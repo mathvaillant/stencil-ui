@@ -1,4 +1,5 @@
 import { Config } from '@stencil/core';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
   namespace: 'core-library',
@@ -7,6 +8,9 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
     },
+    reactOutputTarget({
+      outDir: '../react-library/lib/components',
+    }),
     {
       type: 'dist-custom-elements',
       customElementsExportBehavior: 'auto-define-custom-elements',
@@ -21,6 +25,6 @@ export const config: Config = {
     },
   ],
   testing: {
-    browserHeadless: "shell",
+    browserHeadless: 'shell',
   },
 };
