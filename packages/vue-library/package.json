@@ -1,0 +1,25 @@
+{
+  "name": "vue-library",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p . --outDir ./dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "core-library": "*"
+  },
+  "devDependencies": {
+    "vue": "^3.5.17"
+  }
+}
