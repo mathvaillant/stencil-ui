@@ -4,6 +4,10 @@ import { vueOutputTarget } from '@stencil/vue-output-target';
 
 export const config: Config = {
   namespace: 'core-library',
+  devServer: {
+    openBrowser: true,
+    reloadStrategy: 'pageReload',
+  },
   outputTargets: [
     {
       type: 'dist',

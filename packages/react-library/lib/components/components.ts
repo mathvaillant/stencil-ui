@@ -9,16 +9,16 @@
 
 import type { StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
-import { MyComponent as MyComponentElement, defineCustomElement as defineMyComponent } from "core-library/dist/components/my-component.js";
+import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
 import React from 'react';
 
-export type MyComponentEvents = NonNullable<unknown>;
+export type UiTypographyEvents = NonNullable<unknown>;
 
-export const MyComponent: StencilReactComponent<MyComponentElement, MyComponentEvents> = /*@__PURE__*/ createComponent<MyComponentElement, MyComponentEvents>({
-    tagName: 'my-component',
-    elementClass: MyComponentElement,
+export const UiTypography: StencilReactComponent<UiTypographyElement, UiTypographyEvents> = /*@__PURE__*/ createComponent<UiTypographyElement, UiTypographyEvents>({
+    tagName: 'ui-typography',
+    elementClass: UiTypographyElement,
     // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
     react: React,
-    events: {} as MyComponentEvents,
-    defineCustomElement: defineMyComponent
+    events: {} as UiTypographyEvents,
+    defineCustomElement: defineUiTypography
 });

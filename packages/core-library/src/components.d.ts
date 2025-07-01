@@ -6,56 +6,42 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface UiTypography {
         /**
-          * The first name
+          * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
+          * @default 'h1'
          */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "variant": 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLUiTypographyElement extends Components.UiTypography, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLUiTypographyElement: {
+        prototype: HTMLUiTypographyElement;
+        new (): HTMLUiTypographyElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "ui-typography": HTMLUiTypographyElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface UiTypography {
         /**
-          * The first name
+          * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
+          * @default 'h1'
          */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "variant"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "ui-typography": UiTypography;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
         }
     }
 }
