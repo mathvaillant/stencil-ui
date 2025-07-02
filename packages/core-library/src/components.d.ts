@@ -6,6 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface UiIcon {
+        /**
+          * The name of the icon to display. This should match the name used in Material Symbols. Available Icon Names can be found here:  https://fonts.google.com/icons
+          * @example <ui-icon name="home"></ui-icon> <ui-icon name="settings"></ui-icon>
+         */
+        "name": string;
+    }
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
@@ -15,6 +22,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {
+    }
+    var HTMLUiIconElement: {
+        prototype: HTMLUiIconElement;
+        new (): HTMLUiIconElement;
+    };
     interface HTMLUiTypographyElement extends Components.UiTypography, HTMLStencilElement {
     }
     var HTMLUiTypographyElement: {
@@ -22,10 +35,18 @@ declare global {
         new (): HTMLUiTypographyElement;
     };
     interface HTMLElementTagNameMap {
+        "ui-icon": HTMLUiIconElement;
         "ui-typography": HTMLUiTypographyElement;
     }
 }
 declare namespace LocalJSX {
+    interface UiIcon {
+        /**
+          * The name of the icon to display. This should match the name used in Material Symbols. Available Icon Names can be found here:  https://fonts.google.com/icons
+          * @example <ui-icon name="home"></ui-icon> <ui-icon name="settings"></ui-icon>
+         */
+        "name"?: string;
+    }
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
@@ -34,6 +55,7 @@ declare namespace LocalJSX {
         "variant"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
     interface IntrinsicElements {
+        "ui-icon": UiIcon;
         "ui-typography": UiTypography;
     }
 }
@@ -41,6 +63,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
         }
     }
