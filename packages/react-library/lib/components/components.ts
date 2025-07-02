@@ -10,6 +10,7 @@
 import type { StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
+import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
 import React from 'react';
 
@@ -22,6 +23,17 @@ export const UiIcon: StencilReactComponent<UiIconElement, UiIconEvents> = /*@__P
     react: React,
     events: {} as UiIconEvents,
     defineCustomElement: defineUiIcon
+});
+
+export type UiLogoEvents = NonNullable<unknown>;
+
+export const UiLogo: StencilReactComponent<UiLogoElement, UiLogoEvents> = /*@__PURE__*/ createComponent<UiLogoElement, UiLogoEvents>({
+    tagName: 'ui-logo',
+    elementClass: UiLogoElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiLogoEvents,
+    defineCustomElement: defineUiLogo
 });
 
 export type UiTypographyEvents = NonNullable<unknown>;

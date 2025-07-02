@@ -13,6 +13,16 @@ export namespace Components {
          */
         "name": string;
     }
+    interface UiLogo {
+        /**
+          * @default 100
+         */
+        "height"?: HTMLImageElement['height'];
+        /**
+          * @default 100
+         */
+        "width"?: HTMLImageElement['width'];
+    }
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
@@ -28,6 +38,12 @@ declare global {
         prototype: HTMLUiIconElement;
         new (): HTMLUiIconElement;
     };
+    interface HTMLUiLogoElement extends Components.UiLogo, HTMLStencilElement {
+    }
+    var HTMLUiLogoElement: {
+        prototype: HTMLUiLogoElement;
+        new (): HTMLUiLogoElement;
+    };
     interface HTMLUiTypographyElement extends Components.UiTypography, HTMLStencilElement {
     }
     var HTMLUiTypographyElement: {
@@ -36,6 +52,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ui-icon": HTMLUiIconElement;
+        "ui-logo": HTMLUiLogoElement;
         "ui-typography": HTMLUiTypographyElement;
     }
 }
@@ -47,6 +64,16 @@ declare namespace LocalJSX {
          */
         "name"?: string;
     }
+    interface UiLogo {
+        /**
+          * @default 100
+         */
+        "height"?: HTMLImageElement['height'];
+        /**
+          * @default 100
+         */
+        "width"?: HTMLImageElement['width'];
+    }
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
@@ -56,6 +83,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "ui-icon": UiIcon;
+        "ui-logo": UiLogo;
         "ui-typography": UiTypography;
     }
 }
@@ -64,6 +92,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
+            "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
         }
     }
