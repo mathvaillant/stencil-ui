@@ -2,8 +2,8 @@ import { Component, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'ui-typography',
-  styleUrl: 'ui-typography.css',
-  shadow: false,
+  styleUrl: 'ui-typography.scss',
+  shadow: true,
 })
 export class UITypography {
   /**
@@ -15,7 +15,6 @@ export class UITypography {
   render() {
     return (
       <this.variant>
-        <h1>Internal H1</h1>
         <slot />
       </this.variant>
     );

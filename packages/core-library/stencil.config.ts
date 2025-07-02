@@ -1,9 +1,12 @@
 import { Config } from '@stencil/core';
+import { sass } from '@stencil/sass';
 import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget } from '@stencil/vue-output-target';
 
 export const config: Config = {
   namespace: 'core-library',
+  globalStyle: 'src/global.css',
+  plugins: [sass()],
   devServer: {
     openBrowser: true,
     reloadStrategy: 'pageReload',
