@@ -1,4 +1,32 @@
 :root, :host {
   --ui-font-family: 'Geist', sans-serif;
   --ui-icon-font-size: 24px;
+
+  --ui-space-xsmall: 2px;
+  --ui-space-small: 4px;
+  --ui-space-medium: 8px;
+  --ui-space-large: 16px;
+  --ui-space-xlarge: 24px;
+  --ui-space-xxlarge: 32px;
+
+  --ui-border-small: 1px;
+
+  --ui-radius-small: 0.25em;
+  --ui-radius-medium: 0.5em;
+  --ui-radius-large: 0.75em;
+  --ui-radius-xlarge: 1em;
+  --ui-radius-full: 50%;
+
+  --ui-padding-xsmall: 1px;
+  --ui-padding-small: 2px;
+  --ui-padding-medium: 4px;
+  --ui-padding-large: 8px;
+  --ui-padding-xlarge: 16px;
+  --ui-padding-xxlarge: 24px;
+
+  --ui-accent-color: #0a84ff;
+  --ui-label-color: #000000;
+  --ui-secondary-background: lightgray;
+
+  --ui-hover-opacity: 0.7;
 }

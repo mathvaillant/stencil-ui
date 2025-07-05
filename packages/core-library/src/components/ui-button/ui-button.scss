@@ -1,0 +1,43 @@
+:host {
+  display: inline-block;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-block: var(--ui-padding-large);
+    padding-inline: var(--ui-padding-xlarge);
+    border: none;
+    border-radius: var(--ui-radius-medium);
+    cursor: pointer;
+
+    &.primary {
+      background-color: var(--ui-accent-color);
+      border: var(--ui-border-small) solid transparent;
+      color: white;
+    }
+
+    &.secondary {
+      background-color: var(--ui-secondary-background);
+      border: var(--ui-border-small) solid var(--ui-secondary-background);
+      color: var(--ui-label-color);
+    }
+
+    &.tertiary {
+      background-color: transparent;
+      border: var(--ui-border-small) solid transparent;
+      color: var(--ui-label-color);
+    }
+
+    &:hover {
+      opacity: var(--ui-hover-opacity);
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.5;
+      background-color: var(--ui-secondary-background);
+      color: var(--ui-label-color);
+    }
+  }
+}

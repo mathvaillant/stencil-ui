@@ -9,10 +9,22 @@
 
 import type { StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
+import { UiButton as UiButtonElement, defineCustomElement as defineUiButton } from "core-library/dist/components/ui-button.js";
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
 import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
 import React from 'react';
+
+export type UiButtonEvents = NonNullable<unknown>;
+
+export const UiButton: StencilReactComponent<UiButtonElement, UiButtonEvents> = /*@__PURE__*/ createComponent<UiButtonElement, UiButtonEvents>({
+    tagName: 'ui-button',
+    elementClass: UiButtonElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiButtonEvents,
+    defineCustomElement: defineUiButton
+});
 
 export type UiIconEvents = NonNullable<unknown>;
 

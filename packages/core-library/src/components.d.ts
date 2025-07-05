@@ -6,6 +6,18 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface UiButton {
+        /**
+          * Whether the button is disabled. Defaults to false.
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * The variant of the button. Can be 'primary', 'secondary', or 'tertiary'. Defaults to 'primary'.
+          * @default 'primary'
+         */
+        "variant"?: 'primary' | 'secondary' | 'tertiary';
+    }
     interface UiIcon {
         /**
           * The name of the icon to display. This should match the name used in Material Symbols. Available Icon Names can be found here:  https://fonts.google.com/icons
@@ -32,6 +44,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
+    }
+    var HTMLUiButtonElement: {
+        prototype: HTMLUiButtonElement;
+        new (): HTMLUiButtonElement;
+    };
     interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {
     }
     var HTMLUiIconElement: {
@@ -51,12 +69,25 @@ declare global {
         new (): HTMLUiTypographyElement;
     };
     interface HTMLElementTagNameMap {
+        "ui-button": HTMLUiButtonElement;
         "ui-icon": HTMLUiIconElement;
         "ui-logo": HTMLUiLogoElement;
         "ui-typography": HTMLUiTypographyElement;
     }
 }
 declare namespace LocalJSX {
+    interface UiButton {
+        /**
+          * Whether the button is disabled. Defaults to false.
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * The variant of the button. Can be 'primary', 'secondary', or 'tertiary'. Defaults to 'primary'.
+          * @default 'primary'
+         */
+        "variant"?: 'primary' | 'secondary' | 'tertiary';
+    }
     interface UiIcon {
         /**
           * The name of the icon to display. This should match the name used in Material Symbols. Available Icon Names can be found here:  https://fonts.google.com/icons
@@ -82,6 +113,7 @@ declare namespace LocalJSX {
         "variant"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
     interface IntrinsicElements {
+        "ui-button": UiButton;
         "ui-icon": UiIcon;
         "ui-logo": UiLogo;
         "ui-typography": UiTypography;
@@ -91,6 +123,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
