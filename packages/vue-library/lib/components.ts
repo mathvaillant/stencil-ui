@@ -30,3 +30,9 @@ export const UiTypography: StencilVueComponent<JSX.UiTypography> = /*@__PURE__*/
   'variant'
 ]);
 
+
+export const UiXstack: StencilVueComponent<JSX.UiXstack> = /*@__PURE__*/ defineContainer<JSX.UiXstack>('ui-xstack', undefined);
+
+
+export const UiYstack: StencilVueComponent<JSX.UiYstack> = /*@__PURE__*/ defineContainer<JSX.UiYstack>('ui-ystack', undefined);
+

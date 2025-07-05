@@ -49,6 +49,10 @@ export namespace Components {
          */
         "variant": 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
+    interface UiXstack {
+    }
+    interface UiYstack {
+    }
 }
 declare global {
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
@@ -75,11 +79,25 @@ declare global {
         prototype: HTMLUiTypographyElement;
         new (): HTMLUiTypographyElement;
     };
+    interface HTMLUiXstackElement extends Components.UiXstack, HTMLStencilElement {
+    }
+    var HTMLUiXstackElement: {
+        prototype: HTMLUiXstackElement;
+        new (): HTMLUiXstackElement;
+    };
+    interface HTMLUiYstackElement extends Components.UiYstack, HTMLStencilElement {
+    }
+    var HTMLUiYstackElement: {
+        prototype: HTMLUiYstackElement;
+        new (): HTMLUiYstackElement;
+    };
     interface HTMLElementTagNameMap {
         "ui-button": HTMLUiButtonElement;
         "ui-icon": HTMLUiIconElement;
         "ui-logo": HTMLUiLogoElement;
         "ui-typography": HTMLUiTypographyElement;
+        "ui-xstack": HTMLUiXstackElement;
+        "ui-ystack": HTMLUiYstackElement;
     }
 }
 declare namespace LocalJSX {
@@ -122,11 +140,17 @@ declare namespace LocalJSX {
          */
         "variant"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
     }
+    interface UiXstack {
+    }
+    interface UiYstack {
+    }
     interface IntrinsicElements {
         "ui-button": UiButton;
         "ui-icon": UiIcon;
         "ui-logo": UiLogo;
         "ui-typography": UiTypography;
+        "ui-xstack": UiXstack;
+        "ui-ystack": UiYstack;
     }
 }
 export { LocalJSX as JSX };
@@ -137,6 +161,8 @@ declare module "@stencil/core" {
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
+            "ui-xstack": LocalJSX.UiXstack & JSXBase.HTMLAttributes<HTMLUiXstackElement>;
+            "ui-ystack": LocalJSX.UiYstack & JSXBase.HTMLAttributes<HTMLUiYstackElement>;
         }
     }
 }

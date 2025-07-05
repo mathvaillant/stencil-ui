@@ -13,6 +13,8 @@ import { UiButton as UiButtonElement, defineCustomElement as defineUiButton } fr
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
 import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
+import { UiXstack as UiXstackElement, defineCustomElement as defineUiXstack } from "core-library/dist/components/ui-xstack.js";
+import { UiYstack as UiYstackElement, defineCustomElement as defineUiYstack } from "core-library/dist/components/ui-ystack.js";
 import React from 'react';
 
 export type UiButtonEvents = NonNullable<unknown>;
@@ -57,4 +59,26 @@ export const UiTypography: StencilReactComponent<UiTypographyElement, UiTypograp
     react: React,
     events: {} as UiTypographyEvents,
     defineCustomElement: defineUiTypography
+});
+
+export type UiXstackEvents = NonNullable<unknown>;
+
+export const UiXstack: StencilReactComponent<UiXstackElement, UiXstackEvents> = /*@__PURE__*/ createComponent<UiXstackElement, UiXstackEvents>({
+    tagName: 'ui-xstack',
+    elementClass: UiXstackElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiXstackEvents,
+    defineCustomElement: defineUiXstack
+});
+
+export type UiYstackEvents = NonNullable<unknown>;
+
+export const UiYstack: StencilReactComponent<UiYstackElement, UiYstackEvents> = /*@__PURE__*/ createComponent<UiYstackElement, UiYstackEvents>({
+    tagName: 'ui-ystack',
+    elementClass: UiYstackElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiYstackEvents,
+    defineCustomElement: defineUiYstack
 });
