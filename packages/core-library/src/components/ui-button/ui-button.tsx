@@ -1,5 +1,4 @@
 import { Component, Prop, h } from '@stencil/core';
-import { IconName } from '../ui-icon/icons';
 import { UIIcon } from '../ui-icon/ui-icon';
 
 @Component({
