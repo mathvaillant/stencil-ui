@@ -10,7 +10,8 @@ import type { JSX } from 'core-library';
 
 export const UiButton: StencilVueComponent<JSX.UiButton> = /*@__PURE__*/ defineContainer<JSX.UiButton>('ui-button', undefined, [
   'variant',
-  'disabled'
+  'disabled',
+  'iconName'
 ]);
 
 

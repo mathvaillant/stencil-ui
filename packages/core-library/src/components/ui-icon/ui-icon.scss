@@ -1,5 +1,10 @@
-ui-icon {
+:host {
   display: inline-block;
-  width: var(--ui-icon-font-size);
-  height: var(--ui-icon-font-size);
+  width: 24px;
+  height: 24px;
+
+  svg {
+    height: inherit;
+    width: inherit;
+  }
 }

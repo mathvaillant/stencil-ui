@@ -5,6 +5,10 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { UIIcon } from "./components/ui-icon/ui-icon";
+import { IconName } from "./components/ui-icon/icons";
+export { UIIcon } from "./components/ui-icon/ui-icon";
+export { IconName } from "./components/ui-icon/icons";
 export namespace Components {
     interface UiButton {
         /**
@@ -13,6 +17,10 @@ export namespace Components {
          */
         "disabled": boolean;
         /**
+          * The name of the icon to render inside the button on the left side. If provided, the button will render an `ui-icon` icon.
+         */
+        "iconName"?: UIIcon['name'];
+        /**
           * The variant of the button. Can be 'primary', 'secondary', or 'tertiary'. Defaults to 'primary'.
           * @default 'primary'
          */
@@ -20,10 +28,9 @@ export namespace Components {
     }
     interface UiIcon {
         /**
-          * The name of the icon to display. This should match the name used in Material Symbols. Available Icon Names can be found here:  https://fonts.google.com/icons
-          * @example <ui-icon name="home"></ui-icon> <ui-icon name="settings"></ui-icon>
+          * The name of the icon to render.
          */
-        "name": string;
+        "name": IconName;
     }
     interface UiLogo {
         /**
@@ -83,6 +90,10 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
+          * The name of the icon to render inside the button on the left side. If provided, the button will render an `ui-icon` icon.
+         */
+        "iconName"?: UIIcon['name'];
+        /**
           * The variant of the button. Can be 'primary', 'secondary', or 'tertiary'. Defaults to 'primary'.
           * @default 'primary'
          */
@@ -90,10 +101,9 @@ declare namespace LocalJSX {
     }
     interface UiIcon {
         /**
-          * The name of the icon to display. This should match the name used in Material Symbols. Available Icon Names can be found here:  https://fonts.google.com/icons
-          * @example <ui-icon name="home"></ui-icon> <ui-icon name="settings"></ui-icon>
+          * The name of the icon to render.
          */
-        "name"?: string;
+        "name": IconName;
     }
     interface UiLogo {
         /**

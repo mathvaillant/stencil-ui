@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: var(--ui-space-small);
     padding-block: var(--ui-padding-large);
     padding-inline: var(--ui-padding-xlarge);
     border: none;
@@ -15,18 +16,21 @@
       background-color: var(--ui-accent-color);
       border: var(--ui-border-small) solid transparent;
       color: white;
+      fill: white;
     }
 
     &.secondary {
       background-color: var(--ui-secondary-background);
       border: var(--ui-border-small) solid var(--ui-secondary-background);
       color: var(--ui-label-color);
+      fill: var(--ui-label-color);
     }
 
     &.tertiary {
       background-color: transparent;
       border: var(--ui-border-small) solid transparent;
       color: var(--ui-label-color);
+      fill: var(--ui-label-color);
     }
 
     &:hover {
@@ -38,6 +42,11 @@
       opacity: 0.5;
       background-color: var(--ui-secondary-background);
       color: var(--ui-label-color);
+    }
+
+    ui-icon {
+      width: 14px;
+      height: 14px;
     }
   }
 }

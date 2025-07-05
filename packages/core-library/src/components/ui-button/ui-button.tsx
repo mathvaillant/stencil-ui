@@ -1,4 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
+import { IconName } from '../ui-icon/icons';
+import { UIIcon } from '../ui-icon/ui-icon';
 
 @Component({
   tag: 'ui-button',
@@ -19,9 +21,16 @@ export class UIButton {
    */
   @Prop() disabled: boolean = false;
 
+  /**
+   * The name of the icon to render inside the button on the left side.
+   * If provided, the button will render an `ui-icon` icon.
+   */
+  @Prop() iconName?: UIIcon['name'];
+
   render() {
     return (
       <button class={this.variant} disabled={this.disabled}>
+        {this.iconName && <ui-icon name={this.iconName} />}
         <slot />
       </button>
     );
