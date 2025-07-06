@@ -34,7 +34,7 @@ export class UITooltip {
 
   private positionTooltip() {
     computePosition(this.host, this.tooltipRef, {
-      placement: 'right',
+      placement: 'bottom',
       middleware: [offset(6), flip(), shift({ padding: 5 }), arrow({ element: this.arrowRef })],
     }).then(({ x, y, placement, middlewareData }) => {
       Object.assign(this.tooltipRef.style, {
