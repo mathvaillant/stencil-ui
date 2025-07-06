@@ -42,6 +42,13 @@ export namespace Components {
          */
         "width"?: HTMLImageElement['width'];
     }
+    interface UiTooltip {
+        /**
+          * The text to display in the tooltip. This text will be shown when the user hovers over the component.
+          * @example <ui-tooltip text="This is a tooltip!"></ui-tooltip>
+         */
+        "text": string;
+    }
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
@@ -73,6 +80,12 @@ declare global {
         prototype: HTMLUiLogoElement;
         new (): HTMLUiLogoElement;
     };
+    interface HTMLUiTooltipElement extends Components.UiTooltip, HTMLStencilElement {
+    }
+    var HTMLUiTooltipElement: {
+        prototype: HTMLUiTooltipElement;
+        new (): HTMLUiTooltipElement;
+    };
     interface HTMLUiTypographyElement extends Components.UiTypography, HTMLStencilElement {
     }
     var HTMLUiTypographyElement: {
@@ -95,6 +108,7 @@ declare global {
         "ui-button": HTMLUiButtonElement;
         "ui-icon": HTMLUiIconElement;
         "ui-logo": HTMLUiLogoElement;
+        "ui-tooltip": HTMLUiTooltipElement;
         "ui-typography": HTMLUiTypographyElement;
         "ui-xstack": HTMLUiXstackElement;
         "ui-ystack": HTMLUiYstackElement;
@@ -133,6 +147,13 @@ declare namespace LocalJSX {
          */
         "width"?: HTMLImageElement['width'];
     }
+    interface UiTooltip {
+        /**
+          * The text to display in the tooltip. This text will be shown when the user hovers over the component.
+          * @example <ui-tooltip text="This is a tooltip!"></ui-tooltip>
+         */
+        "text": string;
+    }
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
@@ -148,6 +169,7 @@ declare namespace LocalJSX {
         "ui-button": UiButton;
         "ui-icon": UiIcon;
         "ui-logo": UiLogo;
+        "ui-tooltip": UiTooltip;
         "ui-typography": UiTypography;
         "ui-xstack": UiXstack;
         "ui-ystack": UiYstack;
@@ -160,6 +182,7 @@ declare module "@stencil/core" {
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
+            "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
             "ui-xstack": LocalJSX.UiXstack & JSXBase.HTMLAttributes<HTMLUiXstackElement>;
             "ui-ystack": LocalJSX.UiYstack & JSXBase.HTMLAttributes<HTMLUiYstackElement>;

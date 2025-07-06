@@ -12,6 +12,7 @@ import { createComponent } from '@stencil/react-output-target/runtime';
 import { UiButton as UiButtonElement, defineCustomElement as defineUiButton } from "core-library/dist/components/ui-button.js";
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
 import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
+import { UiTooltip as UiTooltipElement, defineCustomElement as defineUiTooltip } from "core-library/dist/components/ui-tooltip.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
 import { UiXstack as UiXstackElement, defineCustomElement as defineUiXstack } from "core-library/dist/components/ui-xstack.js";
 import { UiYstack as UiYstackElement, defineCustomElement as defineUiYstack } from "core-library/dist/components/ui-ystack.js";
@@ -48,6 +49,17 @@ export const UiLogo: StencilReactComponent<UiLogoElement, UiLogoEvents> = /*@__P
     react: React,
     events: {} as UiLogoEvents,
     defineCustomElement: defineUiLogo
+});
+
+export type UiTooltipEvents = NonNullable<unknown>;
+
+export const UiTooltip: StencilReactComponent<UiTooltipElement, UiTooltipEvents> = /*@__PURE__*/ createComponent<UiTooltipElement, UiTooltipEvents>({
+    tagName: 'ui-tooltip',
+    elementClass: UiTooltipElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiTooltipEvents,
+    defineCustomElement: defineUiTooltip
 });
 
 export type UiTypographyEvents = NonNullable<unknown>;

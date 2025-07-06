@@ -28,4 +28,9 @@
   --ui-secondary-background: lightgray;
 
   --ui-hover-opacity: 0.7;
+
+  --ui-tooltip-background: #2b2b2b;
+  --ui-tooltip-text-color: #ffffff;
+
+  --ui-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

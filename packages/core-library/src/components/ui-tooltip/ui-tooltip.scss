@@ -1,0 +1,36 @@
+:host {
+  display: inline-block;
+
+  [popover] {
+    border: none;
+  }
+
+  p {
+    font-family: var(--ui-font-family);
+    font-size: 12px;
+    display: none;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 200px;
+    width: max-content;
+    height: fit-content;
+    margin: 0;
+    overflow: visible;
+    background-color: var(--ui-tooltip-background);
+    color: var(--ui-tooltip-text-color);
+    padding-block: var(--ui-space-small);
+    padding-inline: var(--ui-space-medium);
+    border-radius: var(--ui-radius-medium);
+    box-shadow: var(--ui-box-shadow);
+
+    span {
+      position: absolute;
+      background-color: var(--ui-tooltip-background);
+      width: 8px;
+      height: 8px;
+      transform: rotate(45deg);
+    }
+  }
+}

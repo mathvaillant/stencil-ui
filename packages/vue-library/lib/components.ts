@@ -26,6 +26,11 @@ export const UiLogo: StencilVueComponent<JSX.UiLogo> = /*@__PURE__*/ defineConta
 ]);
 
 
+export const UiTooltip: StencilVueComponent<JSX.UiTooltip> = /*@__PURE__*/ defineContainer<JSX.UiTooltip>('ui-tooltip', undefined, [
+  'text'
+]);
+
+
 export const UiTypography: StencilVueComponent<JSX.UiTypography> = /*@__PURE__*/ defineContainer<JSX.UiTypography>('ui-typography', undefined, [
   'variant'
 ]);
