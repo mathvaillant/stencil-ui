@@ -26,6 +26,16 @@ export const UiLogo: StencilVueComponent<JSX.UiLogo> = /*@__PURE__*/ defineConta
 ]);
 
 
+export const UiMenu: StencilVueComponent<JSX.UiMenu> = /*@__PURE__*/ defineContainer<JSX.UiMenu>('ui-menu', undefined, [
+  'open',
+  'data',
+  'position',
+  'close'
+], [
+  'close'
+]);
+
+
 export const UiTooltip: StencilVueComponent<JSX.UiTooltip> = /*@__PURE__*/ defineContainer<JSX.UiTooltip>('ui-tooltip', undefined, [
   'text'
 ]);

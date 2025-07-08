@@ -1,0 +1,61 @@
+:host {
+  display: inline-block;
+
+  .backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+  }
+
+  ul {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 50vh;
+    min-width: 160px;
+    padding: var(--ui-padding-large);
+    border-radius: var(--ui-radius-medium);
+    gap: var(--ui-space-medium);
+    box-shadow: var(--ui-box-shadow);
+    background-color: var(--ui-menu-background);
+
+    li {
+      display: flex;
+      align-items: center;
+      border-radius: var(--ui-radius-small);
+
+      &:hover,
+      &:focus-within {
+        background-color: var(--ui-secondary-background);
+      }
+
+      &:active {
+        background-color: var(--ui-accent-color);
+      }
+
+      button {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border: none;
+        background-color: transparent;
+        padding: var(--ui-padding-large);
+        font-family: var(--ui-font-family);
+        color: var(--ui-label-color);
+        fill: var(--ui-label-color);
+      }
+    }
+  }
+}

@@ -7,8 +7,10 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { UIIcon } from "./components/ui-icon/ui-icon";
 import { IconName } from "./components/ui-icon/icons";
+import { UIMenuItem } from "./components/ui-menu/ui-menu.types";
 export { UIIcon } from "./components/ui-icon/ui-icon";
 export { IconName } from "./components/ui-icon/icons";
+export { UIMenuItem } from "./components/ui-menu/ui-menu.types";
 export namespace Components {
     interface UiButton {
         /**
@@ -42,6 +44,26 @@ export namespace Components {
          */
         "width"?: HTMLImageElement['width'];
     }
+    interface UiMenu {
+        /**
+          * The menu items to display in the menu. Each item should conform to the UIMenuItem interface.
+          * @type {UIMenuItem[]}
+          * @default []
+         */
+        "data"?: UIMenuItem[];
+        /**
+          * Indicates whether the menu is open or closed.
+          * @type {boolean}
+          * @default false
+         */
+        "open": boolean;
+        /**
+          * Position relative to the viewport where the menu should be displayed.  If not provided, the menu will be positioned automatically based on the host element.
+          * @type {{ x: number; y: number } | null}
+          * @default null
+         */
+        "position"?: { x: number; y: number } | null;
+    }
     interface UiTooltip {
         /**
           * The text to display in the tooltip. This text will be shown when the user hovers over the component.
@@ -61,6 +83,10 @@ export namespace Components {
     interface UiYstack {
     }
 }
+export interface UiMenuCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiMenuElement;
+}
 declare global {
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
     }
@@ -79,6 +105,23 @@ declare global {
     var HTMLUiLogoElement: {
         prototype: HTMLUiLogoElement;
         new (): HTMLUiLogoElement;
+    };
+    interface HTMLUiMenuElementEventMap {
+        "close": void;
+    }
+    interface HTMLUiMenuElement extends Components.UiMenu, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLUiMenuElementEventMap>(type: K, listener: (this: HTMLUiMenuElement, ev: UiMenuCustomEvent<HTMLUiMenuElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLUiMenuElementEventMap>(type: K, listener: (this: HTMLUiMenuElement, ev: UiMenuCustomEvent<HTMLUiMenuElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLUiMenuElement: {
+        prototype: HTMLUiMenuElement;
+        new (): HTMLUiMenuElement;
     };
     interface HTMLUiTooltipElement extends Components.UiTooltip, HTMLStencilElement {
     }
@@ -108,6 +151,7 @@ declare global {
         "ui-button": HTMLUiButtonElement;
         "ui-icon": HTMLUiIconElement;
         "ui-logo": HTMLUiLogoElement;
+        "ui-menu": HTMLUiMenuElement;
         "ui-tooltip": HTMLUiTooltipElement;
         "ui-typography": HTMLUiTypographyElement;
         "ui-xstack": HTMLUiXstackElement;
@@ -147,6 +191,31 @@ declare namespace LocalJSX {
          */
         "width"?: HTMLImageElement['width'];
     }
+    interface UiMenu {
+        /**
+          * The menu items to display in the menu. Each item should conform to the UIMenuItem interface.
+          * @type {UIMenuItem[]}
+          * @default []
+         */
+        "data"?: UIMenuItem[];
+        /**
+          * Event emitted when the menu is closed.
+          * @event close
+         */
+        "onClose"?: (event: UiMenuCustomEvent<void>) => void;
+        /**
+          * Indicates whether the menu is open or closed.
+          * @type {boolean}
+          * @default false
+         */
+        "open"?: boolean;
+        /**
+          * Position relative to the viewport where the menu should be displayed.  If not provided, the menu will be positioned automatically based on the host element.
+          * @type {{ x: number; y: number } | null}
+          * @default null
+         */
+        "position"?: { x: number; y: number } | null;
+    }
     interface UiTooltip {
         /**
           * The text to display in the tooltip. This text will be shown when the user hovers over the component.
@@ -169,6 +238,7 @@ declare namespace LocalJSX {
         "ui-button": UiButton;
         "ui-icon": UiIcon;
         "ui-logo": UiLogo;
+        "ui-menu": UiMenu;
         "ui-tooltip": UiTooltip;
         "ui-typography": UiTypography;
         "ui-xstack": UiXstack;
@@ -182,6 +252,7 @@ declare module "@stencil/core" {
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
+            "ui-menu": LocalJSX.UiMenu & JSXBase.HTMLAttributes<HTMLUiMenuElement>;
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
             "ui-xstack": LocalJSX.UiXstack & JSXBase.HTMLAttributes<HTMLUiXstackElement>;
