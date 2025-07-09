@@ -13,6 +13,7 @@ import { UiButton as UiButtonElement, defineCustomElement as defineUiButton } fr
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
 import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
 import { UiMenu as UiMenuElement, defineCustomElement as defineUiMenu } from "core-library/dist/components/ui-menu.js";
+import { UiSidebar as UiSidebarElement, defineCustomElement as defineUiSidebar } from "core-library/dist/components/ui-sidebar.js";
 import { UiTooltip as UiTooltipElement, defineCustomElement as defineUiTooltip } from "core-library/dist/components/ui-tooltip.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
 import { UiXstack as UiXstackElement, defineCustomElement as defineUiXstack } from "core-library/dist/components/ui-xstack.js";
@@ -61,6 +62,17 @@ export const UiMenu: StencilReactComponent<UiMenuElement, UiMenuEvents> = /*@__P
     react: React,
     events: { onClose: 'close' } as UiMenuEvents,
     defineCustomElement: defineUiMenu
+});
+
+export type UiSidebarEvents = NonNullable<unknown>;
+
+export const UiSidebar: StencilReactComponent<UiSidebarElement, UiSidebarEvents> = /*@__PURE__*/ createComponent<UiSidebarElement, UiSidebarEvents>({
+    tagName: 'ui-sidebar',
+    elementClass: UiSidebarElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiSidebarEvents,
+    defineCustomElement: defineUiSidebar
 });
 
 export type UiTooltipEvents = NonNullable<unknown>;

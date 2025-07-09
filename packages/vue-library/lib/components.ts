@@ -36,6 +36,12 @@ export const UiMenu: StencilVueComponent<JSX.UiMenu> = /*@__PURE__*/ defineConta
 ]);
 
 
+export const UiSidebar: StencilVueComponent<JSX.UiSidebar> = /*@__PURE__*/ defineContainer<JSX.UiSidebar>('ui-sidebar', undefined, [
+  'open',
+  'items'
+]);
+
+
 export const UiTooltip: StencilVueComponent<JSX.UiTooltip> = /*@__PURE__*/ defineContainer<JSX.UiTooltip>('ui-tooltip', undefined, [
   'text'
 ]);

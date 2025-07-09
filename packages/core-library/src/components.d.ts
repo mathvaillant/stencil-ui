@@ -8,9 +8,11 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { UIIcon } from "./components/ui-icon/ui-icon";
 import { IconName } from "./components/ui-icon/icons";
 import { UIMenuItem } from "./components/ui-menu/ui-menu.types";
+import { UISidebarItem } from "./components/ui-sidebar/ui-sidebar.types";
 export { UIIcon } from "./components/ui-icon/ui-icon";
 export { IconName } from "./components/ui-icon/icons";
 export { UIMenuItem } from "./components/ui-menu/ui-menu.types";
+export { UISidebarItem } from "./components/ui-sidebar/ui-sidebar.types";
 export namespace Components {
     interface UiButton {
         /**
@@ -63,6 +65,20 @@ export namespace Components {
           * @default null
          */
         "position"?: { x: number; y: number } | null;
+    }
+    interface UiSidebar {
+        /**
+          * The items to display in the sidebar.
+          * @type {UISidebarItem[]}
+          * @default []
+         */
+        "items": UISidebarItem[];
+        /**
+          * Indicates whether the sidebar is open or closed.
+          * @type {boolean}
+          * @default false
+         */
+        "open": boolean;
     }
     interface UiTooltip {
         /**
@@ -123,6 +139,12 @@ declare global {
         prototype: HTMLUiMenuElement;
         new (): HTMLUiMenuElement;
     };
+    interface HTMLUiSidebarElement extends Components.UiSidebar, HTMLStencilElement {
+    }
+    var HTMLUiSidebarElement: {
+        prototype: HTMLUiSidebarElement;
+        new (): HTMLUiSidebarElement;
+    };
     interface HTMLUiTooltipElement extends Components.UiTooltip, HTMLStencilElement {
     }
     var HTMLUiTooltipElement: {
@@ -152,6 +174,7 @@ declare global {
         "ui-icon": HTMLUiIconElement;
         "ui-logo": HTMLUiLogoElement;
         "ui-menu": HTMLUiMenuElement;
+        "ui-sidebar": HTMLUiSidebarElement;
         "ui-tooltip": HTMLUiTooltipElement;
         "ui-typography": HTMLUiTypographyElement;
         "ui-xstack": HTMLUiXstackElement;
@@ -216,6 +239,20 @@ declare namespace LocalJSX {
          */
         "position"?: { x: number; y: number } | null;
     }
+    interface UiSidebar {
+        /**
+          * The items to display in the sidebar.
+          * @type {UISidebarItem[]}
+          * @default []
+         */
+        "items"?: UISidebarItem[];
+        /**
+          * Indicates whether the sidebar is open or closed.
+          * @type {boolean}
+          * @default false
+         */
+        "open"?: boolean;
+    }
     interface UiTooltip {
         /**
           * The text to display in the tooltip. This text will be shown when the user hovers over the component.
@@ -239,6 +276,7 @@ declare namespace LocalJSX {
         "ui-icon": UiIcon;
         "ui-logo": UiLogo;
         "ui-menu": UiMenu;
+        "ui-sidebar": UiSidebar;
         "ui-tooltip": UiTooltip;
         "ui-typography": UiTypography;
         "ui-xstack": UiXstack;
@@ -253,6 +291,7 @@ declare module "@stencil/core" {
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-menu": LocalJSX.UiMenu & JSXBase.HTMLAttributes<HTMLUiMenuElement>;
+            "ui-sidebar": LocalJSX.UiSidebar & JSXBase.HTMLAttributes<HTMLUiSidebarElement>;
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
             "ui-xstack": LocalJSX.UiXstack & JSXBase.HTMLAttributes<HTMLUiXstackElement>;
