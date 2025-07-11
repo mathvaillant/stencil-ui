@@ -2,6 +2,14 @@
   display: block;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--ui-font-family)
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: var(--ui-font-family);
+  color: var(--ui-label-color);
+  margin: 0;
 }

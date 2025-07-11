@@ -13,6 +13,7 @@ import { UiButton as UiButtonElement, defineCustomElement as defineUiButton } fr
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
 import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
 import { UiMenu as UiMenuElement, defineCustomElement as defineUiMenu } from "core-library/dist/components/ui-menu.js";
+import { UiModal as UiModalElement, defineCustomElement as defineUiModal } from "core-library/dist/components/ui-modal.js";
 import { UiSidebar as UiSidebarElement, defineCustomElement as defineUiSidebar } from "core-library/dist/components/ui-sidebar.js";
 import { UiTooltip as UiTooltipElement, defineCustomElement as defineUiTooltip } from "core-library/dist/components/ui-tooltip.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
@@ -62,6 +63,17 @@ export const UiMenu: StencilReactComponent<UiMenuElement, UiMenuEvents> = /*@__P
     react: React,
     events: { onClose: 'close' } as UiMenuEvents,
     defineCustomElement: defineUiMenu
+});
+
+export type UiModalEvents = { onClose: EventName<CustomEvent<void>> };
+
+export const UiModal: StencilReactComponent<UiModalElement, UiModalEvents> = /*@__PURE__*/ createComponent<UiModalElement, UiModalEvents>({
+    tagName: 'ui-modal',
+    elementClass: UiModalElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: { onClose: 'close' } as UiModalEvents,
+    defineCustomElement: defineUiModal
 });
 
 export type UiSidebarEvents = NonNullable<unknown>;

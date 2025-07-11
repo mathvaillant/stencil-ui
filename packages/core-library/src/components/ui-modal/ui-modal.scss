@@ -1,0 +1,40 @@
+:host {
+  display: inline-block;
+
+  dialog {
+    width: auto;
+    max-width: 500px;
+    border: 0;
+    padding: 0;
+    background-color: var(--ui-modal-background);
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--ui-padding-xlarge);
+      border-bottom: var(--ui-border-small) solid var(--ui-border-color);
+
+      button {
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        fill: var(--ui-label-color);
+      }
+    }
+
+    section {
+      padding-inline: var(--ui-padding-xlarge);
+      overflow-y: auto;
+      max-height: 400px;
+    }
+
+    footer {
+      border-top: var(--ui-border-small) solid var(--ui-border-color);
+      padding: var(--ui-padding-xlarge);
+    }
+  }
+}

@@ -66,6 +66,34 @@ export namespace Components {
          */
         "position"?: { x: number; y: number } | null;
     }
+    interface UiModal {
+        /**
+          * Closes the modal dialog. This method is called to hide the modal when the `open` property is set to false. It uses the native `close` method of the HTMLDialogElement.
+         */
+        "closeModal": () => Promise<void>;
+        /**
+          * The name of the slot for the footer content. This allows for custom footer content to be passed into the modal.
+          * @type {string}
+          * @default 'footer-slot'
+         */
+        "footerSlotName"?: string;
+        /**
+          * The title of the modal header. This is displayed at the top of the modal.
+          * @type {string}
+          * @default undefined
+         */
+        "headerTitle"?: string;
+        /**
+          * Indicates whether the modal is open or closed.
+          * @type {boolean}
+          * @default false
+         */
+        "open": boolean;
+        /**
+          * Opens the modal dialog. This method is called to display the modal when the `open` property is set to true. It uses the native `showModal` method of the HTMLDialogElement.
+         */
+        "showModal": () => Promise<void>;
+    }
     interface UiSidebar {
         /**
           * The items to display in the sidebar.
@@ -89,10 +117,10 @@ export namespace Components {
     }
     interface UiTypography {
         /**
-          * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
+          * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' or 'p'.
           * @default 'h1'
          */
-        "variant": 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+        "variant": 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
     }
     interface UiXstack {
     }
@@ -102,6 +130,10 @@ export namespace Components {
 export interface UiMenuCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUiMenuElement;
+}
+export interface UiModalCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiModalElement;
 }
 declare global {
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
@@ -139,6 +171,23 @@ declare global {
         prototype: HTMLUiMenuElement;
         new (): HTMLUiMenuElement;
     };
+    interface HTMLUiModalElementEventMap {
+        "close": void;
+    }
+    interface HTMLUiModalElement extends Components.UiModal, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLUiModalElementEventMap>(type: K, listener: (this: HTMLUiModalElement, ev: UiModalCustomEvent<HTMLUiModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLUiModalElementEventMap>(type: K, listener: (this: HTMLUiModalElement, ev: UiModalCustomEvent<HTMLUiModalElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLUiModalElement: {
+        prototype: HTMLUiModalElement;
+        new (): HTMLUiModalElement;
+    };
     interface HTMLUiSidebarElement extends Components.UiSidebar, HTMLStencilElement {
     }
     var HTMLUiSidebarElement: {
@@ -174,6 +223,7 @@ declare global {
         "ui-icon": HTMLUiIconElement;
         "ui-logo": HTMLUiLogoElement;
         "ui-menu": HTMLUiMenuElement;
+        "ui-modal": HTMLUiModalElement;
         "ui-sidebar": HTMLUiSidebarElement;
         "ui-tooltip": HTMLUiTooltipElement;
         "ui-typography": HTMLUiTypographyElement;
@@ -239,6 +289,31 @@ declare namespace LocalJSX {
          */
         "position"?: { x: number; y: number } | null;
     }
+    interface UiModal {
+        /**
+          * The name of the slot for the footer content. This allows for custom footer content to be passed into the modal.
+          * @type {string}
+          * @default 'footer-slot'
+         */
+        "footerSlotName"?: string;
+        /**
+          * The title of the modal header. This is displayed at the top of the modal.
+          * @type {string}
+          * @default undefined
+         */
+        "headerTitle"?: string;
+        /**
+          * Event emitted when the modal is closed.
+          * @event close
+         */
+        "onClose"?: (event: UiModalCustomEvent<void>) => void;
+        /**
+          * Indicates whether the modal is open or closed.
+          * @type {boolean}
+          * @default false
+         */
+        "open"?: boolean;
+    }
     interface UiSidebar {
         /**
           * The items to display in the sidebar.
@@ -262,10 +337,10 @@ declare namespace LocalJSX {
     }
     interface UiTypography {
         /**
-          * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', or 'h6'.
+          * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' or 'p'.
           * @default 'h1'
          */
-        "variant"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+        "variant"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
     }
     interface UiXstack {
     }
@@ -276,6 +351,7 @@ declare namespace LocalJSX {
         "ui-icon": UiIcon;
         "ui-logo": UiLogo;
         "ui-menu": UiMenu;
+        "ui-modal": UiModal;
         "ui-sidebar": UiSidebar;
         "ui-tooltip": UiTooltip;
         "ui-typography": UiTypography;
@@ -291,6 +367,7 @@ declare module "@stencil/core" {
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-menu": LocalJSX.UiMenu & JSXBase.HTMLAttributes<HTMLUiMenuElement>;
+            "ui-modal": LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
             "ui-sidebar": LocalJSX.UiSidebar & JSXBase.HTMLAttributes<HTMLUiSidebarElement>;
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
