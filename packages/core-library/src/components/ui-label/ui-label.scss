@@ -1,0 +1,9 @@
+ui-label {
+  p,
+  label,
+  legend {
+    font-family: var(--ui-font-family);
+    color: var(--ui-label-color);
+    font-size: 14px;
+  }
+}

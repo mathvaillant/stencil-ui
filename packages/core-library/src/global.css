@@ -41,4 +41,10 @@
   --ui-modal-background: #ffffff;
 
   --ui-border-color: #e0e0e0;
+
+  --ui-color-success: #28a745;
+  --ui-color-error: #dc3545;
+  --ui-color-warning: #ffc107;
+  --ui-color-focus: #00ffee;
+  --ui-placeholder-color: #a0a0a0;
 }

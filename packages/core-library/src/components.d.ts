@@ -25,6 +25,11 @@ export namespace Components {
          */
         "iconName"?: UIIcon['name'];
         /**
+          * The type of the button. Can be 'button', 'submit', or 'reset'. Defaults to 'button'.
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
           * The variant of the button. Can be 'primary', 'secondary', or 'tertiary'. Defaults to 'primary'.
           * @default 'primary'
          */
@@ -35,6 +40,27 @@ export namespace Components {
           * The name of the icon to render.
          */
         "name": IconName;
+    }
+    interface UiInput {
+        "autocomplete"?: string;
+        "disabled"?: boolean;
+        "fieldId"?: string;
+        "name"?: string;
+        "placeholder"?: string;
+        "readOnly"?: boolean;
+        "required"?: boolean;
+        /**
+          * @default 'text'
+         */
+        "type"?: HTMLInputElement['type'];
+        "value"?: string;
+    }
+    interface UiLabel {
+        /**
+          * @default 'label'
+         */
+        "as"?: 'p' | 'label' | 'legend';
+        "htmlFor"?: string;
     }
     interface UiLogo {
         /**
@@ -148,6 +174,18 @@ declare global {
         prototype: HTMLUiIconElement;
         new (): HTMLUiIconElement;
     };
+    interface HTMLUiInputElement extends Components.UiInput, HTMLStencilElement {
+    }
+    var HTMLUiInputElement: {
+        prototype: HTMLUiInputElement;
+        new (): HTMLUiInputElement;
+    };
+    interface HTMLUiLabelElement extends Components.UiLabel, HTMLStencilElement {
+    }
+    var HTMLUiLabelElement: {
+        prototype: HTMLUiLabelElement;
+        new (): HTMLUiLabelElement;
+    };
     interface HTMLUiLogoElement extends Components.UiLogo, HTMLStencilElement {
     }
     var HTMLUiLogoElement: {
@@ -221,6 +259,8 @@ declare global {
     interface HTMLElementTagNameMap {
         "ui-button": HTMLUiButtonElement;
         "ui-icon": HTMLUiIconElement;
+        "ui-input": HTMLUiInputElement;
+        "ui-label": HTMLUiLabelElement;
         "ui-logo": HTMLUiLogoElement;
         "ui-menu": HTMLUiMenuElement;
         "ui-modal": HTMLUiModalElement;
@@ -243,6 +283,11 @@ declare namespace LocalJSX {
          */
         "iconName"?: UIIcon['name'];
         /**
+          * The type of the button. Can be 'button', 'submit', or 'reset'. Defaults to 'button'.
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
           * The variant of the button. Can be 'primary', 'secondary', or 'tertiary'. Defaults to 'primary'.
           * @default 'primary'
          */
@@ -253,6 +298,27 @@ declare namespace LocalJSX {
           * The name of the icon to render.
          */
         "name": IconName;
+    }
+    interface UiInput {
+        "autocomplete"?: string;
+        "disabled"?: boolean;
+        "fieldId"?: string;
+        "name"?: string;
+        "placeholder"?: string;
+        "readOnly"?: boolean;
+        "required"?: boolean;
+        /**
+          * @default 'text'
+         */
+        "type"?: HTMLInputElement['type'];
+        "value"?: string;
+    }
+    interface UiLabel {
+        /**
+          * @default 'label'
+         */
+        "as"?: 'p' | 'label' | 'legend';
+        "htmlFor"?: string;
     }
     interface UiLogo {
         /**
@@ -349,6 +415,8 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "ui-button": UiButton;
         "ui-icon": UiIcon;
+        "ui-input": UiInput;
+        "ui-label": UiLabel;
         "ui-logo": UiLogo;
         "ui-menu": UiMenu;
         "ui-modal": UiModal;
@@ -365,6 +433,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
+            "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
+            "ui-label": LocalJSX.UiLabel & JSXBase.HTMLAttributes<HTMLUiLabelElement>;
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-menu": LocalJSX.UiMenu & JSXBase.HTMLAttributes<HTMLUiMenuElement>;
             "ui-modal": LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;

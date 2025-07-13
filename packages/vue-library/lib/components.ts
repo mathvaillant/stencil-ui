@@ -11,12 +11,32 @@ import type { JSX } from 'core-library';
 export const UiButton: StencilVueComponent<JSX.UiButton> = /*@__PURE__*/ defineContainer<JSX.UiButton>('ui-button', undefined, [
   'variant',
   'disabled',
-  'iconName'
+  'iconName',
+  'type'
 ]);
 
 
 export const UiIcon: StencilVueComponent<JSX.UiIcon> = /*@__PURE__*/ defineContainer<JSX.UiIcon>('ui-icon', undefined, [
   'name'
+]);
+
+
+export const UiInput: StencilVueComponent<JSX.UiInput> = /*@__PURE__*/ defineContainer<JSX.UiInput>('ui-input', undefined, [
+  'fieldId',
+  'name',
+  'type',
+  'value',
+  'disabled',
+  'readOnly',
+  'required',
+  'placeholder',
+  'autocomplete'
+]);
+
+
+export const UiLabel: StencilVueComponent<JSX.UiLabel> = /*@__PURE__*/ defineContainer<JSX.UiLabel>('ui-label', undefined, [
+  'as',
+  'htmlFor'
 ]);
 
 

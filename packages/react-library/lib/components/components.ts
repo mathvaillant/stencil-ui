@@ -11,6 +11,8 @@ import type { EventName, StencilReactComponent } from '@stencil/react-output-tar
 import { createComponent } from '@stencil/react-output-target/runtime';
 import { UiButton as UiButtonElement, defineCustomElement as defineUiButton } from "core-library/dist/components/ui-button.js";
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
+import { UiInput as UiInputElement, defineCustomElement as defineUiInput } from "core-library/dist/components/ui-input.js";
+import { UiLabel as UiLabelElement, defineCustomElement as defineUiLabel } from "core-library/dist/components/ui-label.js";
 import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
 import { UiMenu as UiMenuElement, defineCustomElement as defineUiMenu } from "core-library/dist/components/ui-menu.js";
 import { UiModal as UiModalElement, defineCustomElement as defineUiModal } from "core-library/dist/components/ui-modal.js";
@@ -41,6 +43,28 @@ export const UiIcon: StencilReactComponent<UiIconElement, UiIconEvents> = /*@__P
     react: React,
     events: {} as UiIconEvents,
     defineCustomElement: defineUiIcon
+});
+
+export type UiInputEvents = NonNullable<unknown>;
+
+export const UiInput: StencilReactComponent<UiInputElement, UiInputEvents> = /*@__PURE__*/ createComponent<UiInputElement, UiInputEvents>({
+    tagName: 'ui-input',
+    elementClass: UiInputElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiInputEvents,
+    defineCustomElement: defineUiInput
+});
+
+export type UiLabelEvents = NonNullable<unknown>;
+
+export const UiLabel: StencilReactComponent<UiLabelElement, UiLabelEvents> = /*@__PURE__*/ createComponent<UiLabelElement, UiLabelEvents>({
+    tagName: 'ui-label',
+    elementClass: UiLabelElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiLabelEvents,
+    defineCustomElement: defineUiLabel
 });
 
 export type UiLogoEvents = NonNullable<unknown>;

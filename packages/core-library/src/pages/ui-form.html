@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    
+    <!-- GEIST FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <script type="module" src="/build/core-library.esm.js"></script>
+    <script nomodule src="/build/core-library.js"></script>
+    <link rel="stylesheet" href="/build/core-library.css" />
+
+  </head>
+  <body>
+    <form style="display: flex; flex-direction: column; gap: 16px;">
+      <ui-ystack>
+        <ui-label html-for="123" as="label">Name</ui-label>
+        <ui-input required field-id="123" name="name" type="text" autocomplete="name" placeholder="Enter your name"></ui-input>
+      </ui-ystack>
+
+      <ui-ystack>
+        <ui-label html-for="456" as="label">Email</ui-label>
+        <ui-input required field-id="456" name="email" type="email" autocomplete="email" placeholder="Enter your email"></ui-input>
+      </ui-ystack>
+
+      <ui-ystack>
+        <ui-label html-for="567" as="label">Birthday</ui-label>
+        <ui-input required field-id="567" name="birthday" type="date" placeholder="Enter your birthday"></ui-input>
+      </ui-ystack>
+
+      <ui-xstack>
+        <ui-button variant="tertiary" type="reset">Reset</ui-button>
+        <ui-button type="submit">Submit</ui-button>
+      </ui-xstack>
+    </form>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.querySelector('form');
+        
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+          console.log('Form submitted:', data);
+        });
+      });
+    </script>
+  </body>
+</html>

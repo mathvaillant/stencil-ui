@@ -4,7 +4,7 @@ import { UIIcon } from '../ui-icon/ui-icon';
 @Component({
   tag: 'ui-button',
   styleUrl: 'ui-button.scss',
-  shadow: true,
+  shadow: false,
 })
 export class UIButton {
   /**
@@ -26,9 +26,16 @@ export class UIButton {
    */
   @Prop() iconName?: UIIcon['name'];
 
+  /**
+   * The type of the button.
+   * Can be 'button', 'submit', or 'reset'.
+   * Defaults to 'button'.
+   */
+  @Prop() type?: 'button' | 'submit' | 'reset' = 'button';
+
   render() {
     return (
-      <button class={this.variant} disabled={this.disabled}>
+      <button class={this.variant} disabled={this.disabled} type={this.type}>
         {this.iconName && <ui-icon name={this.iconName} />}
         <slot />
       </button>
