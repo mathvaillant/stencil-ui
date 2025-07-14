@@ -120,6 +120,10 @@ export namespace Components {
          */
         "showModal": () => Promise<void>;
     }
+    interface UiSelect {
+        "fieldId"?: string;
+        "name"?: string;
+    }
     interface UiSidebar {
         /**
           * The items to display in the sidebar.
@@ -238,6 +242,12 @@ declare global {
         prototype: HTMLUiModalElement;
         new (): HTMLUiModalElement;
     };
+    interface HTMLUiSelectElement extends Components.UiSelect, HTMLStencilElement {
+    }
+    var HTMLUiSelectElement: {
+        prototype: HTMLUiSelectElement;
+        new (): HTMLUiSelectElement;
+    };
     interface HTMLUiSidebarElement extends Components.UiSidebar, HTMLStencilElement {
     }
     var HTMLUiSidebarElement: {
@@ -282,6 +292,7 @@ declare global {
         "ui-logo": HTMLUiLogoElement;
         "ui-menu": HTMLUiMenuElement;
         "ui-modal": HTMLUiModalElement;
+        "ui-select": HTMLUiSelectElement;
         "ui-sidebar": HTMLUiSidebarElement;
         "ui-textarea": HTMLUiTextareaElement;
         "ui-tooltip": HTMLUiTooltipElement;
@@ -399,6 +410,10 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
     }
+    interface UiSelect {
+        "fieldId"?: string;
+        "name"?: string;
+    }
     interface UiSidebar {
         /**
           * The items to display in the sidebar.
@@ -451,6 +466,7 @@ declare namespace LocalJSX {
         "ui-logo": UiLogo;
         "ui-menu": UiMenu;
         "ui-modal": UiModal;
+        "ui-select": UiSelect;
         "ui-sidebar": UiSidebar;
         "ui-textarea": UiTextarea;
         "ui-tooltip": UiTooltip;
@@ -470,6 +486,7 @@ declare module "@stencil/core" {
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
             "ui-menu": LocalJSX.UiMenu & JSXBase.HTMLAttributes<HTMLUiMenuElement>;
             "ui-modal": LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
+            "ui-select": LocalJSX.UiSelect & JSXBase.HTMLAttributes<HTMLUiSelectElement>;
             "ui-sidebar": LocalJSX.UiSidebar & JSXBase.HTMLAttributes<HTMLUiSidebarElement>;
             "ui-textarea": LocalJSX.UiTextarea & JSXBase.HTMLAttributes<HTMLUiTextareaElement>;
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;

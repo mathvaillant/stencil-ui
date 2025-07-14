@@ -66,6 +66,12 @@ export const UiModal: StencilVueComponent<JSX.UiModal> = /*@__PURE__*/ defineCon
 ]);
 
 
+export const UiSelect: StencilVueComponent<JSX.UiSelect> = /*@__PURE__*/ defineContainer<JSX.UiSelect>('ui-select', undefined, [
+  'fieldId',
+  'name'
+]);
+
+
 export const UiSidebar: StencilVueComponent<JSX.UiSidebar> = /*@__PURE__*/ defineContainer<JSX.UiSidebar>('ui-sidebar', undefined, [
   'open',
   'items'

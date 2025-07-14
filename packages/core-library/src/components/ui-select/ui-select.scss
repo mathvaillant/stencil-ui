@@ -1,0 +1,21 @@
+ui-select select {
+  box-sizing: border-box;
+  border: var(--ui-border-small) solid var(--ui-border-color);
+  border-radius: var(--ui-radius-small);
+  padding: var(--ui-padding-medium);
+  outline: none;
+  width: 100%;
+
+  &:hover {
+    border-color: var(--ui-border-color);
+  }
+
+  &:focus-visible {
+    outline: var(--ui-border-small) solid var(--ui-color-focus);
+  }
+
+  &:disabled {
+    background-color: var(--ui-secondary-background);
+    border-color: var(--ui-border-color);
+  }
+}

@@ -16,6 +16,7 @@ import { UiLabel as UiLabelElement, defineCustomElement as defineUiLabel } from 
 import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "core-library/dist/components/ui-logo.js";
 import { UiMenu as UiMenuElement, defineCustomElement as defineUiMenu } from "core-library/dist/components/ui-menu.js";
 import { UiModal as UiModalElement, defineCustomElement as defineUiModal } from "core-library/dist/components/ui-modal.js";
+import { UiSelect as UiSelectElement, defineCustomElement as defineUiSelect } from "core-library/dist/components/ui-select.js";
 import { UiSidebar as UiSidebarElement, defineCustomElement as defineUiSidebar } from "core-library/dist/components/ui-sidebar.js";
 import { UiTextarea as UiTextareaElement, defineCustomElement as defineUiTextarea } from "core-library/dist/components/ui-textarea.js";
 import { UiTooltip as UiTooltipElement, defineCustomElement as defineUiTooltip } from "core-library/dist/components/ui-tooltip.js";
@@ -99,6 +100,17 @@ export const UiModal: StencilReactComponent<UiModalElement, UiModalEvents> = /*@
     react: React,
     events: { onClose: 'close' } as UiModalEvents,
     defineCustomElement: defineUiModal
+});
+
+export type UiSelectEvents = NonNullable<unknown>;
+
+export const UiSelect: StencilReactComponent<UiSelectElement, UiSelectEvents> = /*@__PURE__*/ createComponent<UiSelectElement, UiSelectEvents>({
+    tagName: 'ui-select',
+    elementClass: UiSelectElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiSelectEvents,
+    defineCustomElement: defineUiSelect
 });
 
 export type UiSidebarEvents = NonNullable<unknown>;
