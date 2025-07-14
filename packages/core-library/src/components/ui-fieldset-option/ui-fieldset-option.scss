@@ -1,0 +1,16 @@
+ui-fieldset-option ui-label label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 13px;
+  gap: var(--ui-space-small);
+  padding: var(--ui-space-small);
+
+  input {
+    margin: 0;
+
+    &:checked {
+      accent-color: var(--ui-accent-color);
+    }
+  }
+}

@@ -10,6 +10,8 @@
 import type { EventName, StencilReactComponent } from '@stencil/react-output-target/runtime';
 import { createComponent } from '@stencil/react-output-target/runtime';
 import { UiButton as UiButtonElement, defineCustomElement as defineUiButton } from "core-library/dist/components/ui-button.js";
+import { UiFieldsetOption as UiFieldsetOptionElement, defineCustomElement as defineUiFieldsetOption } from "core-library/dist/components/ui-fieldset-option.js";
+import { UiFieldset as UiFieldsetElement, defineCustomElement as defineUiFieldset } from "core-library/dist/components/ui-fieldset.js";
 import { UiIcon as UiIconElement, defineCustomElement as defineUiIcon } from "core-library/dist/components/ui-icon.js";
 import { UiInput as UiInputElement, defineCustomElement as defineUiInput } from "core-library/dist/components/ui-input.js";
 import { UiLabel as UiLabelElement, defineCustomElement as defineUiLabel } from "core-library/dist/components/ui-label.js";
@@ -34,6 +36,28 @@ export const UiButton: StencilReactComponent<UiButtonElement, UiButtonEvents> = 
     react: React,
     events: {} as UiButtonEvents,
     defineCustomElement: defineUiButton
+});
+
+export type UiFieldsetEvents = NonNullable<unknown>;
+
+export const UiFieldset: StencilReactComponent<UiFieldsetElement, UiFieldsetEvents> = /*@__PURE__*/ createComponent<UiFieldsetElement, UiFieldsetEvents>({
+    tagName: 'ui-fieldset',
+    elementClass: UiFieldsetElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiFieldsetEvents,
+    defineCustomElement: defineUiFieldset
+});
+
+export type UiFieldsetOptionEvents = NonNullable<unknown>;
+
+export const UiFieldsetOption: StencilReactComponent<UiFieldsetOptionElement, UiFieldsetOptionEvents> = /*@__PURE__*/ createComponent<UiFieldsetOptionElement, UiFieldsetOptionEvents>({
+    tagName: 'ui-fieldset-option',
+    elementClass: UiFieldsetOptionElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiFieldsetOptionEvents,
+    defineCustomElement: defineUiFieldsetOption
 });
 
 export type UiIconEvents = NonNullable<unknown>;

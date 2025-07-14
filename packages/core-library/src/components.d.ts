@@ -35,6 +35,19 @@ export namespace Components {
          */
         "variant"?: 'primary' | 'secondary' | 'tertiary';
     }
+    interface UiFieldset {
+    }
+    interface UiFieldsetOption {
+        "checked"?: boolean;
+        "label": string;
+        "name": string;
+        "required"?: boolean;
+        /**
+          * @default 'radio'
+         */
+        "type"?: 'radio' | 'checkbox';
+        "value": string;
+    }
     interface UiIcon {
         /**
           * The name of the icon to render.
@@ -184,6 +197,18 @@ declare global {
         prototype: HTMLUiButtonElement;
         new (): HTMLUiButtonElement;
     };
+    interface HTMLUiFieldsetElement extends Components.UiFieldset, HTMLStencilElement {
+    }
+    var HTMLUiFieldsetElement: {
+        prototype: HTMLUiFieldsetElement;
+        new (): HTMLUiFieldsetElement;
+    };
+    interface HTMLUiFieldsetOptionElement extends Components.UiFieldsetOption, HTMLStencilElement {
+    }
+    var HTMLUiFieldsetOptionElement: {
+        prototype: HTMLUiFieldsetOptionElement;
+        new (): HTMLUiFieldsetOptionElement;
+    };
     interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {
     }
     var HTMLUiIconElement: {
@@ -286,6 +311,8 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "ui-button": HTMLUiButtonElement;
+        "ui-fieldset": HTMLUiFieldsetElement;
+        "ui-fieldset-option": HTMLUiFieldsetOptionElement;
         "ui-icon": HTMLUiIconElement;
         "ui-input": HTMLUiInputElement;
         "ui-label": HTMLUiLabelElement;
@@ -322,6 +349,19 @@ declare namespace LocalJSX {
           * @default 'primary'
          */
         "variant"?: 'primary' | 'secondary' | 'tertiary';
+    }
+    interface UiFieldset {
+    }
+    interface UiFieldsetOption {
+        "checked"?: boolean;
+        "label": string;
+        "name": string;
+        "required"?: boolean;
+        /**
+          * @default 'radio'
+         */
+        "type"?: 'radio' | 'checkbox';
+        "value": string;
     }
     interface UiIcon {
         /**
@@ -460,6 +500,8 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "ui-button": UiButton;
+        "ui-fieldset": UiFieldset;
+        "ui-fieldset-option": UiFieldsetOption;
         "ui-icon": UiIcon;
         "ui-input": UiInput;
         "ui-label": UiLabel;
@@ -480,6 +522,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+            "ui-fieldset": LocalJSX.UiFieldset & JSXBase.HTMLAttributes<HTMLUiFieldsetElement>;
+            "ui-fieldset-option": LocalJSX.UiFieldsetOption & JSXBase.HTMLAttributes<HTMLUiFieldsetOptionElement>;
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
             "ui-label": LocalJSX.UiLabel & JSXBase.HTMLAttributes<HTMLUiLabelElement>;

@@ -1,0 +1,13 @@
+ui-fieldset fieldset {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  border: var(--ui-border-small) solid var(--ui-border-color);
+  border-radius: var(--ui-radius-small);
+  padding: var(--ui-padding-medium);
+
+  > ui-label legend {
+    margin-block-end: var(--ui-space-medium);
+  }
+}

@@ -16,6 +16,19 @@ export const UiButton: StencilVueComponent<JSX.UiButton> = /*@__PURE__*/ defineC
 ]);
 
 
+export const UiFieldset: StencilVueComponent<JSX.UiFieldset> = /*@__PURE__*/ defineContainer<JSX.UiFieldset>('ui-fieldset', undefined);
+
+
+export const UiFieldsetOption: StencilVueComponent<JSX.UiFieldsetOption> = /*@__PURE__*/ defineContainer<JSX.UiFieldsetOption>('ui-fieldset-option', undefined, [
+  'type',
+  'name',
+  'value',
+  'label',
+  'checked',
+  'required'
+]);
+
+
 export const UiIcon: StencilVueComponent<JSX.UiIcon> = /*@__PURE__*/ defineContainer<JSX.UiIcon>('ui-icon', undefined, [
   'name'
 ]);
