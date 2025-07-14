@@ -17,6 +17,7 @@ import { UiLogo as UiLogoElement, defineCustomElement as defineUiLogo } from "co
 import { UiMenu as UiMenuElement, defineCustomElement as defineUiMenu } from "core-library/dist/components/ui-menu.js";
 import { UiModal as UiModalElement, defineCustomElement as defineUiModal } from "core-library/dist/components/ui-modal.js";
 import { UiSidebar as UiSidebarElement, defineCustomElement as defineUiSidebar } from "core-library/dist/components/ui-sidebar.js";
+import { UiTextarea as UiTextareaElement, defineCustomElement as defineUiTextarea } from "core-library/dist/components/ui-textarea.js";
 import { UiTooltip as UiTooltipElement, defineCustomElement as defineUiTooltip } from "core-library/dist/components/ui-tooltip.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
 import { UiXstack as UiXstackElement, defineCustomElement as defineUiXstack } from "core-library/dist/components/ui-xstack.js";
@@ -109,6 +110,17 @@ export const UiSidebar: StencilReactComponent<UiSidebarElement, UiSidebarEvents>
     react: React,
     events: {} as UiSidebarEvents,
     defineCustomElement: defineUiSidebar
+});
+
+export type UiTextareaEvents = NonNullable<unknown>;
+
+export const UiTextarea: StencilReactComponent<UiTextareaElement, UiTextareaEvents> = /*@__PURE__*/ createComponent<UiTextareaElement, UiTextareaEvents>({
+    tagName: 'ui-textarea',
+    elementClass: UiTextareaElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiTextareaEvents,
+    defineCustomElement: defineUiTextarea
 });
 
 export type UiTooltipEvents = NonNullable<unknown>;

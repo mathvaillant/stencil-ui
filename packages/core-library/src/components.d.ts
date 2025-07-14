@@ -134,6 +134,18 @@ export namespace Components {
          */
         "open": boolean;
     }
+    interface UiTextarea {
+        "disabled"?: boolean;
+        "fieldId"?: string;
+        "maxlength"?: number;
+        "minlength"?: number;
+        "name"?: string;
+        "placeholder"?: string;
+        "readOnly"?: boolean;
+        "required"?: boolean;
+        "rows"?: number;
+        "value"?: string;
+    }
     interface UiTooltip {
         /**
           * The text to display in the tooltip. This text will be shown when the user hovers over the component.
@@ -232,6 +244,12 @@ declare global {
         prototype: HTMLUiSidebarElement;
         new (): HTMLUiSidebarElement;
     };
+    interface HTMLUiTextareaElement extends Components.UiTextarea, HTMLStencilElement {
+    }
+    var HTMLUiTextareaElement: {
+        prototype: HTMLUiTextareaElement;
+        new (): HTMLUiTextareaElement;
+    };
     interface HTMLUiTooltipElement extends Components.UiTooltip, HTMLStencilElement {
     }
     var HTMLUiTooltipElement: {
@@ -265,6 +283,7 @@ declare global {
         "ui-menu": HTMLUiMenuElement;
         "ui-modal": HTMLUiModalElement;
         "ui-sidebar": HTMLUiSidebarElement;
+        "ui-textarea": HTMLUiTextareaElement;
         "ui-tooltip": HTMLUiTooltipElement;
         "ui-typography": HTMLUiTypographyElement;
         "ui-xstack": HTMLUiXstackElement;
@@ -394,6 +413,18 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
     }
+    interface UiTextarea {
+        "disabled"?: boolean;
+        "fieldId"?: string;
+        "maxlength"?: number;
+        "minlength"?: number;
+        "name"?: string;
+        "placeholder"?: string;
+        "readOnly"?: boolean;
+        "required"?: boolean;
+        "rows"?: number;
+        "value"?: string;
+    }
     interface UiTooltip {
         /**
           * The text to display in the tooltip. This text will be shown when the user hovers over the component.
@@ -421,6 +452,7 @@ declare namespace LocalJSX {
         "ui-menu": UiMenu;
         "ui-modal": UiModal;
         "ui-sidebar": UiSidebar;
+        "ui-textarea": UiTextarea;
         "ui-tooltip": UiTooltip;
         "ui-typography": UiTypography;
         "ui-xstack": UiXstack;
@@ -439,6 +471,7 @@ declare module "@stencil/core" {
             "ui-menu": LocalJSX.UiMenu & JSXBase.HTMLAttributes<HTMLUiMenuElement>;
             "ui-modal": LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
             "ui-sidebar": LocalJSX.UiSidebar & JSXBase.HTMLAttributes<HTMLUiSidebarElement>;
+            "ui-textarea": LocalJSX.UiTextarea & JSXBase.HTMLAttributes<HTMLUiTextareaElement>;
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
             "ui-xstack": LocalJSX.UiXstack & JSXBase.HTMLAttributes<HTMLUiXstackElement>;

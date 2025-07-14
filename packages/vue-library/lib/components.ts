@@ -72,6 +72,20 @@ export const UiSidebar: StencilVueComponent<JSX.UiSidebar> = /*@__PURE__*/ defin
 ]);
 
 
+export const UiTextarea: StencilVueComponent<JSX.UiTextarea> = /*@__PURE__*/ defineContainer<JSX.UiTextarea>('ui-textarea', undefined, [
+  'fieldId',
+  'name',
+  'value',
+  'disabled',
+  'readOnly',
+  'required',
+  'placeholder',
+  'maxlength',
+  'minlength',
+  'rows'
+]);
+
+
 export const UiTooltip: StencilVueComponent<JSX.UiTooltip> = /*@__PURE__*/ defineContainer<JSX.UiTooltip>('ui-tooltip', undefined, [
   'text'
 ]);

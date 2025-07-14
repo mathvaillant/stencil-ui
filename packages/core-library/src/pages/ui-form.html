@@ -18,6 +18,19 @@
   <body>
     <form style="display: flex; flex-direction: column; gap: 16px;">
       <ui-ystack>
+        <ui-label html-for="012" as="label">Cover Letter</ui-label>
+        <ui-textarea 
+          required 
+          field-id="012" 
+          name="cover-letter"
+          placeholder="Write about yourself..."
+          maxlength="500"
+          minlength="50"
+          rows="5"
+        ></ui-textarea>
+      </ui-ystack>
+
+      <ui-ystack>
         <ui-label html-for="123" as="label">Name</ui-label>
         <ui-input required field-id="123" name="name" type="text" autocomplete="name" placeholder="Enter your name"></ui-input>
       </ui-ystack>
