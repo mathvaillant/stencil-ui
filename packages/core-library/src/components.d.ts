@@ -151,6 +151,27 @@ export namespace Components {
          */
         "open": boolean;
     }
+    interface UiTab {
+        /**
+          * the label of the tab, displayed in the tab list.
+         */
+        "label": string;
+        /**
+          * the value of the tab, used to identify it within the tab context. This should match the value of the corresponding `ui-tab-context` component.
+         */
+        "value": string;
+    }
+    interface UiTabContext {
+        "value": string;
+    }
+    interface UiTabList {
+    }
+    interface UiTabPanel {
+        /**
+          * the value of the tab panel, used to identify it within the tab context. This should match the value of the corresponding `ui-tab` component.
+         */
+        "value": string;
+    }
     interface UiTextarea {
         "disabled"?: boolean;
         "fieldId"?: string;
@@ -189,6 +210,10 @@ export interface UiMenuCustomEvent<T> extends CustomEvent<T> {
 export interface UiModalCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUiModalElement;
+}
+export interface UiTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiTabElement;
 }
 declare global {
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
@@ -279,6 +304,41 @@ declare global {
         prototype: HTMLUiSidebarElement;
         new (): HTMLUiSidebarElement;
     };
+    interface HTMLUiTabElementEventMap {
+        "tabChange": { value: string };
+    }
+    interface HTMLUiTabElement extends Components.UiTab, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLUiTabElementEventMap>(type: K, listener: (this: HTMLUiTabElement, ev: UiTabCustomEvent<HTMLUiTabElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLUiTabElementEventMap>(type: K, listener: (this: HTMLUiTabElement, ev: UiTabCustomEvent<HTMLUiTabElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLUiTabElement: {
+        prototype: HTMLUiTabElement;
+        new (): HTMLUiTabElement;
+    };
+    interface HTMLUiTabContextElement extends Components.UiTabContext, HTMLStencilElement {
+    }
+    var HTMLUiTabContextElement: {
+        prototype: HTMLUiTabContextElement;
+        new (): HTMLUiTabContextElement;
+    };
+    interface HTMLUiTabListElement extends Components.UiTabList, HTMLStencilElement {
+    }
+    var HTMLUiTabListElement: {
+        prototype: HTMLUiTabListElement;
+        new (): HTMLUiTabListElement;
+    };
+    interface HTMLUiTabPanelElement extends Components.UiTabPanel, HTMLStencilElement {
+    }
+    var HTMLUiTabPanelElement: {
+        prototype: HTMLUiTabPanelElement;
+        new (): HTMLUiTabPanelElement;
+    };
     interface HTMLUiTextareaElement extends Components.UiTextarea, HTMLStencilElement {
     }
     var HTMLUiTextareaElement: {
@@ -321,6 +381,10 @@ declare global {
         "ui-modal": HTMLUiModalElement;
         "ui-select": HTMLUiSelectElement;
         "ui-sidebar": HTMLUiSidebarElement;
+        "ui-tab": HTMLUiTabElement;
+        "ui-tab-context": HTMLUiTabContextElement;
+        "ui-tab-list": HTMLUiTabListElement;
+        "ui-tab-panel": HTMLUiTabPanelElement;
         "ui-textarea": HTMLUiTextareaElement;
         "ui-tooltip": HTMLUiTooltipElement;
         "ui-typography": HTMLUiTypographyElement;
@@ -468,6 +532,28 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
     }
+    interface UiTab {
+        /**
+          * the label of the tab, displayed in the tab list.
+         */
+        "label"?: string;
+        "onTabChange"?: (event: UiTabCustomEvent<{ value: string }>) => void;
+        /**
+          * the value of the tab, used to identify it within the tab context. This should match the value of the corresponding `ui-tab-context` component.
+         */
+        "value"?: string;
+    }
+    interface UiTabContext {
+        "value"?: string;
+    }
+    interface UiTabList {
+    }
+    interface UiTabPanel {
+        /**
+          * the value of the tab panel, used to identify it within the tab context. This should match the value of the corresponding `ui-tab` component.
+         */
+        "value"?: string;
+    }
     interface UiTextarea {
         "disabled"?: boolean;
         "fieldId"?: string;
@@ -510,6 +596,10 @@ declare namespace LocalJSX {
         "ui-modal": UiModal;
         "ui-select": UiSelect;
         "ui-sidebar": UiSidebar;
+        "ui-tab": UiTab;
+        "ui-tab-context": UiTabContext;
+        "ui-tab-list": UiTabList;
+        "ui-tab-panel": UiTabPanel;
         "ui-textarea": UiTextarea;
         "ui-tooltip": UiTooltip;
         "ui-typography": UiTypography;
@@ -532,6 +622,10 @@ declare module "@stencil/core" {
             "ui-modal": LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
             "ui-select": LocalJSX.UiSelect & JSXBase.HTMLAttributes<HTMLUiSelectElement>;
             "ui-sidebar": LocalJSX.UiSidebar & JSXBase.HTMLAttributes<HTMLUiSidebarElement>;
+            "ui-tab": LocalJSX.UiTab & JSXBase.HTMLAttributes<HTMLUiTabElement>;
+            "ui-tab-context": LocalJSX.UiTabContext & JSXBase.HTMLAttributes<HTMLUiTabContextElement>;
+            "ui-tab-list": LocalJSX.UiTabList & JSXBase.HTMLAttributes<HTMLUiTabListElement>;
+            "ui-tab-panel": LocalJSX.UiTabPanel & JSXBase.HTMLAttributes<HTMLUiTabPanelElement>;
             "ui-textarea": LocalJSX.UiTextarea & JSXBase.HTMLAttributes<HTMLUiTextareaElement>;
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;

@@ -10,27 +10,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
-    <!-- MATERIAL SYMBOLS -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-
     <script type="module" src="/build/core-library.esm.js"></script>
     <script nomodule src="/build/core-library.js"></script>
     <link rel="stylesheet" href="/build/core-library.css" />
 
   </head>
   <body>
-    <h1>UI Library</h1>
-
-    <ul>
-      <li><a href="/pages/ui-logo.html">Logo</a></li>
-      <li><a href="/pages/ui-icon.html">Icon</a></li>
-      <li><a href="/pages/ui-typography.html">Typography</a></li>
-      <li><a href="/pages/ui-button.html">Button</a></li>
-      <li><a href="/pages/ui-menu.html">Menu</a></li>
-      <li><a href="/pages/ui-sidebar.html">Sidebar</a></li>
-      <li><a href="/pages/ui-modal.html">Modal</a></li>
-      <li><a href="/pages/ui-form.html">Form</a></li>
-      <li><a href="/pages/ui-tabs.html">Tabs</a></li>
-    </ul>
+     <ui-tab-context value="1">
+      <ui-tab-list>
+        <ui-tab value="1" label="Tab 1"></ui-tab>
+        <ui-tab value="2" label="Tab 2"></ui-tab>
+        <ui-tab value="3" label="Tab 3"></ui-tab>
+        <ui-tab value="4" label="Tab 4"></ui-tab>
+        <ui-tab value="5" label="Tab 5"></ui-tab>
+      </ui-tab-list>
+      <ui-tab-panel value="1">Content for Tab 1</ui-tab-panel>
+      <ui-tab-panel value="2">Content for Tab 2</ui-tab-panel>
+      <ui-tab-panel value="3">Content for Tab 3</ui-tab-panel>
+      <ui-tab-panel value="4">Content for Tab 4</ui-tab-panel>
+      <ui-tab-panel value="5">Content for Tab 5</ui-tab-panel>
+     </ui-tab-context>
   </body>
 </html>

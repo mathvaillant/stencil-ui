@@ -55,6 +55,7 @@
   "license": "MIT",
   "dependencies": {
     "@floating-ui/dom": "^1.7.2",
-    "@stencil/sass": "^3.2.1"
+    "@stencil/sass": "^3.2.1",
+    "uuid": "^11.1.0"
   }
 }

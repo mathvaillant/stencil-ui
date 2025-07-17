@@ -1,0 +1,40 @@
+ui-tab-list > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--ui-space-medium);
+  padding: var(--ui-padding-medium);
+  border-radius: var(--ui-radius-small);
+  background-color: var(--ui-tab-background);
+
+  ui-tab {
+    flex: 1;
+
+    button {
+      box-sizing: border-box;
+      cursor: pointer;
+      width: 100%;
+      background-color: transparent;
+      border: var(--ui-border-small) solid transparent;
+      padding-block: var(--ui-padding-medium);
+      border-radius: var(--ui-radius-small);
+
+      &:focus-within,
+      &:hover,
+      &:active,
+      &.active {
+        background-color: var(--ui-tab-active-background);
+        box-shadow: var(--ui-box-shadow);
+      }
+
+      &:focus-within {
+        outline: var(--ui-border-small) solid var(--ui-color-focus);
+      }
+    }
+  }
+}
+
+ui-tab-panel > div {
+  padding: var(--ui-padding-medium);
+}

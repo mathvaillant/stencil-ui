@@ -91,6 +91,28 @@ export const UiSidebar: StencilVueComponent<JSX.UiSidebar> = /*@__PURE__*/ defin
 ]);
 
 
+export const UiTab: StencilVueComponent<JSX.UiTab> = /*@__PURE__*/ defineContainer<JSX.UiTab>('ui-tab', undefined, [
+  'value',
+  'label',
+  'tabChange'
+], [
+  'tabChange'
+]);
+
+
+export const UiTabContext: StencilVueComponent<JSX.UiTabContext> = /*@__PURE__*/ defineContainer<JSX.UiTabContext>('ui-tab-context', undefined, [
+  'value'
+]);
+
+
+export const UiTabList: StencilVueComponent<JSX.UiTabList> = /*@__PURE__*/ defineContainer<JSX.UiTabList>('ui-tab-list', undefined);
+
+
+export const UiTabPanel: StencilVueComponent<JSX.UiTabPanel> = /*@__PURE__*/ defineContainer<JSX.UiTabPanel>('ui-tab-panel', undefined, [
+  'value'
+]);
+
+
 export const UiTextarea: StencilVueComponent<JSX.UiTextarea> = /*@__PURE__*/ defineContainer<JSX.UiTextarea>('ui-textarea', undefined, [
   'fieldId',
   'name',

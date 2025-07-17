@@ -47,4 +47,8 @@
   --ui-color-warning: #ffc107;
   --ui-color-focus: #00ffee;
   --ui-placeholder-color: #a0a0a0;
+
+  --ui-tab-background: #efefef;
+  --ui-tab-active-background: #ffffff;
+  --ui-tab-border-color: #d7d7d7;
 }

@@ -20,6 +20,10 @@ import { UiMenu as UiMenuElement, defineCustomElement as defineUiMenu } from "co
 import { UiModal as UiModalElement, defineCustomElement as defineUiModal } from "core-library/dist/components/ui-modal.js";
 import { UiSelect as UiSelectElement, defineCustomElement as defineUiSelect } from "core-library/dist/components/ui-select.js";
 import { UiSidebar as UiSidebarElement, defineCustomElement as defineUiSidebar } from "core-library/dist/components/ui-sidebar.js";
+import { UiTabContext as UiTabContextElement, defineCustomElement as defineUiTabContext } from "core-library/dist/components/ui-tab-context.js";
+import { UiTabList as UiTabListElement, defineCustomElement as defineUiTabList } from "core-library/dist/components/ui-tab-list.js";
+import { UiTabPanel as UiTabPanelElement, defineCustomElement as defineUiTabPanel } from "core-library/dist/components/ui-tab-panel.js";
+import { UiTab as UiTabElement, defineCustomElement as defineUiTab } from "core-library/dist/components/ui-tab.js";
 import { UiTextarea as UiTextareaElement, defineCustomElement as defineUiTextarea } from "core-library/dist/components/ui-textarea.js";
 import { UiTooltip as UiTooltipElement, defineCustomElement as defineUiTooltip } from "core-library/dist/components/ui-tooltip.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
@@ -146,6 +150,50 @@ export const UiSidebar: StencilReactComponent<UiSidebarElement, UiSidebarEvents>
     react: React,
     events: {} as UiSidebarEvents,
     defineCustomElement: defineUiSidebar
+});
+
+export type UiTabEvents = { onTabChange: EventName<CustomEvent<{ value: string }>> };
+
+export const UiTab: StencilReactComponent<UiTabElement, UiTabEvents> = /*@__PURE__*/ createComponent<UiTabElement, UiTabEvents>({
+    tagName: 'ui-tab',
+    elementClass: UiTabElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: { onTabChange: 'tabChange' } as UiTabEvents,
+    defineCustomElement: defineUiTab
+});
+
+export type UiTabContextEvents = NonNullable<unknown>;
+
+export const UiTabContext: StencilReactComponent<UiTabContextElement, UiTabContextEvents> = /*@__PURE__*/ createComponent<UiTabContextElement, UiTabContextEvents>({
+    tagName: 'ui-tab-context',
+    elementClass: UiTabContextElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiTabContextEvents,
+    defineCustomElement: defineUiTabContext
+});
+
+export type UiTabListEvents = NonNullable<unknown>;
+
+export const UiTabList: StencilReactComponent<UiTabListElement, UiTabListEvents> = /*@__PURE__*/ createComponent<UiTabListElement, UiTabListEvents>({
+    tagName: 'ui-tab-list',
+    elementClass: UiTabListElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiTabListEvents,
+    defineCustomElement: defineUiTabList
+});
+
+export type UiTabPanelEvents = NonNullable<unknown>;
+
+export const UiTabPanel: StencilReactComponent<UiTabPanelElement, UiTabPanelEvents> = /*@__PURE__*/ createComponent<UiTabPanelElement, UiTabPanelEvents>({
+    tagName: 'ui-tab-panel',
+    elementClass: UiTabPanelElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiTabPanelEvents,
+    defineCustomElement: defineUiTabPanel
 });
 
 export type UiTextareaEvents = NonNullable<unknown>;
