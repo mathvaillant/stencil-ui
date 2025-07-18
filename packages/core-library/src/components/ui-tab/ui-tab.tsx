@@ -12,7 +12,7 @@ export class UITab {
 
   /**
    * the value of the tab, used to identify it within the tab context.
-   * This should match the value of the corresponding `ui-tab-context` component.
+   * This should match the value of the corresponding `ui-tab-panel` component.
    */
   @Prop({ reflect: true, mutable: true }) value: string;
 
