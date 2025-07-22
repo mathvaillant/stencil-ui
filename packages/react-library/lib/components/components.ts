@@ -24,6 +24,7 @@ import { UiTabContext as UiTabContextElement, defineCustomElement as defineUiTab
 import { UiTabList as UiTabListElement, defineCustomElement as defineUiTabList } from "core-library/dist/components/ui-tab-list.js";
 import { UiTabPanel as UiTabPanelElement, defineCustomElement as defineUiTabPanel } from "core-library/dist/components/ui-tab-panel.js";
 import { UiTab as UiTabElement, defineCustomElement as defineUiTab } from "core-library/dist/components/ui-tab.js";
+import { UiTable as UiTableElement, defineCustomElement as defineUiTable } from "core-library/dist/components/ui-table.js";
 import { UiTextarea as UiTextareaElement, defineCustomElement as defineUiTextarea } from "core-library/dist/components/ui-textarea.js";
 import { UiTooltip as UiTooltipElement, defineCustomElement as defineUiTooltip } from "core-library/dist/components/ui-tooltip.js";
 import { UiTypography as UiTypographyElement, defineCustomElement as defineUiTypography } from "core-library/dist/components/ui-typography.js";
@@ -194,6 +195,17 @@ export const UiTabPanel: StencilReactComponent<UiTabPanelElement, UiTabPanelEven
     react: React,
     events: {} as UiTabPanelEvents,
     defineCustomElement: defineUiTabPanel
+});
+
+export type UiTableEvents = NonNullable<unknown>;
+
+export const UiTable: StencilReactComponent<UiTableElement, UiTableEvents> = /*@__PURE__*/ createComponent<UiTableElement, UiTableEvents>({
+    tagName: 'ui-table',
+    elementClass: UiTableElement,
+    // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
+    react: React,
+    events: {} as UiTableEvents,
+    defineCustomElement: defineUiTable
 });
 
 export type UiTextareaEvents = NonNullable<unknown>;

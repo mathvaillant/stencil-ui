@@ -51,4 +51,8 @@
   --ui-tab-background: #efefef;
   --ui-tab-active-background: #ffffff;
   --ui-tab-border-color: #d7d7d7;
+
+  --ui-table-border-color:#e0e0e0;
+  --ui-table-thead-background:#f9f9f9;
+  --ui-table-row-hover-background: #f1f1f1;  
 }

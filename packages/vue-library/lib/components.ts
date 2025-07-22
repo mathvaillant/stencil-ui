@@ -113,6 +113,16 @@ export const UiTabPanel: StencilVueComponent<JSX.UiTabPanel> = /*@__PURE__*/ def
 ]);
 
 
+export const UiTable: StencilVueComponent<JSX.UiTable> = /*@__PURE__*/ defineContainer<JSX.UiTable>('ui-table', undefined, [
+  'columns',
+  'rows',
+  'maxWidth',
+  'maxHeight',
+  'overflow',
+  'stickyHeader'
+]);
+
+
 export const UiTextarea: StencilVueComponent<JSX.UiTextarea> = /*@__PURE__*/ defineContainer<JSX.UiTextarea>('ui-textarea', undefined, [
   'fieldId',
   'name',

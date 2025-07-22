@@ -1,0 +1,39 @@
+:host {
+  display: block;
+  font-family: var(--ui-font-family);
+  border: var(--ui-border-small) solid var(--ui-table-border-color);
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    text-align: left;
+  }
+
+  th,
+  td {
+    border: var(--ui-border-small) solid var(--ui-table-border-color);
+    padding: var(--ui-padding-large) var(--ui-padding-xlarge);
+    vertical-align: middle;
+  }
+
+  thead {
+    background-color: var(--ui-table-thead-background);
+    font-weight: 600;
+
+    &.sticky {
+      position: sticky;
+      top: -1px;
+      z-index: 2;
+      box-shadow: var(--ui-box-shadow);
+    }
+  }
+
+  tr:hover {
+    background-color: var(--ui-table-row-hover-background);
+  }
+
+  th {
+    text-wrap: nowrap;
+  }
+}

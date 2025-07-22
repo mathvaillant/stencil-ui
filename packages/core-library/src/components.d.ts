@@ -9,10 +9,12 @@ import { UIIcon } from "./components/ui-icon/ui-icon";
 import { IconName } from "./components/ui-icon/icons";
 import { UIMenuItem } from "./components/ui-menu/ui-menu.types";
 import { UISidebarItem } from "./components/ui-sidebar/ui-sidebar.types";
+import { UITableColumn, UITableRow } from "./components/ui-table/ui-table.types";
 export { UIIcon } from "./components/ui-icon/ui-icon";
 export { IconName } from "./components/ui-icon/icons";
 export { UIMenuItem } from "./components/ui-menu/ui-menu.types";
 export { UISidebarItem } from "./components/ui-sidebar/ui-sidebar.types";
+export { UITableColumn, UITableRow } from "./components/ui-table/ui-table.types";
 export namespace Components {
     interface UiButton {
         /**
@@ -157,7 +159,7 @@ export namespace Components {
          */
         "label": string;
         /**
-          * the value of the tab, used to identify it within the tab context. This should match the value of the corresponding `ui-tab-context` component.
+          * the value of the tab, used to identify it within the tab context. This should match the value of the corresponding `ui-tab-panel` component.
          */
         "value": string;
     }
@@ -171,6 +173,37 @@ export namespace Components {
           * the value of the tab panel, used to identify it within the tab context. This should match the value of the corresponding `ui-tab` component.
          */
         "value": string;
+    }
+    interface UiTable {
+        /**
+          * An array of column definitions for the table. Each column is defined by a label and an optional alignment. Alignement can be 'left', 'center', or 'right'.
+          * @default []
+         */
+        "columns": UITableColumn[];
+        /**
+          * Maximum height of the table. This can be set to a specific value like '400px' or '100%'.
+          * @default '100%'
+         */
+        "maxHeight": CSSStyleDeclaration['maxHeight'];
+        /**
+          * Optional properties to control the table's appearance. These include maxWidth, maxHeight, and overflow styles.
+          * @default '100%'
+         */
+        "maxWidth": CSSStyleDeclaration['maxWidth'];
+        /**
+          * Overflow style for the table. Can be set to 'auto', 'scroll', or 'hidden'.
+          * @default 'auto'
+         */
+        "overflow": CSSStyleDeclaration['overflow'];
+        /**
+          * An array of row data for the table. Each row is an array of cells Each cell can by a text, link, button, input & select element.
+          * @default []
+         */
+        "rows": UITableRow[];
+        /**
+          * @default false
+         */
+        "stickyHeader": boolean;
     }
     interface UiTextarea {
         "disabled"?: boolean;
@@ -339,6 +372,12 @@ declare global {
         prototype: HTMLUiTabPanelElement;
         new (): HTMLUiTabPanelElement;
     };
+    interface HTMLUiTableElement extends Components.UiTable, HTMLStencilElement {
+    }
+    var HTMLUiTableElement: {
+        prototype: HTMLUiTableElement;
+        new (): HTMLUiTableElement;
+    };
     interface HTMLUiTextareaElement extends Components.UiTextarea, HTMLStencilElement {
     }
     var HTMLUiTextareaElement: {
@@ -385,6 +424,7 @@ declare global {
         "ui-tab-context": HTMLUiTabContextElement;
         "ui-tab-list": HTMLUiTabListElement;
         "ui-tab-panel": HTMLUiTabPanelElement;
+        "ui-table": HTMLUiTableElement;
         "ui-textarea": HTMLUiTextareaElement;
         "ui-tooltip": HTMLUiTooltipElement;
         "ui-typography": HTMLUiTypographyElement;
@@ -539,7 +579,7 @@ declare namespace LocalJSX {
         "label"?: string;
         "onTabChange"?: (event: UiTabCustomEvent<{ value: string }>) => void;
         /**
-          * the value of the tab, used to identify it within the tab context. This should match the value of the corresponding `ui-tab-context` component.
+          * the value of the tab, used to identify it within the tab context. This should match the value of the corresponding `ui-tab-panel` component.
          */
         "value"?: string;
     }
@@ -553,6 +593,37 @@ declare namespace LocalJSX {
           * the value of the tab panel, used to identify it within the tab context. This should match the value of the corresponding `ui-tab` component.
          */
         "value"?: string;
+    }
+    interface UiTable {
+        /**
+          * An array of column definitions for the table. Each column is defined by a label and an optional alignment. Alignement can be 'left', 'center', or 'right'.
+          * @default []
+         */
+        "columns"?: UITableColumn[];
+        /**
+          * Maximum height of the table. This can be set to a specific value like '400px' or '100%'.
+          * @default '100%'
+         */
+        "maxHeight"?: CSSStyleDeclaration['maxHeight'];
+        /**
+          * Optional properties to control the table's appearance. These include maxWidth, maxHeight, and overflow styles.
+          * @default '100%'
+         */
+        "maxWidth"?: CSSStyleDeclaration['maxWidth'];
+        /**
+          * Overflow style for the table. Can be set to 'auto', 'scroll', or 'hidden'.
+          * @default 'auto'
+         */
+        "overflow"?: CSSStyleDeclaration['overflow'];
+        /**
+          * An array of row data for the table. Each row is an array of cells Each cell can by a text, link, button, input & select element.
+          * @default []
+         */
+        "rows"?: UITableRow[];
+        /**
+          * @default false
+         */
+        "stickyHeader"?: boolean;
     }
     interface UiTextarea {
         "disabled"?: boolean;
@@ -600,6 +671,7 @@ declare namespace LocalJSX {
         "ui-tab-context": UiTabContext;
         "ui-tab-list": UiTabList;
         "ui-tab-panel": UiTabPanel;
+        "ui-table": UiTable;
         "ui-textarea": UiTextarea;
         "ui-tooltip": UiTooltip;
         "ui-typography": UiTypography;
@@ -626,6 +698,7 @@ declare module "@stencil/core" {
             "ui-tab-context": LocalJSX.UiTabContext & JSXBase.HTMLAttributes<HTMLUiTabContextElement>;
             "ui-tab-list": LocalJSX.UiTabList & JSXBase.HTMLAttributes<HTMLUiTabListElement>;
             "ui-tab-panel": LocalJSX.UiTabPanel & JSXBase.HTMLAttributes<HTMLUiTabPanelElement>;
+            "ui-table": LocalJSX.UiTable & JSXBase.HTMLAttributes<HTMLUiTableElement>;
             "ui-textarea": LocalJSX.UiTextarea & JSXBase.HTMLAttributes<HTMLUiTextareaElement>;
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
