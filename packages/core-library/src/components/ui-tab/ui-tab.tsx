@@ -24,6 +24,9 @@ export class UITab {
   @State() contextId: string = '';
   @State() contextValue: string = '';
 
+  /**
+   * Event emitted when the tab is clicked, providing the value of the tab.
+   */
   @Event() tabChange: EventEmitter<{ value: string }>;
 
   componentWillLoad() {
@@ -35,7 +38,10 @@ export class UITab {
       if (typeof MutationObserver !== 'undefined') {
         this.syncValueFromContext();
         this.observer = new MutationObserver(this.syncValueFromContext.bind(this));
-        this.observer.observe(this.context, { attributes: true, attributeFilter: ['value'] });
+        this.observer.observe(this.context, {
+          attributes: true,
+          attributeFilter: ['value'],
+        });
       }
     }
   }

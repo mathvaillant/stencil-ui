@@ -6,7 +6,9 @@ import { Component, Prop, h } from '@stencil/core';
   shadow: false,
 })
 export class UISelect {
+  /** The ID of the select element */
   @Prop() fieldId?: string;
+  /** The name of the select element */
   @Prop() name?: string;
 
   render() {
