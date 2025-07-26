@@ -2,6 +2,10 @@ import { computePosition, flip, offset, shift, autoUpdate } from '@floating-ui/d
 import { Component, Element, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 import { UIMenuItem } from './ui-menu.types';
 
+/**
+ * `ui-menu` is a component for rendering a menu with items.
+ * It supports positioning and dynamic data binding for menu items.
+ */
 @Component({
   tag: 'ui-menu',
   styleUrl: 'ui-menu.scss',
@@ -74,7 +78,11 @@ export class UIMenu {
   private show() {
     this.menuRef.style.display = 'block';
     this.menuRef?.showPopover?.();
-    this.autoUpdateCleanUp = autoUpdate(this.host, this.menuRef, this.positionMenu.bind(this));
+    this.autoUpdateCleanUp = autoUpdate(
+      this.host,
+      this.menuRef,
+      this.positionMenu.bind(this),
+    );
   }
 
   private hide() {

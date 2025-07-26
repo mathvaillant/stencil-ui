@@ -1,6 +1,10 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 import { UITableCell, UITableColumn, UITableRow } from './ui-table.types';
 
+/**
+ * `ui-table` is a component for rendering a table with customizable columns and rows.
+ * It supports various cell types including text, links, buttons, inputs, and selects.
+ */
 @Component({
   tag: 'ui-table',
   styleUrl: 'ui-table.scss',

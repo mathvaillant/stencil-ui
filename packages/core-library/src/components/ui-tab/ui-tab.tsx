@@ -1,5 +1,9 @@
 import { Component, Element, Event, EventEmitter, Prop, State, h } from '@stencil/core';
 
+/**
+ * `ui-tab` is a component for rendering a tab within a tab context.
+ * It allows users to switch between different content panels.
+ */
 @Component({
   tag: 'ui-tab',
   styleUrl: 'ui-tab.scss',

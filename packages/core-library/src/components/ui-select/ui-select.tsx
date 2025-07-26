@@ -1,5 +1,9 @@
 import { Component, Prop, h } from '@stencil/core';
 
+/**
+ * `ui-select` is a component for rendering a select dropdown.
+ * It allows customization of the select element's ID and name.
+ */
 @Component({
   tag: 'ui-select',
   styleUrl: 'ui-select.scss',

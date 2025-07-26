@@ -1,6 +1,10 @@
 import { Component, Host, Prop, h } from '@stencil/core';
 import { UISidebarItem } from './ui-sidebar.types';
 
+/**
+ * `ui-sidebar` is a component for rendering a sidebar navigation.
+ * It supports toggling open/closed state and displaying a list of items.
+ */
 @Component({
   tag: 'ui-sidebar',
   styleUrl: 'ui-sidebar.scss',
@@ -38,7 +42,10 @@ export class UISidebar {
         <aside class={{ open: this.open }} role="navigation">
           <ui-logo width={50} height={50} />
           <ul role="menu">{this.items.map(item => this.renderItem(item))}</ul>
-          <ui-button onClick={() => (this.open = !this.open)} iconName={this.open ? 'previous-double-arrow' : 'next-double-arrow'} />
+          <ui-button
+            onClick={() => (this.open = !this.open)}
+            iconName={this.open ? 'previous-double-arrow' : 'next-double-arrow'}
+          />
         </aside>
       </Host>
     );

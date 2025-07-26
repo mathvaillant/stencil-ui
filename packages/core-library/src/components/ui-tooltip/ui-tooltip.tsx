@@ -1,6 +1,17 @@
-import { arrow, computePosition, flip, offset, shift, autoUpdate } from '@floating-ui/dom';
+import {
+  arrow,
+  computePosition,
+  flip,
+  offset,
+  shift,
+  autoUpdate,
+} from '@floating-ui/dom';
 import { Component, Element, Host, Listen, Prop, State, h } from '@stencil/core';
 
+/**
+ * `ui-tooltip` is a component for rendering a tooltip that appears on hover.
+ * It displays additional information when the user hovers over the component.
+ */
 @Component({
   tag: 'ui-tooltip',
   styleUrl: 'ui-tooltip.scss',
@@ -35,7 +46,12 @@ export class UITooltip {
   private positionTooltip() {
     computePosition(this.host, this.tooltipRef, {
       placement: 'bottom',
-      middleware: [offset(6), flip(), shift({ padding: 5 }), arrow({ element: this.arrowRef })],
+      middleware: [
+        offset(6),
+        flip(),
+        shift({ padding: 5 }),
+        arrow({ element: this.arrowRef }),
+      ],
     }).then(({ x, y, placement, middlewareData }) => {
       Object.assign(this.tooltipRef.style, {
         left: `${x}px`,
@@ -66,7 +82,11 @@ export class UITooltip {
     if (this.isUsingTouch) return this.hide();
     this.tooltipRef.style.display = 'block';
     this.tooltipRef?.showPopover?.();
-    this.autoUpdateCleanUp = autoUpdate(this.host, this.tooltipRef, this.positionTooltip.bind(this));
+    this.autoUpdateCleanUp = autoUpdate(
+      this.host,
+      this.tooltipRef,
+      this.positionTooltip.bind(this),
+    );
   }
 
   private hide() {

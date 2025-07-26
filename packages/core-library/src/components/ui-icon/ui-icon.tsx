@@ -1,6 +1,10 @@
 import { Component, Prop, h } from '@stencil/core';
 import { IconName, icons } from './icons';
 
+/**
+ * `ui-icon` is a component for rendering icons.
+ * It supports various icon names defined in the icons object.
+ */
 @Component({
   tag: 'ui-icon',
   styleUrl: 'ui-icon.scss',

@@ -1,6 +1,9 @@
 import { Component, Prop, h } from '@stencil/core';
 import { UIIcon } from '../ui-icon/ui-icon';
 
+/**
+ * `ui-button` is a component for rendering buttons with different styles and icons.
+ */
 @Component({
   tag: 'ui-button',
   styleUrl: 'ui-button.scss',

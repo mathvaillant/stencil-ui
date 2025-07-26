@@ -1,5 +1,9 @@
 import { Component, Prop, h } from '@stencil/core';
 
+/**
+ * `ui-textarea` is a component for rendering a textarea element.
+ * It allows customization of the textarea's ID, name, value, and other attributes.
+ */
 @Component({
   tag: 'ui-textarea',
   styleUrl: 'ui-textarea.scss',

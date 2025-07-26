@@ -1,5 +1,9 @@
 import { Component, Event, EventEmitter, h, Method, Prop } from '@stencil/core';
 
+/**
+ * `ui-modal` is a component for rendering a modal dialog.
+ * It supports opening and closing the modal, and allows for custom header and footer content.
+ */
 @Component({
   tag: 'ui-modal',
   styleUrl: 'ui-modal.scss',

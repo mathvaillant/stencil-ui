@@ -1,5 +1,9 @@
 import { Component, Prop, h } from '@stencil/core';
 
+/**
+ * `ui-label` is a component for rendering label elements.
+ * It can render as a paragraph, label, or legend element.
+ */
 @Component({
   tag: 'ui-label',
   styleUrl: 'ui-label.scss',

@@ -1,5 +1,9 @@
 import { Component, getAssetPath, h, Prop } from '@stencil/core';
 
+/**
+ * `ui-logo` is a component for rendering a logo image.
+ * It allows customization of the logo's width and height.
+ */
 @Component({
   tag: 'ui-logo',
   styleUrl: 'ui-logo.scss',

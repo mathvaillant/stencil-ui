@@ -1,5 +1,10 @@
 import { Component, Element, Prop, State, h } from '@stencil/core';
 
+/**
+ * `ui-tab-panel` is a component for rendering a tab panel within a tab context.
+ * It displays content associated with a specific tab.
+ * The panel is shown when the corresponding tab is active.
+ */
 @Component({
   tag: 'ui-tab-panel',
   styleUrl: 'ui-tab.scss',
@@ -28,7 +33,10 @@ export class UITabPanel {
       if (typeof MutationObserver !== 'undefined') {
         this.syncValueFromContext();
         this.observer = new MutationObserver(this.syncValueFromContext.bind(this));
-        this.observer.observe(this.context, { attributes: true, attributeFilter: ['value'] });
+        this.observer.observe(this.context, {
+          attributes: true,
+          attributeFilter: ['value'],
+        });
       }
     }
   }

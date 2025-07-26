@@ -1,5 +1,9 @@
 import { Component, Prop, h } from '@stencil/core';
 
+/**
+ * `ui-fieldset-option` is a component for rendering options within a fieldset.
+ * It can be used to create radio buttons or checkboxes with labels.
+ */
 @Component({
   tag: 'ui-fieldset-option',
   styleUrl: 'ui-fieldset-option.scss',
@@ -17,7 +21,7 @@ export class UIFieldsetOption {
 
   /** Whether the input is checked by default. */
   @Prop() checked?: boolean;
-  /** Whether the input is required for form submission. */
+
   @Prop() required?: boolean;
 
   render() {

@@ -1,6 +1,10 @@
 import { Component, Event, EventEmitter, Host, Prop, State, h } from '@stencil/core';
 import { v4 as uuid } from 'uuid';
 
+/**
+ * `ui-tab-context` is a component that provides a context for tab navigation.
+ * It allows for managing the active tab and emits events when tabs are changed.
+ */
 @Component({
   tag: 'ui-tab-context',
   styleUrl: 'ui-tab.scss',
