@@ -164,14 +164,14 @@ export const UiTab: StencilReactComponent<UiTabElement, UiTabEvents> = /*@__PURE
     defineCustomElement: defineUiTab
 });
 
-export type UiTabContextEvents = NonNullable<unknown>;
+export type UiTabContextEvents = { onTabChange: EventName<CustomEvent<{ value: string }>> };
 
 export const UiTabContext: StencilReactComponent<UiTabContextElement, UiTabContextEvents> = /*@__PURE__*/ createComponent<UiTabContextElement, UiTabContextEvents>({
     tagName: 'ui-tab-context',
     elementClass: UiTabContextElement,
     // @ts-ignore - ignore potential React type mismatches between the Stencil Output Target and your project.
     react: React,
-    events: {} as UiTabContextEvents,
+    events: { onTabChange: 'tabChange' } as UiTabContextEvents,
     defineCustomElement: defineUiTabContext
 });
 

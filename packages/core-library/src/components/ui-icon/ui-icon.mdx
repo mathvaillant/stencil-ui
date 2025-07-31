@@ -1,0 +1,14 @@
+import { Meta, Stories, Markdown, Heading, Canvas, Controls } from '@storybook/addon-docs/blocks';
+import * as UIIcon from './ui-icon.stories';
+import { IconShowcase } from "../../../.storybook/blocks/IconShowcase";
+import README from "./readme.md?raw";
+
+<Meta of={UIIcon} title="Icon" />
+
+<Heading>Example & Controls</Heading>
+<Canvas />
+<Controls />
+
+<Markdown>{README}</Markdown>
+
+<IconShowcase />

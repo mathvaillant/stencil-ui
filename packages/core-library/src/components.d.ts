@@ -16,6 +16,9 @@ export { UIMenuItem } from "./components/ui-menu/ui-menu.types";
 export { UISidebarItem } from "./components/ui-sidebar/ui-sidebar.types";
 export { UITableColumn, UITableRow } from "./components/ui-table/ui-table.types";
 export namespace Components {
+    /**
+     * `ui-button` is a component for rendering buttons with different styles and icons.
+     */
     interface UiButton {
         /**
           * Whether the button is disabled. Defaults to false.
@@ -37,19 +40,44 @@ export namespace Components {
          */
         "variant"?: 'primary' | 'secondary' | 'tertiary';
     }
+    /**
+     * `ui-fieldset` is a component for rendering a fieldset element.
+     * It can be used to group related form controls.
+     */
     interface UiFieldset {
     }
+    /**
+     * `ui-fieldset-option` is a component for rendering options within a fieldset.
+     * It can be used to create radio buttons or checkboxes with labels.
+     */
     interface UiFieldsetOption {
+        /**
+          * Whether the input is checked by default.
+         */
         "checked"?: boolean;
+        /**
+          * The label text for the input.
+         */
         "label": string;
+        /**
+          * The name of the input, used to group radio buttons.
+         */
         "name": string;
         "required"?: boolean;
         /**
+          * The type of input, either 'radio' or 'checkbox'. Defaults to 'radio'.
           * @default 'radio'
          */
         "type"?: 'radio' | 'checkbox';
+        /**
+          * The value of the input, which is submitted with the form.
+         */
         "value": string;
     }
+    /**
+     * `ui-icon` is a component for rendering icons.
+     * It supports various icon names defined in the icons object.
+     */
     interface UiIcon {
         /**
           * The name of the icon to render.
@@ -57,36 +85,79 @@ export namespace Components {
         "name": IconName;
     }
     interface UiInput {
+        /**
+          * Autocomplete attribute for the input field
+         */
         "autocomplete"?: string;
+        /**
+          * If the input is disabled
+         */
         "disabled"?: boolean;
+        /**
+          * The ID of the input field
+         */
         "fieldId"?: string;
+        /**
+          * The name of the input field
+         */
         "name"?: string;
+        /**
+          * Placeholder text for the input field
+         */
         "placeholder"?: string;
+        /**
+          * If the input is read-only
+         */
         "readOnly"?: boolean;
+        /**
+          * If the input is required
+         */
         "required"?: boolean;
         /**
+          * The type of the input field
           * @default 'text'
          */
         "type"?: HTMLInputElement['type'];
+        /**
+          * The value of the input field
+         */
         "value"?: string;
     }
+    /**
+     * `ui-label` is a component for rendering label elements.
+     * It can render as a paragraph, label, or legend element.
+     */
     interface UiLabel {
         /**
+          * The HTML element to render as. Can be 'p', 'label', or 'legend'.
           * @default 'label'
          */
         "as"?: 'p' | 'label' | 'legend';
+        /**
+          * The `for` attribute for the label element. This is only applicable when `as` is 'label'.
+         */
         "htmlFor"?: string;
     }
+    /**
+     * `ui-logo` is a component for rendering a logo image.
+     * It allows customization of the logo's width and height.
+     */
     interface UiLogo {
         /**
+          * The height of the logo image. Default is 100 pixels.
           * @default 100
          */
         "height"?: HTMLImageElement['height'];
         /**
+          * The width of the logo image. Default is 100 pixels.
           * @default 100
          */
         "width"?: HTMLImageElement['width'];
     }
+    /**
+     * `ui-menu` is a component for rendering a menu with items.
+     * It supports positioning and dynamic data binding for menu items.
+     */
     interface UiMenu {
         /**
           * The menu items to display in the menu. Each item should conform to the UIMenuItem interface.
@@ -107,6 +178,10 @@ export namespace Components {
          */
         "position"?: { x: number; y: number } | null;
     }
+    /**
+     * `ui-modal` is a component for rendering a modal dialog.
+     * It supports opening and closing the modal, and allows for custom header and footer content.
+     */
     interface UiModal {
         /**
           * Closes the modal dialog. This method is called to hide the modal when the `open` property is set to false. It uses the native `close` method of the HTMLDialogElement.
@@ -135,10 +210,24 @@ export namespace Components {
          */
         "showModal": () => Promise<void>;
     }
+    /**
+     * `ui-select` is a component for rendering a select dropdown.
+     * It allows customization of the select element's ID and name.
+     */
     interface UiSelect {
+        /**
+          * The ID of the select element
+         */
         "fieldId"?: string;
+        /**
+          * The name of the select element
+         */
         "name"?: string;
     }
+    /**
+     * `ui-sidebar` is a component for rendering a sidebar navigation.
+     * It supports toggling open/closed state and displaying a list of items.
+     */
     interface UiSidebar {
         /**
           * The items to display in the sidebar.
@@ -153,6 +242,10 @@ export namespace Components {
          */
         "open": boolean;
     }
+    /**
+     * `ui-tab` is a component for rendering a tab within a tab context.
+     * It allows users to switch between different content panels.
+     */
     interface UiTab {
         /**
           * the label of the tab, displayed in the tab list.
@@ -163,17 +256,37 @@ export namespace Components {
          */
         "value": string;
     }
+    /**
+     * `ui-tab-context` is a component that provides a context for tab navigation.
+     * It allows for managing the active tab and emits events when tabs are changed.
+     */
     interface UiTabContext {
+        /**
+          * The value of the tab context, used to identify the active tab.
+         */
         "value": string;
     }
+    /**
+     * `ui-tab-list` is a component for rendering a list of tabs.
+     * It serves as a container for individual `ui-tab` components.
+     */
     interface UiTabList {
     }
+    /**
+     * `ui-tab-panel` is a component for rendering a tab panel within a tab context.
+     * It displays content associated with a specific tab.
+     * The panel is shown when the corresponding tab is active.
+     */
     interface UiTabPanel {
         /**
           * the value of the tab panel, used to identify it within the tab context. This should match the value of the corresponding `ui-tab` component.
          */
         "value": string;
     }
+    /**
+     * `ui-table` is a component for rendering a table with customizable columns and rows.
+     * It supports various cell types including text, links, buttons, inputs, and selects.
+     */
     interface UiTable {
         /**
           * An array of column definitions for the table. Each column is defined by a label and an optional alignment. Alignement can be 'left', 'center', or 'right'.
@@ -205,18 +318,56 @@ export namespace Components {
          */
         "stickyHeader": boolean;
     }
+    /**
+     * `ui-textarea` is a component for rendering a textarea element.
+     * It allows customization of the textarea's ID, name, value, and other attributes.
+     */
     interface UiTextarea {
+        /**
+          * Whether the textarea is disabled, preventing user interaction.
+         */
         "disabled"?: boolean;
+        /**
+          * The ID of the textarea, used for form submission and accessibility.
+         */
         "fieldId"?: string;
+        /**
+          * Maximum number of characters allowed in the textarea.
+         */
         "maxlength"?: number;
+        /**
+          * Minimum number of characters required in the textarea.
+         */
         "minlength"?: number;
+        /**
+          * Additional properties for the textarea element.
+         */
         "name"?: string;
+        /**
+          * Placeholder text displayed when the textarea is empty.
+         */
         "placeholder"?: string;
+        /**
+          * Whether the textarea is read-only, preventing user input but allowing selection.
+         */
         "readOnly"?: boolean;
+        /**
+          * Whether the textarea is required for form submission.
+         */
         "required"?: boolean;
+        /**
+          * Number of rows in the textarea, controlling its height.
+         */
         "rows"?: number;
+        /**
+          * The value of the textarea, used for form submission.
+         */
         "value"?: string;
     }
+    /**
+     * `ui-tooltip` is a component for rendering a tooltip that appears on hover.
+     * It displays additional information when the user hovers over the component.
+     */
     interface UiTooltip {
         /**
           * The text to display in the tooltip. This text will be shown when the user hovers over the component.
@@ -224,6 +375,10 @@ export namespace Components {
          */
         "text": string;
     }
+    /**
+     * `ui-typography` is a component for rendering typography elements.
+     * It supports different variants such as headings and paragraphs.
+     */
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' or 'p'.
@@ -231,8 +386,16 @@ export namespace Components {
          */
         "variant": 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
     }
+    /**
+     * `ui-xstack` is a component for rendering a horizontal stack of elements.
+     * It can be used to align items in a row with customizable spacing and alignment.
+     */
     interface UiXstack {
     }
+    /**
+     * `ui-ystack` is a component for rendering a vertical stack of elements.
+     * It can be used to align items in a column with customizable spacing and alignment.
+     */
     interface UiYstack {
     }
 }
@@ -248,25 +411,44 @@ export interface UiTabCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLUiTabElement;
 }
+export interface UiTabContextCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLUiTabContextElement;
+}
 declare global {
+    /**
+     * `ui-button` is a component for rendering buttons with different styles and icons.
+     */
     interface HTMLUiButtonElement extends Components.UiButton, HTMLStencilElement {
     }
     var HTMLUiButtonElement: {
         prototype: HTMLUiButtonElement;
         new (): HTMLUiButtonElement;
     };
+    /**
+     * `ui-fieldset` is a component for rendering a fieldset element.
+     * It can be used to group related form controls.
+     */
     interface HTMLUiFieldsetElement extends Components.UiFieldset, HTMLStencilElement {
     }
     var HTMLUiFieldsetElement: {
         prototype: HTMLUiFieldsetElement;
         new (): HTMLUiFieldsetElement;
     };
+    /**
+     * `ui-fieldset-option` is a component for rendering options within a fieldset.
+     * It can be used to create radio buttons or checkboxes with labels.
+     */
     interface HTMLUiFieldsetOptionElement extends Components.UiFieldsetOption, HTMLStencilElement {
     }
     var HTMLUiFieldsetOptionElement: {
         prototype: HTMLUiFieldsetOptionElement;
         new (): HTMLUiFieldsetOptionElement;
     };
+    /**
+     * `ui-icon` is a component for rendering icons.
+     * It supports various icon names defined in the icons object.
+     */
     interface HTMLUiIconElement extends Components.UiIcon, HTMLStencilElement {
     }
     var HTMLUiIconElement: {
@@ -279,12 +461,20 @@ declare global {
         prototype: HTMLUiInputElement;
         new (): HTMLUiInputElement;
     };
+    /**
+     * `ui-label` is a component for rendering label elements.
+     * It can render as a paragraph, label, or legend element.
+     */
     interface HTMLUiLabelElement extends Components.UiLabel, HTMLStencilElement {
     }
     var HTMLUiLabelElement: {
         prototype: HTMLUiLabelElement;
         new (): HTMLUiLabelElement;
     };
+    /**
+     * `ui-logo` is a component for rendering a logo image.
+     * It allows customization of the logo's width and height.
+     */
     interface HTMLUiLogoElement extends Components.UiLogo, HTMLStencilElement {
     }
     var HTMLUiLogoElement: {
@@ -294,6 +484,10 @@ declare global {
     interface HTMLUiMenuElementEventMap {
         "close": void;
     }
+    /**
+     * `ui-menu` is a component for rendering a menu with items.
+     * It supports positioning and dynamic data binding for menu items.
+     */
     interface HTMLUiMenuElement extends Components.UiMenu, HTMLStencilElement {
         addEventListener<K extends keyof HTMLUiMenuElementEventMap>(type: K, listener: (this: HTMLUiMenuElement, ev: UiMenuCustomEvent<HTMLUiMenuElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -311,6 +505,10 @@ declare global {
     interface HTMLUiModalElementEventMap {
         "close": void;
     }
+    /**
+     * `ui-modal` is a component for rendering a modal dialog.
+     * It supports opening and closing the modal, and allows for custom header and footer content.
+     */
     interface HTMLUiModalElement extends Components.UiModal, HTMLStencilElement {
         addEventListener<K extends keyof HTMLUiModalElementEventMap>(type: K, listener: (this: HTMLUiModalElement, ev: UiModalCustomEvent<HTMLUiModalElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -325,12 +523,20 @@ declare global {
         prototype: HTMLUiModalElement;
         new (): HTMLUiModalElement;
     };
+    /**
+     * `ui-select` is a component for rendering a select dropdown.
+     * It allows customization of the select element's ID and name.
+     */
     interface HTMLUiSelectElement extends Components.UiSelect, HTMLStencilElement {
     }
     var HTMLUiSelectElement: {
         prototype: HTMLUiSelectElement;
         new (): HTMLUiSelectElement;
     };
+    /**
+     * `ui-sidebar` is a component for rendering a sidebar navigation.
+     * It supports toggling open/closed state and displaying a list of items.
+     */
     interface HTMLUiSidebarElement extends Components.UiSidebar, HTMLStencilElement {
     }
     var HTMLUiSidebarElement: {
@@ -340,6 +546,10 @@ declare global {
     interface HTMLUiTabElementEventMap {
         "tabChange": { value: string };
     }
+    /**
+     * `ui-tab` is a component for rendering a tab within a tab context.
+     * It allows users to switch between different content panels.
+     */
     interface HTMLUiTabElement extends Components.UiTab, HTMLStencilElement {
         addEventListener<K extends keyof HTMLUiTabElementEventMap>(type: K, listener: (this: HTMLUiTabElement, ev: UiTabCustomEvent<HTMLUiTabElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
         addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
@@ -354,54 +564,102 @@ declare global {
         prototype: HTMLUiTabElement;
         new (): HTMLUiTabElement;
     };
+    interface HTMLUiTabContextElementEventMap {
+        "tabChange": { value: string };
+    }
+    /**
+     * `ui-tab-context` is a component that provides a context for tab navigation.
+     * It allows for managing the active tab and emits events when tabs are changed.
+     */
     interface HTMLUiTabContextElement extends Components.UiTabContext, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLUiTabContextElementEventMap>(type: K, listener: (this: HTMLUiTabContextElement, ev: UiTabContextCustomEvent<HTMLUiTabContextElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLUiTabContextElementEventMap>(type: K, listener: (this: HTMLUiTabContextElement, ev: UiTabContextCustomEvent<HTMLUiTabContextElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLUiTabContextElement: {
         prototype: HTMLUiTabContextElement;
         new (): HTMLUiTabContextElement;
     };
+    /**
+     * `ui-tab-list` is a component for rendering a list of tabs.
+     * It serves as a container for individual `ui-tab` components.
+     */
     interface HTMLUiTabListElement extends Components.UiTabList, HTMLStencilElement {
     }
     var HTMLUiTabListElement: {
         prototype: HTMLUiTabListElement;
         new (): HTMLUiTabListElement;
     };
+    /**
+     * `ui-tab-panel` is a component for rendering a tab panel within a tab context.
+     * It displays content associated with a specific tab.
+     * The panel is shown when the corresponding tab is active.
+     */
     interface HTMLUiTabPanelElement extends Components.UiTabPanel, HTMLStencilElement {
     }
     var HTMLUiTabPanelElement: {
         prototype: HTMLUiTabPanelElement;
         new (): HTMLUiTabPanelElement;
     };
+    /**
+     * `ui-table` is a component for rendering a table with customizable columns and rows.
+     * It supports various cell types including text, links, buttons, inputs, and selects.
+     */
     interface HTMLUiTableElement extends Components.UiTable, HTMLStencilElement {
     }
     var HTMLUiTableElement: {
         prototype: HTMLUiTableElement;
         new (): HTMLUiTableElement;
     };
+    /**
+     * `ui-textarea` is a component for rendering a textarea element.
+     * It allows customization of the textarea's ID, name, value, and other attributes.
+     */
     interface HTMLUiTextareaElement extends Components.UiTextarea, HTMLStencilElement {
     }
     var HTMLUiTextareaElement: {
         prototype: HTMLUiTextareaElement;
         new (): HTMLUiTextareaElement;
     };
+    /**
+     * `ui-tooltip` is a component for rendering a tooltip that appears on hover.
+     * It displays additional information when the user hovers over the component.
+     */
     interface HTMLUiTooltipElement extends Components.UiTooltip, HTMLStencilElement {
     }
     var HTMLUiTooltipElement: {
         prototype: HTMLUiTooltipElement;
         new (): HTMLUiTooltipElement;
     };
+    /**
+     * `ui-typography` is a component for rendering typography elements.
+     * It supports different variants such as headings and paragraphs.
+     */
     interface HTMLUiTypographyElement extends Components.UiTypography, HTMLStencilElement {
     }
     var HTMLUiTypographyElement: {
         prototype: HTMLUiTypographyElement;
         new (): HTMLUiTypographyElement;
     };
+    /**
+     * `ui-xstack` is a component for rendering a horizontal stack of elements.
+     * It can be used to align items in a row with customizable spacing and alignment.
+     */
     interface HTMLUiXstackElement extends Components.UiXstack, HTMLStencilElement {
     }
     var HTMLUiXstackElement: {
         prototype: HTMLUiXstackElement;
         new (): HTMLUiXstackElement;
     };
+    /**
+     * `ui-ystack` is a component for rendering a vertical stack of elements.
+     * It can be used to align items in a column with customizable spacing and alignment.
+     */
     interface HTMLUiYstackElement extends Components.UiYstack, HTMLStencilElement {
     }
     var HTMLUiYstackElement: {
@@ -433,6 +691,9 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    /**
+     * `ui-button` is a component for rendering buttons with different styles and icons.
+     */
     interface UiButton {
         /**
           * Whether the button is disabled. Defaults to false.
@@ -454,19 +715,44 @@ declare namespace LocalJSX {
          */
         "variant"?: 'primary' | 'secondary' | 'tertiary';
     }
+    /**
+     * `ui-fieldset` is a component for rendering a fieldset element.
+     * It can be used to group related form controls.
+     */
     interface UiFieldset {
     }
+    /**
+     * `ui-fieldset-option` is a component for rendering options within a fieldset.
+     * It can be used to create radio buttons or checkboxes with labels.
+     */
     interface UiFieldsetOption {
+        /**
+          * Whether the input is checked by default.
+         */
         "checked"?: boolean;
+        /**
+          * The label text for the input.
+         */
         "label": string;
+        /**
+          * The name of the input, used to group radio buttons.
+         */
         "name": string;
         "required"?: boolean;
         /**
+          * The type of input, either 'radio' or 'checkbox'. Defaults to 'radio'.
           * @default 'radio'
          */
         "type"?: 'radio' | 'checkbox';
+        /**
+          * The value of the input, which is submitted with the form.
+         */
         "value": string;
     }
+    /**
+     * `ui-icon` is a component for rendering icons.
+     * It supports various icon names defined in the icons object.
+     */
     interface UiIcon {
         /**
           * The name of the icon to render.
@@ -474,36 +760,79 @@ declare namespace LocalJSX {
         "name": IconName;
     }
     interface UiInput {
+        /**
+          * Autocomplete attribute for the input field
+         */
         "autocomplete"?: string;
+        /**
+          * If the input is disabled
+         */
         "disabled"?: boolean;
+        /**
+          * The ID of the input field
+         */
         "fieldId"?: string;
+        /**
+          * The name of the input field
+         */
         "name"?: string;
+        /**
+          * Placeholder text for the input field
+         */
         "placeholder"?: string;
+        /**
+          * If the input is read-only
+         */
         "readOnly"?: boolean;
+        /**
+          * If the input is required
+         */
         "required"?: boolean;
         /**
+          * The type of the input field
           * @default 'text'
          */
         "type"?: HTMLInputElement['type'];
+        /**
+          * The value of the input field
+         */
         "value"?: string;
     }
+    /**
+     * `ui-label` is a component for rendering label elements.
+     * It can render as a paragraph, label, or legend element.
+     */
     interface UiLabel {
         /**
+          * The HTML element to render as. Can be 'p', 'label', or 'legend'.
           * @default 'label'
          */
         "as"?: 'p' | 'label' | 'legend';
+        /**
+          * The `for` attribute for the label element. This is only applicable when `as` is 'label'.
+         */
         "htmlFor"?: string;
     }
+    /**
+     * `ui-logo` is a component for rendering a logo image.
+     * It allows customization of the logo's width and height.
+     */
     interface UiLogo {
         /**
+          * The height of the logo image. Default is 100 pixels.
           * @default 100
          */
         "height"?: HTMLImageElement['height'];
         /**
+          * The width of the logo image. Default is 100 pixels.
           * @default 100
          */
         "width"?: HTMLImageElement['width'];
     }
+    /**
+     * `ui-menu` is a component for rendering a menu with items.
+     * It supports positioning and dynamic data binding for menu items.
+     */
     interface UiMenu {
         /**
           * The menu items to display in the menu. Each item should conform to the UIMenuItem interface.
@@ -529,6 +858,10 @@ declare namespace LocalJSX {
          */
         "position"?: { x: number; y: number } | null;
     }
+    /**
+     * `ui-modal` is a component for rendering a modal dialog.
+     * It supports opening and closing the modal, and allows for custom header and footer content.
+     */
     interface UiModal {
         /**
           * The name of the slot for the footer content. This allows for custom footer content to be passed into the modal.
@@ -554,10 +887,24 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
     }
+    /**
+     * `ui-select` is a component for rendering a select dropdown.
+     * It allows customization of the select element's ID and name.
+     */
     interface UiSelect {
+        /**
+          * The ID of the select element
+         */
         "fieldId"?: string;
+        /**
+          * The name of the select element
+         */
         "name"?: string;
     }
+    /**
+     * `ui-sidebar` is a component for rendering a sidebar navigation.
+     * It supports toggling open/closed state and displaying a list of items.
+     */
     interface UiSidebar {
         /**
           * The items to display in the sidebar.
@@ -572,28 +919,59 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
     }
+    /**
+     * `ui-tab` is a component for rendering a tab within a tab context.
+     * It allows users to switch between different content panels.
+     */
     interface UiTab {
         /**
           * the label of the tab, displayed in the tab list.
          */
         "label"?: string;
+        /**
+          * Event emitted when the tab is clicked, providing the value of the tab.
+         */
         "onTabChange"?: (event: UiTabCustomEvent<{ value: string }>) => void;
         /**
           * the value of the tab, used to identify it within the tab context. This should match the value of the corresponding `ui-tab-panel` component.
          */
         "value"?: string;
     }
+    /**
+     * `ui-tab-context` is a component that provides a context for tab navigation.
+     * It allows for managing the active tab and emits events when tabs are changed.
+     */
     interface UiTabContext {
+        /**
+          * Event emitted when a `ui-tab` is clicked, providing the value of the tab.
+         */
+        "onTabChange"?: (event: UiTabContextCustomEvent<{ value: string }>) => void;
+        /**
+          * The value of the tab context, used to identify the active tab.
+         */
         "value"?: string;
     }
+    /**
+     * `ui-tab-list` is a component for rendering a list of tabs.
+     * It serves as a container for individual `ui-tab` components.
+     */
     interface UiTabList {
     }
+    /**
+     * `ui-tab-panel` is a component for rendering a tab panel within a tab context.
+     * It displays content associated with a specific tab.
+     * The panel is shown when the corresponding tab is active.
+     */
     interface UiTabPanel {
         /**
           * the value of the tab panel, used to identify it within the tab context. This should match the value of the corresponding `ui-tab` component.
          */
         "value"?: string;
     }
+    /**
+     * `ui-table` is a component for rendering a table with customizable columns and rows.
+     * It supports various cell types including text, links, buttons, inputs, and selects.
+     */
     interface UiTable {
         /**
           * An array of column definitions for the table. Each column is defined by a label and an optional alignment. Alignement can be 'left', 'center', or 'right'.
@@ -625,18 +1003,56 @@ declare namespace LocalJSX {
          */
         "stickyHeader"?: boolean;
     }
+    /**
+     * `ui-textarea` is a component for rendering a textarea element.
+     * It allows customization of the textarea's ID, name, value, and other attributes.
+     */
     interface UiTextarea {
+        /**
+          * Whether the textarea is disabled, preventing user interaction.
+         */
         "disabled"?: boolean;
+        /**
+          * The ID of the textarea, used for form submission and accessibility.
+         */
         "fieldId"?: string;
+        /**
+          * Maximum number of characters allowed in the textarea.
+         */
         "maxlength"?: number;
+        /**
+          * Minimum number of characters required in the textarea.
+         */
         "minlength"?: number;
+        /**
+          * Additional properties for the textarea element.
+         */
         "name"?: string;
+        /**
+          * Placeholder text displayed when the textarea is empty.
+         */
         "placeholder"?: string;
+        /**
+          * Whether the textarea is read-only, preventing user input but allowing selection.
+         */
         "readOnly"?: boolean;
+        /**
+          * Whether the textarea is required for form submission.
+         */
         "required"?: boolean;
+        /**
+          * Number of rows in the textarea, controlling its height.
+         */
         "rows"?: number;
+        /**
+          * The value of the textarea, used for form submission.
+         */
         "value"?: string;
     }
+    /**
+     * `ui-tooltip` is a component for rendering a tooltip that appears on hover.
+     * It displays additional information when the user hovers over the component.
+     */
     interface UiTooltip {
         /**
           * The text to display in the tooltip. This text will be shown when the user hovers over the component.
@@ -644,6 +1060,10 @@ declare namespace LocalJSX {
          */
         "text": string;
     }
+    /**
+     * `ui-typography` is a component for rendering typography elements.
+     * It supports different variants such as headings and paragraphs.
+     */
     interface UiTypography {
         /**
           * The variant of the typography element. Can be one of 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' or 'p'.
@@ -651,8 +1071,16 @@ declare namespace LocalJSX {
          */
         "variant"?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
     }
+    /**
+     * `ui-xstack` is a component for rendering a horizontal stack of elements.
+     * It can be used to align items in a row with customizable spacing and alignment.
+     */
     interface UiXstack {
     }
+    /**
+     * `ui-ystack` is a component for rendering a vertical stack of elements.
+     * It can be used to align items in a column with customizable spacing and alignment.
+     */
     interface UiYstack {
     }
     interface IntrinsicElements {
@@ -683,26 +1111,106 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            /**
+             * `ui-button` is a component for rendering buttons with different styles and icons.
+             */
             "ui-button": LocalJSX.UiButton & JSXBase.HTMLAttributes<HTMLUiButtonElement>;
+            /**
+             * `ui-fieldset` is a component for rendering a fieldset element.
+             * It can be used to group related form controls.
+             */
             "ui-fieldset": LocalJSX.UiFieldset & JSXBase.HTMLAttributes<HTMLUiFieldsetElement>;
+            /**
+             * `ui-fieldset-option` is a component for rendering options within a fieldset.
+             * It can be used to create radio buttons or checkboxes with labels.
+             */
             "ui-fieldset-option": LocalJSX.UiFieldsetOption & JSXBase.HTMLAttributes<HTMLUiFieldsetOptionElement>;
+            /**
+             * `ui-icon` is a component for rendering icons.
+             * It supports various icon names defined in the icons object.
+             */
             "ui-icon": LocalJSX.UiIcon & JSXBase.HTMLAttributes<HTMLUiIconElement>;
             "ui-input": LocalJSX.UiInput & JSXBase.HTMLAttributes<HTMLUiInputElement>;
+            /**
+             * `ui-label` is a component for rendering label elements.
+             * It can render as a paragraph, label, or legend element.
+             */
             "ui-label": LocalJSX.UiLabel & JSXBase.HTMLAttributes<HTMLUiLabelElement>;
+            /**
+             * `ui-logo` is a component for rendering a logo image.
+             * It allows customization of the logo's width and height.
+             */
             "ui-logo": LocalJSX.UiLogo & JSXBase.HTMLAttributes<HTMLUiLogoElement>;
+            /**
+             * `ui-menu` is a component for rendering a menu with items.
+             * It supports positioning and dynamic data binding for menu items.
+             */
             "ui-menu": LocalJSX.UiMenu & JSXBase.HTMLAttributes<HTMLUiMenuElement>;
+            /**
+             * `ui-modal` is a component for rendering a modal dialog.
+             * It supports opening and closing the modal, and allows for custom header and footer content.
+             */
             "ui-modal": LocalJSX.UiModal & JSXBase.HTMLAttributes<HTMLUiModalElement>;
+            /**
+             * `ui-select` is a component for rendering a select dropdown.
+             * It allows customization of the select element's ID and name.
+             */
             "ui-select": LocalJSX.UiSelect & JSXBase.HTMLAttributes<HTMLUiSelectElement>;
+            /**
+             * `ui-sidebar` is a component for rendering a sidebar navigation.
+             * It supports toggling open/closed state and displaying a list of items.
+             */
             "ui-sidebar": LocalJSX.UiSidebar & JSXBase.HTMLAttributes<HTMLUiSidebarElement>;
+            /**
+             * `ui-tab` is a component for rendering a tab within a tab context.
+             * It allows users to switch between different content panels.
+             */
             "ui-tab": LocalJSX.UiTab & JSXBase.HTMLAttributes<HTMLUiTabElement>;
+            /**
+             * `ui-tab-context` is a component that provides a context for tab navigation.
+             * It allows for managing the active tab and emits events when tabs are changed.
+             */
             "ui-tab-context": LocalJSX.UiTabContext & JSXBase.HTMLAttributes<HTMLUiTabContextElement>;
+            /**
+             * `ui-tab-list` is a component for rendering a list of tabs.
+             * It serves as a container for individual `ui-tab` components.
+             */
             "ui-tab-list": LocalJSX.UiTabList & JSXBase.HTMLAttributes<HTMLUiTabListElement>;
+            /**
+             * `ui-tab-panel` is a component for rendering a tab panel within a tab context.
+             * It displays content associated with a specific tab.
+             * The panel is shown when the corresponding tab is active.
+             */
             "ui-tab-panel": LocalJSX.UiTabPanel & JSXBase.HTMLAttributes<HTMLUiTabPanelElement>;
+            /**
+             * `ui-table` is a component for rendering a table with customizable columns and rows.
+             * It supports various cell types including text, links, buttons, inputs, and selects.
+             */
             "ui-table": LocalJSX.UiTable & JSXBase.HTMLAttributes<HTMLUiTableElement>;
+            /**
+             * `ui-textarea` is a component for rendering a textarea element.
+             * It allows customization of the textarea's ID, name, value, and other attributes.
+             */
             "ui-textarea": LocalJSX.UiTextarea & JSXBase.HTMLAttributes<HTMLUiTextareaElement>;
+            /**
+             * `ui-tooltip` is a component for rendering a tooltip that appears on hover.
+             * It displays additional information when the user hovers over the component.
+             */
             "ui-tooltip": LocalJSX.UiTooltip & JSXBase.HTMLAttributes<HTMLUiTooltipElement>;
+            /**
+             * `ui-typography` is a component for rendering typography elements.
+             * It supports different variants such as headings and paragraphs.
+             */
             "ui-typography": LocalJSX.UiTypography & JSXBase.HTMLAttributes<HTMLUiTypographyElement>;
+            /**
+             * `ui-xstack` is a component for rendering a horizontal stack of elements.
+             * It can be used to align items in a row with customizable spacing and alignment.
+             */
             "ui-xstack": LocalJSX.UiXstack & JSXBase.HTMLAttributes<HTMLUiXstackElement>;
+            /**
+             * `ui-ystack` is a component for rendering a vertical stack of elements.
+             * It can be used to align items in a column with customizable spacing and alignment.
+             */
             "ui-ystack": LocalJSX.UiYstack & JSXBase.HTMLAttributes<HTMLUiYstackElement>;
         }
     }

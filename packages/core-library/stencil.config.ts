@@ -13,6 +13,10 @@ export const config: Config = {
   },
   outputTargets: [
     {
+      type: 'docs-json',
+      file: './docs/docs.json',
+    },
+    {
       type: 'dist',
       esmLoaderPath: '../loader',
     },

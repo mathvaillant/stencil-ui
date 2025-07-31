@@ -1,0 +1,15 @@
+import { Meta, Stories, Markdown, Heading, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as UITypography from "./ui-typography.stories";
+import README from "./readme.md?raw";
+import { TypographyShowcase } from "../../../.storybook/blocks/TypographyShowcase";
+
+<Meta of={UITypography} title="Components/Typography" />
+
+<Heading>Example & Controls</Heading>
+<Canvas />
+<Controls />
+
+<Markdown>{README}</Markdown>
+
+<TypographyShowcase />
+

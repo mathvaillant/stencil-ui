@@ -1,0 +1,2385 @@
+{
+  "timestamp": "2025-07-31T18:30:04",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "4.35.1",
+    "typescriptVersion": "5.5.4"
+  },
+  "components": [
+    {
+      "filePath": "src/components/ui-button/ui-button.tsx",
+      "encapsulation": "none",
+      "tag": "ui-button",
+      "readme": "# ui-button\n\n\n",
+      "docs": "`ui-button` is a component for rendering buttons with different styles and icons.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Whether the button is disabled.\nDefaults to false.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "iconName",
+          "type": "\"add\" | \"arrow-left\" | \"arrow-right\" | \"close\" | \"delete\" | \"edit\" | \"menu\" | \"minus\" | \"next-double-arrow\" | \"notification\" | \"previous-double-arrow\" | \"search\" | \"settings\" | \"user\"",
+          "complexType": {
+            "original": "UIIcon['name']",
+            "resolved": "\"add\" | \"arrow-left\" | \"arrow-right\" | \"close\" | \"delete\" | \"edit\" | \"menu\" | \"minus\" | \"next-double-arrow\" | \"notification\" | \"previous-double-arrow\" | \"search\" | \"settings\" | \"user\"",
+            "references": {
+              "UIIcon": {
+                "location": "import",
+                "path": "../ui-icon/ui-icon",
+                "id": "src/components/ui-icon/ui-icon.tsx::UIIcon"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "icon-name",
+          "reflectToAttr": false,
+          "docs": "The name of the icon to render inside the button on the left side.\nIf provided, the button will render an `ui-icon` icon.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "value": "arrow-left",
+              "type": "string"
+            },
+            {
+              "value": "arrow-right",
+              "type": "string"
+            },
+            {
+              "value": "close",
+              "type": "string"
+            },
+            {
+              "value": "delete",
+              "type": "string"
+            },
+            {
+              "value": "edit",
+              "type": "string"
+            },
+            {
+              "value": "menu",
+              "type": "string"
+            },
+            {
+              "value": "minus",
+              "type": "string"
+            },
+            {
+              "value": "next-double-arrow",
+              "type": "string"
+            },
+            {
+              "value": "notification",
+              "type": "string"
+            },
+            {
+              "value": "previous-double-arrow",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "settings",
+              "type": "string"
+            },
+            {
+              "value": "user",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "complexType": {
+            "original": "'button' | 'submit' | 'reset'",
+            "resolved": "\"button\" | \"reset\" | \"submit\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of the button.\nCan be 'button', 'submit', or 'reset'.\nDefaults to 'button'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'button'"
+            }
+          ],
+          "default": "'button'",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "variant",
+          "type": "\"primary\" | \"secondary\" | \"tertiary\"",
+          "complexType": {
+            "original": "'primary' | 'secondary' | 'tertiary'",
+            "resolved": "\"primary\" | \"secondary\" | \"tertiary\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "The variant of the button.\nCan be 'primary', 'secondary', or 'tertiary'.\nDefaults to 'primary'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'primary'"
+            }
+          ],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-sidebar",
+        "ui-table"
+      ],
+      "dependencies": [
+        "ui-icon"
+      ],
+      "dependencyGraph": {
+        "ui-button": [
+          "ui-icon"
+        ],
+        "ui-sidebar": [
+          "ui-button"
+        ],
+        "ui-table": [
+          "ui-button"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-fieldset/ui-fieldset.tsx",
+      "encapsulation": "none",
+      "tag": "ui-fieldset",
+      "readme": "# ui-fieldset\n\n\n",
+      "docs": "`ui-fieldset` is a component for rendering a fieldset element.\nIt can be used to group related form controls.",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-fieldset-option/ui-fieldset-option.tsx",
+      "encapsulation": "none",
+      "tag": "ui-fieldset-option",
+      "readme": "# ui-fieldset-option\n\n\n",
+      "docs": "`ui-fieldset-option` is a component for rendering options within a fieldset.\nIt can be used to create radio buttons or checkboxes with labels.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "checked",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "checked",
+          "reflectToAttr": false,
+          "docs": "Whether the input is checked by default.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "The label text for the input.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the input, used to group radio buttons.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "type",
+          "type": "\"checkbox\" | \"radio\"",
+          "complexType": {
+            "original": "'radio' | 'checkbox'",
+            "resolved": "\"checkbox\" | \"radio\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of input, either 'radio' or 'checkbox'. Defaults to 'radio'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'radio'"
+            }
+          ],
+          "default": "'radio'",
+          "values": [
+            {
+              "value": "checkbox",
+              "type": "string"
+            },
+            {
+              "value": "radio",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the input, which is submitted with the form.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ui-label"
+      ],
+      "dependencyGraph": {
+        "ui-fieldset-option": [
+          "ui-label"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-icon/ui-icon.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-icon",
+      "readme": "# ui-icon\n\n\n",
+      "docs": "`ui-icon` is a component for rendering icons.\nIt supports various icon names defined in the icons object.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "name",
+          "type": "\"add\" | \"arrow-left\" | \"arrow-right\" | \"close\" | \"delete\" | \"edit\" | \"menu\" | \"minus\" | \"next-double-arrow\" | \"notification\" | \"previous-double-arrow\" | \"search\" | \"settings\" | \"user\"",
+          "complexType": {
+            "original": "IconName",
+            "resolved": "\"add\" | \"arrow-left\" | \"arrow-right\" | \"close\" | \"delete\" | \"edit\" | \"menu\" | \"minus\" | \"next-double-arrow\" | \"notification\" | \"previous-double-arrow\" | \"search\" | \"settings\" | \"user\"",
+            "references": {
+              "IconName": {
+                "location": "import",
+                "path": "./icons",
+                "id": "src/components/ui-icon/icons.ts::IconName"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the icon to render.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "add",
+              "type": "string"
+            },
+            {
+              "value": "arrow-left",
+              "type": "string"
+            },
+            {
+              "value": "arrow-right",
+              "type": "string"
+            },
+            {
+              "value": "close",
+              "type": "string"
+            },
+            {
+              "value": "delete",
+              "type": "string"
+            },
+            {
+              "value": "edit",
+              "type": "string"
+            },
+            {
+              "value": "menu",
+              "type": "string"
+            },
+            {
+              "value": "minus",
+              "type": "string"
+            },
+            {
+              "value": "next-double-arrow",
+              "type": "string"
+            },
+            {
+              "value": "notification",
+              "type": "string"
+            },
+            {
+              "value": "previous-double-arrow",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "settings",
+              "type": "string"
+            },
+            {
+              "value": "user",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-button",
+        "ui-menu",
+        "ui-modal",
+        "ui-sidebar"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-button": [
+          "ui-icon"
+        ],
+        "ui-menu": [
+          "ui-icon"
+        ],
+        "ui-modal": [
+          "ui-icon"
+        ],
+        "ui-sidebar": [
+          "ui-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-input/ui-input.tsx",
+      "encapsulation": "none",
+      "tag": "ui-input",
+      "readme": "# ui-input\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "autocomplete",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "autocomplete",
+          "reflectToAttr": false,
+          "docs": "Autocomplete attribute for the input field",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If the input is disabled",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "fieldId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "field-id",
+          "reflectToAttr": false,
+          "docs": "The ID of the input field",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the input field",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder text for the input field",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "read-only",
+          "reflectToAttr": false,
+          "docs": "If the input is read-only",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "If the input is required",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "complexType": {
+            "original": "HTMLInputElement['type']",
+            "resolved": "string",
+            "references": {
+              "HTMLInputElement": {
+                "location": "global",
+                "id": "global::HTMLInputElement"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of the input field",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'text'"
+            }
+          ],
+          "default": "'text'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the input field",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-table"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-table": [
+          "ui-input"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-label/ui-label.tsx",
+      "encapsulation": "none",
+      "tag": "ui-label",
+      "readme": "# ui-label\n\n\n",
+      "docs": "`ui-label` is a component for rendering label elements.\nIt can render as a paragraph, label, or legend element.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "as",
+          "type": "\"label\" | \"legend\" | \"p\"",
+          "complexType": {
+            "original": "'p' | 'label' | 'legend'",
+            "resolved": "\"label\" | \"legend\" | \"p\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "as",
+          "reflectToAttr": true,
+          "docs": "The HTML element to render as.\nCan be 'p', 'label', or 'legend'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'label'"
+            }
+          ],
+          "default": "'label'",
+          "values": [
+            {
+              "value": "label",
+              "type": "string"
+            },
+            {
+              "value": "legend",
+              "type": "string"
+            },
+            {
+              "value": "p",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "htmlFor",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "html-for",
+          "reflectToAttr": false,
+          "docs": "The `for` attribute for the label element.\nThis is only applicable when `as` is 'label'.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-fieldset-option"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-fieldset-option": [
+          "ui-label"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-logo/ui-logo.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-logo",
+      "readme": "# ui-logo\n\n\n",
+      "docs": "`ui-logo` is a component for rendering a logo image.\nIt allows customization of the logo's width and height.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "height",
+          "type": "number",
+          "complexType": {
+            "original": "HTMLImageElement['height']",
+            "resolved": "number",
+            "references": {
+              "HTMLImageElement": {
+                "location": "global",
+                "id": "global::HTMLImageElement"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "height",
+          "reflectToAttr": false,
+          "docs": "The height of the logo image.\nDefault is 100 pixels.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "100"
+            }
+          ],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "width",
+          "type": "number",
+          "complexType": {
+            "original": "HTMLImageElement['width']",
+            "resolved": "number",
+            "references": {
+              "HTMLImageElement": {
+                "location": "global",
+                "id": "global::HTMLImageElement"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "width",
+          "reflectToAttr": false,
+          "docs": "The width of the logo image.\nDefault is 100 pixels.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "100"
+            }
+          ],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-sidebar"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-sidebar": [
+          "ui-logo"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-menu/ui-menu.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-menu",
+      "readme": "# ui-menu\n\n\n",
+      "docs": "`ui-menu` is a component for rendering a menu with items.\nIt supports positioning and dynamic data binding for menu items.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "data",
+          "type": "UIMenuItem[]",
+          "complexType": {
+            "original": "UIMenuItem[]",
+            "resolved": "UIMenuItem[]",
+            "references": {
+              "UIMenuItem": {
+                "location": "import",
+                "path": "./ui-menu.types",
+                "id": "src/components/ui-menu/ui-menu.types.ts::UIMenuItem"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "data",
+          "reflectToAttr": false,
+          "docs": "The menu items to display in the menu.\nEach item should conform to the UIMenuItem interface.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{UIMenuItem[]}"
+            },
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "UIMenuItem[]"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": true,
+          "docs": "Indicates whether the menu is open or closed.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{boolean}"
+            },
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "position",
+          "type": "{ x: number; y: number; }",
+          "complexType": {
+            "original": "{ x: number; y: number } | null",
+            "resolved": "{ x: number; y: number; }",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "Position relative to the viewport where the menu should be displayed.\n\nIf not provided, the menu will be positioned automatically based on the host element.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{{ x: number; y: number } | null}"
+            },
+            {
+              "name": "default",
+              "text": "null"
+            }
+          ],
+          "default": "null",
+          "values": [
+            {
+              "type": "{ x: number; y: number; }"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "close",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event emitted when the menu is closed.",
+          "docsTags": [
+            {
+              "name": "event",
+              "text": "close"
+            }
+          ]
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ui-icon"
+      ],
+      "dependencyGraph": {
+        "ui-menu": [
+          "ui-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-modal/ui-modal.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-modal",
+      "readme": "# ui-modal\n\n\n",
+      "docs": "`ui-modal` is a component for rendering a modal dialog.\nIt supports opening and closing the modal, and allows for custom header and footer content.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "footerSlotName",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "footer-slot-name",
+          "reflectToAttr": false,
+          "docs": "The name of the slot for the footer content.\nThis allows for custom footer content to be passed into the modal.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{string}"
+            },
+            {
+              "name": "default",
+              "text": "'footer-slot'"
+            }
+          ],
+          "default": "'footer-slot'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "headerTitle",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "header-title",
+          "reflectToAttr": false,
+          "docs": "The title of the modal header.\nThis is displayed at the top of the modal.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{string}"
+            },
+            {
+              "name": "default",
+              "text": "undefined"
+            }
+          ],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": true,
+          "docs": "Indicates whether the modal is open or closed.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{boolean}"
+            },
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "closeModal",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "closeModal() => Promise<void>",
+          "parameters": [],
+          "docs": "Closes the modal dialog.\nThis method is called to hide the modal when the `open` property is set to false.\nIt uses the native `close` method of the HTMLDialogElement.",
+          "docsTags": []
+        },
+        {
+          "name": "showModal",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "showModal() => Promise<void>",
+          "parameters": [],
+          "docs": "Opens the modal dialog.\nThis method is called to display the modal when the `open` property is set to true.\nIt uses the native `showModal` method of the HTMLDialogElement.",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "close",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event emitted when the modal is closed.",
+          "docsTags": [
+            {
+              "name": "event",
+              "text": "close"
+            }
+          ]
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ui-typography",
+        "ui-icon"
+      ],
+      "dependencyGraph": {
+        "ui-modal": [
+          "ui-typography",
+          "ui-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-select/ui-select.tsx",
+      "encapsulation": "none",
+      "tag": "ui-select",
+      "readme": "# ui-select\n\n\n",
+      "docs": "`ui-select` is a component for rendering a select dropdown.\nIt allows customization of the select element's ID and name.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "fieldId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "field-id",
+          "reflectToAttr": false,
+          "docs": "The ID of the select element",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the select element",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-table"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-table": [
+          "ui-select"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-sidebar/ui-sidebar.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-sidebar",
+      "readme": "# ui-sidebar\n\n\n",
+      "docs": "`ui-sidebar` is a component for rendering a sidebar navigation.\nIt supports toggling open/closed state and displaying a list of items.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "items",
+          "type": "UISidebarItem[]",
+          "complexType": {
+            "original": "UISidebarItem[]",
+            "resolved": "UISidebarItem[]",
+            "references": {
+              "UISidebarItem": {
+                "location": "import",
+                "path": "./ui-sidebar.types",
+                "id": "src/components/ui-sidebar/ui-sidebar.types.ts::UISidebarItem"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "items",
+          "reflectToAttr": false,
+          "docs": "The items to display in the sidebar.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{UISidebarItem[]}"
+            },
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "UISidebarItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": true,
+          "docs": "Indicates whether the sidebar is open or closed.",
+          "docsTags": [
+            {
+              "name": "type",
+              "text": "{boolean}"
+            },
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ui-icon",
+        "ui-logo",
+        "ui-button"
+      ],
+      "dependencyGraph": {
+        "ui-sidebar": [
+          "ui-icon",
+          "ui-logo",
+          "ui-button"
+        ],
+        "ui-button": [
+          "ui-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-tab/ui-tab.tsx",
+      "encapsulation": "none",
+      "tag": "ui-tab",
+      "readme": "# ui-tab-panel\n\n\n",
+      "docs": "`ui-tab` is a component for rendering a tab within a tab context.\nIt allows users to switch between different content panels.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "label",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "the label of the tab, displayed in the tab list.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "the value of the tab, used to identify it within the tab context.\nThis should match the value of the corresponding `ui-tab-panel` component.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "tabChange",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: string }",
+            "resolved": "{ value: string; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event emitted when the tab is clicked, providing the value of the tab.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-tab/ui-tab-context.tsx",
+      "encapsulation": "none",
+      "tag": "ui-tab-context",
+      "readme": "# ui-tab-panel\n\n\n",
+      "docs": "`ui-tab-context` is a component that provides a context for tab navigation.\nIt allows for managing the active tab and emits events when tabs are changed.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "The value of the tab context, used to identify the active tab.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "tabChange",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: string }",
+            "resolved": "{ value: string; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Event emitted when a `ui-tab` is clicked, providing the value of the tab.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-tab/ui-tab-list.tsx",
+      "encapsulation": "none",
+      "tag": "ui-tab-list",
+      "readme": "# ui-tab-panel\n\n\n",
+      "docs": "`ui-tab-list` is a component for rendering a list of tabs.\nIt serves as a container for individual `ui-tab` components.",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-tab/ui-tab-panel.tsx",
+      "encapsulation": "none",
+      "tag": "ui-tab-panel",
+      "readme": "# ui-tab-panel\n\n\n",
+      "docs": "`ui-tab-panel` is a component for rendering a tab panel within a tab context.\nIt displays content associated with a specific tab.\nThe panel is shown when the corresponding tab is active.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "the value of the tab panel, used to identify it within the tab context.\nThis should match the value of the corresponding `ui-tab` component.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-table/ui-table.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-table",
+      "readme": "# ui-table\n\n\n",
+      "docs": "`ui-table` is a component for rendering a table with customizable columns and rows.\nIt supports various cell types including text, links, buttons, inputs, and selects.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "columns",
+          "type": "UITableColumn[]",
+          "complexType": {
+            "original": "UITableColumn[]",
+            "resolved": "UITableColumn[]",
+            "references": {
+              "UITableColumn": {
+                "location": "import",
+                "path": "./ui-table.types",
+                "id": "src/components/ui-table/ui-table.types.tsx::UITableColumn"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "columns",
+          "reflectToAttr": false,
+          "docs": "An array of column definitions for the table.\nEach column is defined by a label and an optional alignment.\nAlignement can be 'left', 'center', or 'right'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "UITableColumn[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "maxHeight",
+          "type": "string",
+          "complexType": {
+            "original": "CSSStyleDeclaration['maxHeight']",
+            "resolved": "string",
+            "references": {
+              "CSSStyleDeclaration": {
+                "location": "global",
+                "id": "global::CSSStyleDeclaration"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "max-height",
+          "reflectToAttr": false,
+          "docs": "Maximum height of the table.\nThis can be set to a specific value like '400px' or '100%'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'100%'"
+            }
+          ],
+          "default": "'100%'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "maxWidth",
+          "type": "string",
+          "complexType": {
+            "original": "CSSStyleDeclaration['maxWidth']",
+            "resolved": "string",
+            "references": {
+              "CSSStyleDeclaration": {
+                "location": "global",
+                "id": "global::CSSStyleDeclaration"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "max-width",
+          "reflectToAttr": false,
+          "docs": "Optional properties to control the table's appearance.\nThese include maxWidth, maxHeight, and overflow styles.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'100%'"
+            }
+          ],
+          "default": "'100%'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "overflow",
+          "type": "string",
+          "complexType": {
+            "original": "CSSStyleDeclaration['overflow']",
+            "resolved": "string",
+            "references": {
+              "CSSStyleDeclaration": {
+                "location": "global",
+                "id": "global::CSSStyleDeclaration"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "overflow",
+          "reflectToAttr": false,
+          "docs": "Overflow style for the table.\nCan be set to 'auto', 'scroll', or 'hidden'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'auto'"
+            }
+          ],
+          "default": "'auto'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "rows",
+          "type": "UITableRow[]",
+          "complexType": {
+            "original": "UITableRow[]",
+            "resolved": "UITableRow[]",
+            "references": {
+              "UITableRow": {
+                "location": "import",
+                "path": "./ui-table.types",
+                "id": "src/components/ui-table/ui-table.types.tsx::UITableRow"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "rows",
+          "reflectToAttr": false,
+          "docs": "An array of row data for the table.\nEach row is an array of cells\nEach cell can by a text, link, button, input & select element.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "UITableRow[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "stickyHeader",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sticky-header",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "ui-typography",
+        "ui-button",
+        "ui-select",
+        "ui-input"
+      ],
+      "dependencyGraph": {
+        "ui-table": [
+          "ui-typography",
+          "ui-button",
+          "ui-select",
+          "ui-input"
+        ],
+        "ui-button": [
+          "ui-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-textarea/ui-textarea.tsx",
+      "encapsulation": "none",
+      "tag": "ui-textarea",
+      "readme": "# ui-textarea\n\n\n",
+      "docs": "`ui-textarea` is a component for rendering a textarea element.\nIt allows customization of the textarea's ID, name, value, and other attributes.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Whether the textarea is disabled, preventing user interaction.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "fieldId",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "field-id",
+          "reflectToAttr": false,
+          "docs": "The ID of the textarea, used for form submission and accessibility.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "Maximum number of characters allowed in the textarea.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "minlength",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "minlength",
+          "reflectToAttr": false,
+          "docs": "Minimum number of characters required in the textarea.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "Additional properties for the textarea element.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Placeholder text displayed when the textarea is empty.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "readOnly",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "read-only",
+          "reflectToAttr": false,
+          "docs": "Whether the textarea is read-only, preventing user input but allowing selection.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "Whether the textarea is required for form submission.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "rows",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "rows",
+          "reflectToAttr": false,
+          "docs": "Number of rows in the textarea, controlling its height.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the textarea, used for form submission.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-tooltip/ui-tooltip.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-tooltip",
+      "readme": "# ui-tooltip\n\n\n",
+      "docs": "`ui-tooltip` is a component for rendering a tooltip that appears on hover.\nIt displays additional information when the user hovers over the component.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "text",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "text",
+          "reflectToAttr": false,
+          "docs": "The text to display in the tooltip.\nThis text will be shown when the user hovers over the component.",
+          "docsTags": [
+            {
+              "name": "example",
+              "text": "<ui-tooltip text=\"This is a tooltip!\"></ui-tooltip>"
+            }
+          ],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [
+        {
+          "event": "touchstart",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-typography/ui-typography.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-typography",
+      "readme": "# ui-typography\n\n\n",
+      "docs": "`ui-typography` is a component for rendering typography elements.\nIt supports different variants such as headings and paragraphs.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "variant",
+          "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\"",
+          "complexType": {
+            "original": "'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'",
+            "resolved": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\" | \"p\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "The variant of the typography element.\nCan be one of 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' or 'p'.",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'h1'"
+            }
+          ],
+          "default": "'h1'",
+          "values": [
+            {
+              "value": "h1",
+              "type": "string"
+            },
+            {
+              "value": "h2",
+              "type": "string"
+            },
+            {
+              "value": "h3",
+              "type": "string"
+            },
+            {
+              "value": "h4",
+              "type": "string"
+            },
+            {
+              "value": "h5",
+              "type": "string"
+            },
+            {
+              "value": "h6",
+              "type": "string"
+            },
+            {
+              "value": "p",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "ui-modal",
+        "ui-table"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "ui-modal": [
+          "ui-typography"
+        ],
+        "ui-table": [
+          "ui-typography"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/ui-xstack/ui-xstack.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-xstack",
+      "readme": "# ui-xstack\n\n\n",
+      "docs": "`ui-xstack` is a component for rendering a horizontal stack of elements.\nIt can be used to align items in a row with customizable spacing and alignment.",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/ui-ystack/ui-ystack.tsx",
+      "encapsulation": "shadow",
+      "tag": "ui-ystack",
+      "readme": "# ui-ystack\n\n\n",
+      "docs": "`ui-ystack` is a component for rendering a vertical stack of elements.\nIt can be used to align items in a column with customizable spacing and alignment.",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ],
+  "typeLibrary": {
+    "src/components/ui-icon/icons.ts::IconName": {
+      "declaration": "\"search\" | \"user\" | \"settings\" | \"notification\" | \"add\" | \"minus\" | \"edit\" | \"delete\" | \"arrow-left\" | \"arrow-right\" | \"menu\" | \"next-double-arrow\" | \"previous-double-arrow\" | \"close\"",
+      "docstring": "",
+      "path": "src/components/ui-icon/icons.ts"
+    },
+    "src/components/ui-icon/ui-icon.tsx::UIIcon": {
+      "declaration": "any",
+      "docstring": "",
+      "path": "src/components/ui-icon/ui-icon.tsx"
+    },
+    "src/components/ui-menu/ui-menu.types.ts::UIMenuItem": {
+      "declaration": "export interface UIMenuItem {\n  label: string;\n  id?: string;\n  icon?: IconName;\n  onClick?: (event: MouseEvent) => void;\n}",
+      "docstring": "",
+      "path": "src/components/ui-menu/ui-menu.types.ts"
+    },
+    "src/components/ui-sidebar/ui-sidebar.types.ts::UISidebarItem": {
+      "declaration": "export interface UISidebarItem {\n  label: string;\n  icon?: IconName;\n  active?: boolean;\n  onClick?: (event: MouseEvent) => void;\n}",
+      "docstring": "",
+      "path": "src/components/ui-sidebar/ui-sidebar.types.ts"
+    },
+    "src/components/ui-table/ui-table.types.tsx::UITableColumn": {
+      "declaration": "{\n  label: string;\n  align?: 'left' | 'center' | 'right';\n}",
+      "docstring": "",
+      "path": "src/components/ui-table/ui-table.types.tsx"
+    },
+    "src/components/ui-table/ui-table.types.tsx::UITableRow": {
+      "declaration": "interface Array<T> {\n    /**\n     * Gets or sets the length of the array. This is a number one higher than the highest index in the array.\n     */\n    length: number;\n    /**\n     * Returns a string representation of an array.\n     */\n    toString(): string;\n    /**\n     * Returns a string representation of an array. The elements are converted to string using their toLocaleString methods.\n     */\n    toLocaleString(): string;\n    /**\n     * Removes the last element from an array and returns it.\n     * If the array is empty, undefined is returned and the array is not modified.\n     */\n    pop(): T | undefined;\n    /**\n     * Appends new elements to the end of an array, and returns the new length of the array.\n     * @param items New elements to add to the array.\n     */\n    push(...items: T[]): number;\n    /**\n     * Combines two or more arrays.\n     * This method returns a new array without modifying any existing arrays.\n     * @param items Additional arrays and/or items to add to the end of the array.\n     */\n    concat(...items: ConcatArray<T>[]): T[];\n    /**\n     * Combines two or more arrays.\n     * This method returns a new array without modifying any existing arrays.\n     * @param items Additional arrays and/or items to add to the end of the array.\n     */\n    concat(...items: (T | ConcatArray<T>)[]): T[];\n    /**\n     * Adds all the elements of an array into a string, separated by the specified separator string.\n     * @param separator A string used to separate one element of the array from the next in the resulting string. If omitted, the array elements are separated with a comma.\n     */\n    join(separator?: string): string;\n    /**\n     * Reverses the elements in an array in place.\n     * This method mutates the array and returns a reference to the same array.\n     */\n    reverse(): T[];\n    /**\n     * Removes the first element from an array and returns it.\n     * If the array is empty, undefined is returned and the array is not modified.\n     */\n    shift(): T | undefined;\n    /**\n     * Returns a copy of a section of an array.\n     * For both start and end, a negative index can be used to indicate an offset from the end of the array.\n     * For example, -2 refers to the second to last element of the array.\n     * @param start The beginning index of the specified portion of the array.\n     * If start is undefined, then the slice begins at index 0.\n     * @param end The end index of the specified portion of the array. This is exclusive of the element at the index 'end'.\n     * If end is undefined, then the slice extends to the end of the array.\n     */\n    slice(start?: number, end?: number): T[];\n    /**\n     * Sorts an array in place.\n     * This method mutates the array and returns a reference to the same array.\n     * @param compareFn Function used to determine the order of the elements. It is expected to return\n     * a negative value if the first argument is less than the second argument, zero if they're equal, and a positive\n     * value otherwise. If omitted, the elements are sorted in ascending, ASCII character order.\n     * ```ts\n     * [11,2,22,1].sort((a, b) => a - b)\n     * ```\n     */\n    sort(compareFn?: (a: T, b: T) => number): this;\n    /**\n     * Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.\n     * @param start The zero-based location in the array from which to start removing elements.\n     * @param deleteCount The number of elements to remove.\n     * @returns An array containing the elements that were deleted.\n     */\n    splice(start: number, deleteCount?: number): T[];\n    /**\n     * Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.\n     * @param start The zero-based location in the array from which to start removing elements.\n     * @param deleteCount The number of elements to remove.\n     * @param items Elements to insert into the array in place of the deleted elements.\n     * @returns An array containing the elements that were deleted.\n     */\n    splice(start: number, deleteCount: number, ...items: T[]): T[];\n    /**\n     * Inserts new elements at the start of an array, and returns the new length of the array.\n     * @param items Elements to insert at the start of the array.\n     */\n    unshift(...items: T[]): number;\n    /**\n     * Returns the index of the first occurrence of a value in an array, or -1 if it is not present.\n     * @param searchElement The value to locate in the array.\n     * @param fromIndex The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0.\n     */\n    indexOf(searchElement: T, fromIndex?: number): number;\n    /**\n     * Returns the index of the last occurrence of a specified value in an array, or -1 if it is not present.\n     * @param searchElement The value to locate in the array.\n     * @param fromIndex The array index at which to begin searching backward. If fromIndex is omitted, the search starts at the last index in the array.\n     */\n    lastIndexOf(searchElement: T, fromIndex?: number): number;\n    /**\n     * Determines whether all the members of an array satisfy the specified test.\n     * @param predicate A function that accepts up to three arguments. The every method calls\n     * the predicate function for each element in the array until the predicate returns a value\n     * which is coercible to the Boolean value false, or until the end of the array.\n     * @param thisArg An object to which the this keyword can refer in the predicate function.\n     * If thisArg is omitted, undefined is used as the this value.\n     */\n    every<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): this is S[];\n    /**\n     * Determines whether all the members of an array satisfy the specified test.\n     * @param predicate A function that accepts up to three arguments. The every method calls\n     * the predicate function for each element in the array until the predicate returns a value\n     * which is coercible to the Boolean value false, or until the end of the array.\n     * @param thisArg An object to which the this keyword can refer in the predicate function.\n     * If thisArg is omitted, undefined is used as the this value.\n     */\n    every(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean;\n    /**\n     * Determines whether the specified callback function returns true for any element of an array.\n     * @param predicate A function that accepts up to three arguments. The some method calls\n     * the predicate function for each element in the array until the predicate returns a value\n     * which is coercible to the Boolean value true, or until the end of the array.\n     * @param thisArg An object to which the this keyword can refer in the predicate function.\n     * If thisArg is omitted, undefined is used as the this value.\n     */\n    some(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): boolean;\n    /**\n     * Performs the specified action for each element in an array.\n     * @param callbackfn  A function that accepts up to three arguments. forEach calls the callbackfn function one time for each element in the array.\n     * @param thisArg  An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.\n     */\n    forEach(callbackfn: (value: T, index: number, array: T[]) => void, thisArg?: any): void;\n    /**\n     * Calls a defined callback function on each element of an array, and returns an array that contains the results.\n     * @param callbackfn A function that accepts up to three arguments. The map method calls the callbackfn function one time for each element in the array.\n     * @param thisArg An object to which the this keyword can refer in the callbackfn function. If thisArg is omitted, undefined is used as the this value.\n     */\n    map<U>(callbackfn: (value: T, index: number, array: T[]) => U, thisArg?: any): U[];\n    /**\n     * Returns the elements of an array that meet the condition specified in a callback function.\n     * @param predicate A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.\n     * @param thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.\n     */\n    filter<S extends T>(predicate: (value: T, index: number, array: T[]) => value is S, thisArg?: any): S[];\n    /**\n     * Returns the elements of an array that meet the condition specified in a callback function.\n     * @param predicate A function that accepts up to three arguments. The filter method calls the predicate function one time for each element in the array.\n     * @param thisArg An object to which the this keyword can refer in the predicate function. If thisArg is omitted, undefined is used as the this value.\n     */\n    filter(predicate: (value: T, index: number, array: T[]) => unknown, thisArg?: any): T[];\n    /**\n     * Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.\n     * @param callbackfn A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array.\n     * @param initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.\n     */\n    reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T): T;\n    reduce(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue: T): T;\n    /**\n     * Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.\n     * @param callbackfn A function that accepts up to four arguments. The reduce method calls the callbackfn function one time for each element in the array.\n     * @param initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.\n     */\n    reduce<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;\n    /**\n     * Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.\n     * @param callbackfn A function that accepts up to four arguments. The reduceRight method calls the callbackfn function one time for each element in the array.\n     * @param initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.\n     */\n    reduceRight(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T): T;\n    reduceRight(callbackfn: (previousValue: T, currentValue: T, currentIndex: number, array: T[]) => T, initialValue: T): T;\n    /**\n     * Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.\n     * @param callbackfn A function that accepts up to four arguments. The reduceRight method calls the callbackfn function one time for each element in the array.\n     * @param initialValue If initialValue is specified, it is used as the initial value to start the accumulation. The first call to the callbackfn function provides this value as an argument instead of an array value.\n     */\n    reduceRight<U>(callbackfn: (previousValue: U, currentValue: T, currentIndex: number, array: T[]) => U, initialValue: U): U;\n\n    [n: number]: T;\n}",
+      "docstring": "",
+      "path": "src/components/ui-table/ui-table.types.tsx"
+    }
+  }
+}

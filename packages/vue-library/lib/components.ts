@@ -101,7 +101,10 @@ export const UiTab: StencilVueComponent<JSX.UiTab> = /*@__PURE__*/ defineContain
 
 
 export const UiTabContext: StencilVueComponent<JSX.UiTabContext> = /*@__PURE__*/ defineContainer<JSX.UiTabContext>('ui-tab-context', undefined, [
-  'value'
+  'value',
+  'tabChange'
+], [
+  'tabChange'
 ]);
 
 
