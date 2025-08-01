@@ -1,0 +1,13 @@
+import { Meta, Stories, Markdown, Heading, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as UIFieldset from "./ui-fieldset.stories";
+import FIELDSET_README from "./readme.md?raw";
+import FIELDSET_OPTION_README from "../ui-fieldset-option/readme.md?raw";
+
+<Meta of={UIFieldset} title="Components/Button" />
+
+<Heading>Example & Controls</Heading>
+<Canvas />
+<Controls />
+
+<Markdown>{FIELDSET_README}</Markdown>
+<Markdown>{FIELDSET_OPTION_README}</Markdown>

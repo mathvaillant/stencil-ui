@@ -1,0 +1,11 @@
+import { Meta, Stories, Markdown, Heading, Canvas, Controls } from "@storybook/addon-docs/blocks";
+import * as UITabs from "./ui-tabs.stories";
+import README from "./readme.md?raw";
+
+<Meta of={UITabs} title="Components/Tabs" />
+
+<Heading>Example & Controls</Heading>
+<Canvas />
+<Controls />
+
+<Markdown>{README}</Markdown>
