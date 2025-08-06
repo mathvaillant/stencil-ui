@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>UI Tabs E2E Testing</title>
+    
+    <!-- GEIST FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <script type="module" src="/build/core-library.esm.js"></script>
+    <script nomodule src="/build/core-library.js"></script>
+    <link rel="stylesheet" href="/build/core-library.css" />
+
+  </head>
+  <body>
+     <ui-tab-context value="1">
+      <ui-tab-list>
+        <ui-tab value="1" label="Tab 1"></ui-tab>
+        <ui-tab value="2" label="Tab 2"></ui-tab>
+        <ui-tab value="3" label="Tab 3"></ui-tab>
+        <ui-tab value="4" label="Tab 4"></ui-tab>
+        <ui-tab value="5" label="Tab 5"></ui-tab>
+      </ui-tab-list>
+      <ui-tab-panel value="1">Content for Tab 1</ui-tab-panel>
+      <ui-tab-panel value="2">Content for Tab 2</ui-tab-panel>
+      <ui-tab-panel value="3">Content for Tab 3</ui-tab-panel>
+      <ui-tab-panel value="4">Content for Tab 4</ui-tab-panel>
+      <ui-tab-panel value="5">Content for Tab 5</ui-tab-panel>
+     </ui-tab-context>
+  </body>
+</html>

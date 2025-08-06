@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
+
+    <!-- GEIST FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script type="module" src="/build/core-library.esm.js"></script>
+    <script nomodule src="/build/core-library.js"></script>
+    <link rel="stylesheet" href="/build/core-library.css" />
+  </head>
+  <body>
+    <body>
+      <ui-xstack style="justify-content: space-between">
+        <ui-menu>
+          <ui-button id="trigger">Menu Trigger</ui-button>
+        </ui-menu>
+      </ui-xstack>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const data = [
+            {
+              id: 'item1',
+              label: 'Item 1',
+              icon: 'notification',
+              onClick: event => console.log('Item 1 clicked'),
+            },
+            {
+              id: 'item2',
+              label: 'Item 2',
+              icon: 'settings',
+              onClick: event => console.log('Item 2 clicked'),
+            },
+            {
+              id: 'item3',
+              label: 'Item 3',
+              icon: 'delete',
+              onClick: event => console.log('Item 3 clicked'),
+            },
+            {
+              id: 'item4',
+              label: 'Item 4',
+              icon: 'edit',
+              onClick: event => console.log('Item 4 clicked'),
+            },
+            {
+              id: 'item5',
+              label: 'Item 5',
+              icon: 'menu',
+              onClick: event => console.log('Item 5 clicked'),
+            },
+          ];
+
+          const menu = document.querySelector('ui-menu');
+          const trigger = menu.querySelector('#trigger');
+          menu.data = data;
+          trigger.addEventListener('click', () => (menu.open = !menu.open));
+        });
+      </script>
+    </body>
+  </body>
+</html>

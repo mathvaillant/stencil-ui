@@ -38,14 +38,18 @@
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",
-    "test": "stencil test --spec --e2e",
-    "test.watch": "stencil test --spec --e2e --watchAll",
+    "test": "stencil test --spec",
+    "test.watch": "stencil test --spec --watchAll",
+    "test:e2e:ui": "npx playwright test --ui",
+    "test:e2e": "npx playwright test",
     "generate": "stencil generate",
     "storybook:dev": "npm run build && storybook dev -p 6006",
     "storybook:build": "npm run build && storybook build"
   },
   "devDependencies": {
+    "@playwright/test": "^1.54.2",
     "@stencil/core": "^4.27.1",
+    "@stencil/playwright": "^0.2.1",
     "@stencil/react-output-target": "^1.1.0",
     "@stencil/vue-output-target": "^0.10.8",
     "@storybook/addon-a11y": "^9.0.18",

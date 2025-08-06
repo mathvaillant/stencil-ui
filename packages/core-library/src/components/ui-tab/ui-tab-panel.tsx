@@ -59,6 +59,7 @@ export class UITabPanel {
         aria-labelledby={`tab-${this.contextId}-${this.value}`}
         aria-hidden={!isActive}
         hidden={!isActive}
+        class={{ active: isActive }}
       >
         <slot />
       </div>

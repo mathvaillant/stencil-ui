@@ -1,11 +1,45 @@
-import { newE2EPage } from '@stencil/core/testing';
+import { expect } from '@playwright/test';
+import { test } from '@stencil/playwright';
 
-describe('ui-tab', () => {
-  it('renders', async () => {
-    const page = await newE2EPage();
-    await page.setContent('<ui-tab></ui-tab>');
+const PAGE = '/components/ui-tab/test/ui-tab.e2e.html';
 
-    const element = await page.find('ui-tab');
-    expect(element).toHaveClass('hydrated');
+test.describe('Tabs Component', () => {
+  test.describe('Given a value 1 to the tab context', () => {
+    test('it should show the tab and panel with value 1 as active', async ({ page }) => {
+      await page.goto(PAGE);
+
+      const activeTab = page.locator('button[role="tab"].active');
+      const activePanel = page.locator('div[role="tabpanel"].active');
+
+      const activeTabId = await activeTab.getAttribute('id');
+      const activePanelId = await activePanel.getAttribute('id');
+
+      expect(await activeTab.isVisible()).toBeTruthy();
+      expect(await activeTab.textContent()).toBe('Tab 1');
+      expect(await activeTab.getAttribute('aria-selected')).not.toBeNull();
+      expect(await activeTab.getAttribute('aria-controls')).toBe(activePanelId);
+
+      expect(await activePanel.isVisible()).toBeTruthy();
+      expect(await activePanel.textContent()).toBe('Content for Tab 1');
+      expect(await activePanel.getAttribute('aria-labelledby')).toBe(activeTabId);
+      expect(await activePanel.getAttribute('aria-hidden')).toBeFalsy();
+    });
+
+    test.describe('When clicking on Tab 2', () => {
+      test('it should update the active tab and panel to Tab 2', async ({ page }) => {
+        await page.goto(PAGE);
+
+        const tab2 = page.locator('button[role="tab"]').nth(1);
+        await tab2.click();
+
+        const activeTab = page.locator('button[role="tab"].active');
+        const activePanel = page.locator('div[role="tabpanel"].active');
+
+        expect(await activeTab.textContent()).toBe('Tab 2');
+        expect(await activePanel.textContent()).toBe('Content for Tab 2');
+        expect(await activeTab.getAttribute('aria-selected')).not.toBeNull();
+        expect(await activePanel.getAttribute('aria-hidden')).toBeFalsy();
+      });
+    });
   });
 });
