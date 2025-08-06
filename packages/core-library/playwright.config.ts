@@ -3,4 +3,6 @@ import { matchers, createConfig } from '@stencil/playwright';
 
 expect.extend(matchers);
 
-export default createConfig({});
+export default createConfig({
+  reporter: [['html', { open: 'always' }]],
+});
