@@ -15,6 +15,8 @@
     border: var(--ui-border-small) solid var(--ui-table-border-color);
     padding: var(--ui-padding-large) var(--ui-padding-xlarge);
     vertical-align: middle;
+    font-family: var(--ui-font-family);
+    color: var(--ui-label-color);
   }
 
   thead {

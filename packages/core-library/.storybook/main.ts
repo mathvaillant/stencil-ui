@@ -13,8 +13,8 @@ const config: StorybookConfig = {
   stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   staticDirs: [
     {
-      from: '../www/build/core-library.css',
-      to: '/core-library.css',
+      from: '../www/build/stencil-ui-core-library.css',
+      to: '/stencil-ui-core-library.css',
     },
   ],
   addons: [

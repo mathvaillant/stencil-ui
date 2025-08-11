@@ -3,7 +3,7 @@ import "./assets/main.css";
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";
-import { ComponentLibrary } from "vue-library";
+import { ComponentLibrary } from "stencil-ui-vue-library";
 
 const app = createApp(App);
 

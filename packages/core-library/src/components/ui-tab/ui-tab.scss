@@ -19,6 +19,7 @@ ui-tab-list > div {
       border: var(--ui-border-small) solid transparent;
       padding-block: var(--ui-padding-medium);
       border-radius: var(--ui-radius-small);
+      color: var(--ui-label-color);
 
       &:focus-within,
       &:hover,

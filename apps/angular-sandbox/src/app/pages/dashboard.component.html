@@ -1,0 +1,110 @@
+<ui-xstack style="padding:20px; width:100%">
+  <ui-ystack style="width:100%; gap:20px">
+    <ui-typography>Dashboard Page</ui-typography>
+
+    <ui-tab-context value="table">
+      <ui-tab-list>
+        <ui-tab label="Table" value="table"></ui-tab>
+        <ui-tab label="Form" value="form"></ui-tab>
+      </ui-tab-list>
+
+      <ui-tab-panel value="table">
+        <ui-xstack style="padding-block:20px; width:100%">
+          <ui-table
+            style="width:100%; max-height:80vh"
+            sticky-header
+            [columns]="tableColumns"
+            [rows]="tableRows"
+          ></ui-table>
+        </ui-xstack>
+      </ui-tab-panel>
+
+      <ui-tab-panel value="form">
+        <ui-xstack style="padding-block:20px; width:100%">
+          <form #formRef (submit)="submitForm($event)" style="display:flex; flex-direction:column; gap:16px; width:100%">
+            <ui-ystack>
+              <ui-label htmlFor="012">Cover Letter</ui-label>
+              <ui-textarea
+                required
+                fieldId="012"
+                name="cover-letter"
+                placeholder="Write about yourself..."
+                [maxlength]="500"
+                [minlength]="50"
+                rows="5"
+              ></ui-textarea>
+            </ui-ystack>
+
+            <ui-ystack>
+              <ui-label htmlFor="123">Name</ui-label>
+              <ui-input required fieldId="123" name="name" type="text" autocomplete="name" placeholder="Enter your name"></ui-input>
+            </ui-ystack>
+
+            <ui-ystack>
+              <ui-label htmlFor="456">Email</ui-label>
+              <ui-input required fieldId="456" name="email" type="email" autocomplete="email" placeholder="Enter your email"></ui-input>
+            </ui-ystack>
+
+            <ui-ystack>
+              <ui-label htmlFor="567">Birthday</ui-label>
+              <ui-input required fieldId="567" name="birthday" type="date" placeholder="Enter your birthday"></ui-input>
+            </ui-ystack>
+
+            <ui-ystack>
+              <ui-label htmlFor="678">Stack</ui-label>
+              <ui-select fieldId="678" name="stack">
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">Fullstack</option>
+              </ui-select>
+            </ui-ystack>
+
+            <ui-fieldset>
+              <ui-label as="legend">I agree to the terms and conditions</ui-label>
+              <ui-fieldset-option type="radio" name="terms" label="Yes" value="agree"></ui-fieldset-option>
+              <ui-fieldset-option type="radio" name="terms" label="No" value="disagree"></ui-fieldset-option>
+            </ui-fieldset>
+
+            <ui-fieldset>
+              <ui-label as="legend">Languages</ui-label>
+              <ui-fieldset-option type="checkbox" name="can-speak-english" label="English" value="english"></ui-fieldset-option>
+              <ui-fieldset-option type="checkbox" name="can-speak-spanish" label="Spanish" value="spanish"></ui-fieldset-option>
+              <ui-fieldset-option type="checkbox" name="can-speak-french" label="French" value="french"></ui-fieldset-option>
+            </ui-fieldset>
+
+            <ui-xstack style="justify-content:end; gap:8px">
+              <ui-button variant="tertiary" type="reset">Reset</ui-button>
+              <ui-button type="submit">Submit</ui-button>
+            </ui-xstack>
+          </form>
+        </ui-xstack>
+      </ui-tab-panel>
+    </ui-tab-context>
+  </ui-ystack>
+</ui-xstack>
+
+<ui-modal
+  [open]="formData"
+  header-title="Form Data"
+  (close)="closeModal()"
+  footer-slot-name="footer-slot"
+>
+  <ui-xstack style="padding:20px" *ngIf="formData">
+    <ui-ystack style="gap:20px">
+      <ui-typography variant="h5">Cover Letter: {{ formData['cover-letter'] }}</ui-typography>
+      <ui-typography variant="h5">Name: {{ formData.name }}</ui-typography>
+      <ui-typography variant="h5">Email: {{ formData.email }}</ui-typography>
+      <ui-typography variant="h5">Birthday: {{ formData.birthday }}</ui-typography>
+      <ui-typography variant="h5">Stack: {{ formData.stack }}</ui-typography>
+      <ui-typography variant="h5">Terms: {{ formData.terms }}</ui-typography>
+      <ui-typography variant="h5" style="text-transform:capitalize">
+        Languages: {{ selectedLanguages }}
+      </ui-typography>
+    </ui-ystack>
+  </ui-xstack>
+
+  <ui-xstack slot="footer-slot" style="justify-content:end; padding:10px">
+    <ui-button variant="secondary" (click)="closeModal()">Close</ui-button>
+    <ui-button (click)="finalSubmit()">Submit</ui-button>
+  </ui-xstack>
+</ui-modal>

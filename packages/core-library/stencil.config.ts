@@ -4,7 +4,7 @@ import { reactOutputTarget } from '@stencil/react-output-target';
 import { vueOutputTarget } from '@stencil/vue-output-target';
 
 export const config: Config = {
-  namespace: 'core-library',
+  namespace: 'stencil-ui-core-library',
   globalStyle: 'src/global.css',
   plugins: [sass()],
   devServer: {
@@ -24,7 +24,7 @@ export const config: Config = {
       outDir: '../react-library/lib/components',
     }),
     vueOutputTarget({
-      componentCorePackage: 'core-library',
+      componentCorePackage: 'stencil-ui-core-library',
       proxiesFile: '../vue-library/lib/components.ts',
     }),
     {

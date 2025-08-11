@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+
+		<!-- LOCAL -->
+		<!-- <script type="module" src="http://localhost:3333/build/stencil-ui-core-library.esm.js"></script>
+		<link rel="stylesheet" href="http://localhost:3333/build/stencil-ui-core-library.css"/> -->
+
+		<!-- DEPLOYED -->
+		<script type="module" src="https://unpkg.com/stencil-ui-core-library@1.0.1"></script>
+		
+		<link rel="stylesheet" href="./src/style.css" />
+		<link rel="icon" type="image/svg+xml" href="/ts.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- GEIST FONT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>TypeScript</title>
+	</head>
+	<body>
+		<div id="app">
+			<ui-xstack style="align-items: start">
+				<ui-sidebar></ui-sidebar>
+
+				<ui-xstack style="padding: 20px; width: 100%">
+					<ui-ystack style="width: 100%; gap: 20px">
+						<ui-typography>Dashboard Page</ui-typography>
+
+						<ui-tab-context value="table">
+							<ui-tab-list>
+								<ui-tab label="Table" value="table"></ui-tab>
+								<ui-tab label="Form" value="form"></ui-tab>
+							</ui-tab-list>
+
+							<ui-tab-panel value="table">
+								<ui-xstack
+									style="padding-block: 20px; width: 100%"
+								>
+									<ui-table
+										style="width: 100%; max-height: 80vh"
+										sticky-header
+										columns=""
+										rows=""
+									></ui-table>
+								</ui-xstack>
+							</ui-tab-panel>
+
+							<ui-tab-panel value="form">
+								<ui-xstack
+									style="padding-block: 20px; width: 100%"
+								>
+									<form
+										style="
+											display: flex;
+											flex-direction: column;
+											gap: 16px;
+											width: 100%;
+										"
+									>
+										<ui-ystack>
+											<ui-label htmlFor="012"
+												>Cover Letter</ui-label
+											>
+											<ui-textarea
+												required
+												fieldId="012"
+												name="cover-letter"
+												placeholder="Write about yourself..."
+												maxlength="500"
+												minlength="50"
+												rows="5"
+											></ui-textarea>
+										</ui-ystack>
+
+										<ui-ystack>
+											<ui-label htmlFor="123"
+												>Name</ui-label
+											>
+											<ui-input
+												required
+												fieldId="123"
+												name="name"
+												type="text"
+												autocomplete="name"
+												placeholder="Enter your name"
+											></ui-input>
+										</ui-ystack>
+
+										<ui-ystack>
+											<ui-label htmlFor="456"
+												>Email</ui-label
+											>
+											<ui-input
+												required
+												fieldId="456"
+												name="email"
+												type="email"
+												autocomplete="email"
+												placeholder="Enter your email"
+											></ui-input>
+										</ui-ystack>
+
+										<ui-ystack>
+											<ui-label htmlFor="567"
+												>Birthday</ui-label
+											>
+											<ui-input
+												required
+												fieldId="567"
+												name="birthday"
+												type="date"
+												placeholder="Enter your birthday"
+											></ui-input>
+										</ui-ystack>
+
+										<ui-ystack>
+											<ui-label htmlFor="678"
+												>Stack</ui-label
+											>
+											<ui-select
+												fieldId="678"
+												name="stack"
+											>
+												<option value="frontend">
+													Frontend
+												</option>
+												<option value="backend">
+													Backend
+												</option>
+												<option value="fullstack">
+													Fullstack
+												</option>
+											</ui-select>
+										</ui-ystack>
+
+										<ui-fieldset>
+											<ui-label as="legend"
+												>I agree to the terms and
+												conditions</ui-label
+											>
+											<ui-fieldset-option
+												type="radio"
+												name="terms"
+												label="Yes"
+												value="agree"
+											></ui-fieldset-option>
+											<ui-fieldset-option
+												type="radio"
+												name="terms"
+												label="No"
+												value="disagree"
+											></ui-fieldset-option>
+										</ui-fieldset>
+
+										<ui-fieldset>
+											<ui-label as="legend"
+												>Languages</ui-label
+											>
+											<ui-fieldset-option
+												type="checkbox"
+												name="can-speak-english"
+												label="English"
+												value="english"
+											></ui-fieldset-option>
+											<ui-fieldset-option
+												type="checkbox"
+												name="can-speak-spanish"
+												label="Spanish"
+												value="spanish"
+											></ui-fieldset-option>
+											<ui-fieldset-option
+												type="checkbox"
+												name="can-speak-french"
+												label="French"
+												value="french"
+											></ui-fieldset-option>
+										</ui-fieldset>
+
+										<ui-xstack
+											style="
+												justify-content: end;
+												gap: 8px;
+											"
+										>
+											<ui-button
+												variant="tertiary"
+												type="reset"
+												>Reset</ui-button
+											>
+											<ui-button type="submit"
+												>Submit</ui-button
+											>
+										</ui-xstack>
+									</form>
+								</ui-xstack>
+							</ui-tab-panel>
+						</ui-tab-context>
+					</ui-ystack>
+				</ui-xstack>
+
+				<ui-modal
+					header-title="Form Data"
+					footer-slot-name="footer-slot"
+				>
+					<ui-xstack style="padding: 20px">
+						<ui-ystack style="gap: 20px">
+							<ui-typography class="cover-letter" variant="h5">Cover Letter:</ui-typography>
+							<ui-typography class="name" variant="h5">Name:</ui-typography>
+							<ui-typography class="email" variant="h5">Email:</ui-typography>
+							<ui-typography class="birthday" variant="h5">Birthday:</ui-typography>
+							<ui-typography class="stack" variant="h5">Stack:</ui-typography>
+							<ui-typography class="terms" variant="h5">Terms:</ui-typography>
+							<ui-typography class="languages" variant="h5" style="text-transform: capitalize">Languages:</ui-typography>
+						</ui-ystack>
+					</ui-xstack>
+
+					<ui-xstack
+						slot="footer-slot"
+						style="justify-content: end; padding: 10px"
+					>
+						<ui-button id="close-modal" variant="secondary">Close</ui-button>
+						<ui-button id="submit-modal">Submit</ui-button>
+					</ui-xstack>
+				</ui-modal>
+			</ui-xstack>
+
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+					const items = [
+						{
+							label: "Home",
+							icon: "menu",
+							active: window.location.pathname === "/",
+							onClick: () => (window.location.href = "/"),
+						},
+						{
+							label: "Dashboard",
+							icon: "user",
+							active: window.location.pathname === "/dashboard",
+							onClick: () =>
+								(window.location.href = "/dashboard"),
+						},
+					];
+
+					const sidebar = document.querySelector("ui-sidebar");
+					sidebar.items = items;
+
+					const form = document.querySelector("form");
+					const modal = document.querySelector("ui-modal");
+					const table = document.querySelector("ui-table");
+					const tabContext = document.querySelector("ui-tab-context");
+					const closeModalButton = document.getElementById("close-modal");
+					const submitModalButton = document.getElementById("submit-modal");
+
+					table.columns = [
+						{ label: "Name", align: "left" },
+						{ label: "Email", align: "left" },
+						{ label: "Status", align: "center" },
+						{ label: "Actions", align: "center" },
+						{ label: "Input", align: "right" },
+						{ label: "Link", align: "right" },
+						{ label: "Delete", align: "right" },
+					];
+					table.rows = [
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Alice",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "alice@example.com",
+							},
+							{
+								type: "select",
+								selectedValue: "active",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "pending",
+										label: "Pending",
+									},
+								],
+								onChange: (val) =>
+									console.log("Alice status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Edit",
+								onClick: () => alert("Edit Alice"),
+							},
+							{
+								type: "input",
+								inputType: "text",
+								value: "Alice input",
+								placeholder: "Edit...",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Profile",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Alice"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Bob",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "bob@example.com",
+							},
+							{
+								type: "select",
+								selectedValue: "inactive",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "pending",
+										label: "Pending",
+									},
+								],
+								onChange: (val) =>
+									console.log("Bob status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Delete",
+								onClick: () => alert("Delete Bob"),
+							},
+							{
+								type: "input",
+								inputType: "email",
+								value: "",
+								placeholder: "bob@domain.com",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Details",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Bob"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Charlie",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "charlie@example.com",
+							},
+							{
+								type: "select",
+								selectedValue: "pending",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "pending",
+										label: "Pending",
+									},
+								],
+								onChange: (val) =>
+									console.log(
+										"Charlie status changed to",
+										val
+									),
+							},
+							{
+								type: "button",
+								text: "Ban",
+								onClick: () => alert("Ban Charlie"),
+							},
+							{
+								type: "input",
+								inputType: "password",
+								value: "",
+								placeholder: "Enter password",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Visit",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Charlie"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "subtitle",
+								text: "Diana",
+							},
+							{
+								type: "typography",
+								variant: "caption",
+								text: "diana@example.com",
+							},
+							{
+								type: "select",
+								name: "status-diana",
+								selectedValue: "active",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+								],
+								onChange: (val) =>
+									console.log("Diana status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Promote",
+								onClick: () => alert("Promote Diana"),
+							},
+							{
+								type: "input",
+								inputType: "search",
+								value: "",
+								placeholder: "Search...",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Reports",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Diana"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Eve",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "eve@example.com",
+							},
+							{
+								type: "select",
+								name: "status-eve",
+								selectedValue: "inactive",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "banned",
+										label: "Banned",
+									},
+								],
+								onChange: (val) =>
+									console.log("Eve status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Warn",
+								onClick: () => alert("Warn Eve"),
+							},
+							{
+								type: "input",
+								inputType: "number",
+								value: "123",
+								placeholder: "Enter ID",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Audit Log",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Eve"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "title",
+								text: "Frank",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "frank@example.com",
+							},
+							{
+								type: "select",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+								],
+								onChange: (val) =>
+									console.log("Frank status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Suspend",
+								onClick: () => alert("Suspend Frank"),
+							},
+							{
+								type: "input",
+								inputType: "url",
+								value: "",
+								placeholder: "Enter URL",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Website",
+								href: "https://example.com",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Frank"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Alice",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "alice@example.com",
+							},
+							{
+								type: "select",
+								name: "status-alice",
+								selectedValue: "active",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "pending",
+										label: "Pending",
+									},
+								],
+								onChange: (val) =>
+									console.log("Alice status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Edit",
+								onClick: () => alert("Edit Alice"),
+							},
+							{
+								type: "input",
+								inputType: "text",
+								value: "Alice input",
+								placeholder: "Edit...",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Profile",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Alice"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Bob",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "bob@example.com",
+							},
+							{
+								type: "select",
+								name: "status-bob",
+								selectedValue: "inactive",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "pending",
+										label: "Pending",
+									},
+								],
+								onChange: (val) =>
+									console.log("Bob status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Delete",
+								onClick: () => alert("Delete Bob"),
+							},
+							{
+								type: "input",
+								inputType: "email",
+								value: "",
+								placeholder: "bob@domain.com",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Details",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Bob"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Charlie",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "charlie@example.com",
+							},
+							{
+								type: "select",
+								name: "status-charlie",
+								selectedValue: "pending",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "pending",
+										label: "Pending",
+									},
+								],
+								onChange: (val) =>
+									console.log(
+										"Charlie status changed to",
+										val
+									),
+							},
+							{
+								type: "button",
+								text: "Ban",
+								onClick: () => alert("Ban Charlie"),
+							},
+							{
+								type: "input",
+								inputType: "password",
+								value: "",
+								placeholder: "Enter password",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Visit",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Charlie"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "subtitle",
+								text: "Diana",
+							},
+							{
+								type: "typography",
+								variant: "caption",
+								text: "diana@example.com",
+							},
+							{
+								type: "select",
+								name: "status-diana",
+								selectedValue: "active",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+								],
+								onChange: (val) =>
+									console.log("Diana status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Promote",
+								onClick: () => alert("Promote Diana"),
+							},
+							{
+								type: "input",
+								inputType: "search",
+								value: "",
+								placeholder: "Search...",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Reports",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Diana"),
+							},
+						],
+						[
+							{
+								type: "typography",
+								variant: "p",
+								text: "Eve",
+							},
+							{
+								type: "typography",
+								variant: "p",
+								text: "eve@example.com",
+							},
+							{
+								type: "select",
+								name: "status-eve",
+								selectedValue: "inactive",
+								options: [
+									{
+										value: "active",
+										label: "Active",
+									},
+									{
+										value: "inactive",
+										label: "Inactive",
+									},
+									{
+										value: "banned",
+										label: "Banned",
+									},
+								],
+								onChange: (val) =>
+									console.log("Eve status changed to", val),
+							},
+							{
+								type: "button",
+								text: "Warn",
+								onClick: () => alert("Warn Eve"),
+							},
+							{
+								type: "input",
+								inputType: "number",
+								value: "123",
+								placeholder: "Enter ID",
+								onInput: (e) =>
+									console.log(
+										"Input changed:",
+										e.target.value
+									),
+							},
+							{
+								type: "link",
+								text: "Audit Log",
+								href: "#",
+							},
+							{
+								type: "button",
+								text: "",
+								variant: "secondary",
+								iconName: "delete",
+								onClick: () => alert("Delete Eve"),
+							},
+						],
+					];
+
+
+					form.addEventListener('submit', (e) => {
+						e.preventDefault();
+						const formData = new FormData(form);
+						const data = Object.fromEntries(formData.entries());
+
+						// Show modal with form data
+						modal.querySelector('.cover-letter').textContent = "Cover Letter:" + data['cover-letter'] || 'N/A';
+						modal.querySelector('.name').textContent = "Name:" + data.name || 'N/A';
+						modal.querySelector('.email').textContent = "Email:" + data.email || 'N/A';
+						modal.querySelector('.birthday').textContent = "Birthday:" + data.birthday || 'N/A';
+						modal.querySelector('.stack').textContent = "Stack:" + data.stack || 'N/A';
+						modal.querySelector('.terms').textContent = "Terms:" + data.terms || 'N/A';
+						const languages = [];
+						if (data['can-speak-english']) languages.push('English');
+						if (data['can-speak-spanish']) languages.push('Spanish');
+						if (data['can-speak-french']) languages.push('French');
+						modal.querySelector('.languages').textContent = "Languages:" + (languages.length ? languages.join(', ') : 'N/A');
+
+						modal.showModal();
+					});
+				
+					closeModalButton.addEventListener('click', () => {
+						form.reset();
+						modal.closeModal();
+					});
+
+					submitModalButton.addEventListener('click', () => {
+						const formData = new FormData(form);
+						const data = Object.fromEntries(formData.entries());
+						console.log('Form submitted with data:', data);
+						modal.closeModal();
+					});
+				});
+			</script>
+		</div>
+	</body>
+</html>

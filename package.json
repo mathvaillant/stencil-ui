@@ -1,8 +1,4 @@
 {
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "packageManager": "npm@8.5.0",
   "devDependencies": {
     "@types/node": "^24.0.4",

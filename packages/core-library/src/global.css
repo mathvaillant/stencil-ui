@@ -1,4 +1,5 @@
-:root, :host {
+:root,
+:host {
   --ui-font-family: 'Geist', sans-serif;
 
   --ui-space-xsmall: 2px;
@@ -52,7 +53,38 @@
   --ui-tab-active-background: #ffffff;
   --ui-tab-border-color: #d7d7d7;
 
-  --ui-table-border-color:#e0e0e0;
-  --ui-table-thead-background:#f9f9f9;
-  --ui-table-row-hover-background: #f1f1f1;  
+  --ui-table-border-color: #e0e0e0;
+  --ui-table-thead-background: #f9f9f9;
+  --ui-table-row-hover-background: #f1f1f1;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #121212;
+  }
+
+  :root,
+  :host {
+    --ui-label-color: #ffffff;
+    --ui-secondary-background: #1e1e1e;
+
+    --ui-tooltip-background: #333333;
+    --ui-tooltip-text-color: #ffffff;
+
+    --ui-menu-background: #1e1e1e;
+
+    --ui-sidebar-background: #1e1e1e;
+
+    --ui-modal-background: #1e1e1e;
+
+    --ui-border-color: #444444;
+
+    --ui-tab-background: #2c2c2c;
+    --ui-tab-active-background: #3c3c3c;
+    --ui-tab-border-color: #555555;
+
+    --ui-table-border-color: #444444;
+    --ui-table-thead-background: #2c2c2c;
+    --ui-table-row-hover-background: #333333;
+  }
 }

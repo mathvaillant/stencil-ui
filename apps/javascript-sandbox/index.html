@@ -1,14 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <script type="module" src="http://localhost:3333/build/core-library.esm.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<!-- LOCAL -->
+		<!-- <script type="module" src="http://localhost:3333/build/stencil-ui-core-library.esm.js"></script>
+		<link rel="stylesheet" href="http://localhost:3333/build/stencil-ui-core-library.css"/> -->
+
+		<!-- DEPLOYED -->
+		<script type="module" src="https://unpkg.com/stencil-ui-core-library@1.0.1"></script>
+
+		<link rel="stylesheet" href="./src/style.css"/>
+		<link rel="icon" type="image/svg+xml" href="/ts.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- GEIST FONT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>TypeScript</title>
+	</head>
+	<body>
+		<div id="app">
+			<ui-xstack style="align-items: start;">
+				<ui-sidebar></ui-sidebar>
+
+				<ui-ystack style="padding: 20px;">
+					<ui-typography>TypeScript Sandbox</ui-typography>
+					<ui-typography variant="p">
+						Welcome to the TypeScript Sandbox! This is a playground for testing
+						and experimenting with various components and features.
+					</ui-typography>
+				</ui-ystack> 
+			</ui-xstack> 
+
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+					const items = [
+						{
+							label: "Home",
+							icon: "menu",
+							active: window.location.pathname === "/",
+							onClick: () => window.location.href = "/",
+						},
+						{
+							label: "Dashboard",
+							icon: "user",
+							active: window.location.pathname === "/dashboard",
+							onClick: () => window.location.href = "/dashboard",
+						},
+					];
+
+					const sidebar = document.querySelector("ui-sidebar");
+					sidebar.items = items;
+				});
+			</script>
+		</div>
+	</body>
 </html>

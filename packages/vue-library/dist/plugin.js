@@ -1,4 +1,4 @@
-import { defineCustomElements } from "core-library/loader";
+import { defineCustomElements } from "stencil-ui-core-library/loader";
 export const ComponentLibrary = {
     async install() {
         defineCustomElements();

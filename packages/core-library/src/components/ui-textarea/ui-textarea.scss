@@ -2,6 +2,8 @@ ui-textarea textarea {
   box-sizing: border-box;
   border: var(--ui-border-small) solid var(--ui-border-color);
   border-radius: var(--ui-radius-small);
+  background-color: var(--ui-secondary-background);
+  color: var(--ui-label-color);
   padding: var(--ui-padding-medium);
   outline: none;
   width: 100%;

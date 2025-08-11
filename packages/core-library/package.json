@@ -1,17 +1,17 @@
 {
-  "name": "core-library",
-  "version": "0.0.1",
+  "name": "stencil-ui-core-library",
+  "version": "1.0.2",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/core-library/core-library.esm.js",
+  "unpkg": "dist/stencil-ui-core-library/stencil-ui-core-library.esm.js",
   "exports": {
     ".": {
-      "import": "./dist/core-library/core-library.esm.js",
-      "require": "./dist/core-library/core-library.cjs.js"
+      "import": "./dist/stencil-ui-core-library/stencil-ui-core-library.esm.js",
+      "require": "./dist/stencil-ui-core-library/stencil-ui-core-library.cjs.js"
     },
     "./dist/*": {
       "import": "./dist/*",

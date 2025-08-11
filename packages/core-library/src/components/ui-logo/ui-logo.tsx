@@ -1,4 +1,4 @@
-import { Component, getAssetPath, h, Prop } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 
 /**
  * `ui-logo` is a component for rendering a logo image.
@@ -8,9 +8,10 @@ import { Component, getAssetPath, h, Prop } from '@stencil/core';
   tag: 'ui-logo',
   styleUrl: 'ui-logo.scss',
   shadow: true,
-  assetsDirs: ['assets'],
 })
 export class UILogo {
+  private darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
   /**
    * The width of the logo image.
    * Default is 100 pixels.
@@ -23,14 +24,28 @@ export class UILogo {
    */
   @Prop() height?: HTMLImageElement['height'] = 100;
 
+  @State() isDarkMode = false;
+
+  componentWillLoad() {
+    this.isDarkMode = this.darkModeQuery.matches;
+    this.darkModeQuery.addEventListener('change', this.handleColorSchemeChange);
+  }
+
+  disconnectedCallback() {
+    this.darkModeQuery.removeEventListener('change', this.handleColorSchemeChange);
+  }
+
+  handleColorSchemeChange = (e: MediaQueryListEvent) => {
+    this.isDarkMode = e.matches;
+  };
+
+  private get src() {
+    return this.isDarkMode
+      ? 'https://iili.io/FLPqzV2.png'
+      : 'https://iili.io/FLPquK7.png';
+  }
+
   render() {
-    return (
-      <img
-        width={this.width}
-        height={this.height}
-        src={getAssetPath('assets/logo.png')}
-        alt="UI Logo"
-      />
-    );
+    return <img width={this.width} height={this.height} src={this.src} alt="UI Logo" />;
   }
 }
